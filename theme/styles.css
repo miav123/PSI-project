@@ -1,0 +1,84 @@
+.navbar {
+    background-color: #b5e48c !important;
+    width:100%;
+    
+}
+
+.nav-item a{
+    /*color:#fe6d73 !important;*/
+    color:#ffffff !important;
+}
+
+.active a {
+    font-weight:bold !important;
+    text-decoration:underline solid #ffffff 2px!important;
+    
+}
+
+.nav-item a:hover {
+    font-weight:bolder !important;
+}
+
+.logo {
+    height:40px;
+}
+
+#menu-left {
+    background-color: #b5e48c;
+    float:left;
+    width:15%;
+    border-top: 1px solid #fefae0;
+    border-bottom: 1px solid #fefae0;
+}
+
+#content{
+    width: 85%;
+    background-color:#fefae0;
+    /*float:right;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   
+}
+
+#footer {
+    width: 100%;
+    background-color:#b5e48c;
+    color:#ffffff;
+    text-align:center;
+    font-style: italic;
+}
+
+.chart{
+    height: 350px !important;
+}
+
+#content-charts{
+    width: auto;
+    margin: 30px;
+    /*background-color:#fefae0;*/
+    /*float:right;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#charts-container{
+    background-color:#ffffff;
+}
+
+.foodIcon{
+    background-color:#b5e48c !important;
+    border-color:#b5e48c !important;
+    
+}
+
+.waterIcon{
+    background-color:#8ecae6 !important;
+    border-color: #8ecae6 !important;
+}
+
+.trainingIcon{
+    background-color:#ffadad !important;
+    border-color: #ffadad !important;
+}
