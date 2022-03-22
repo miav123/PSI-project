@@ -1,11 +1,73 @@
 .water{
-    background-color: #8eecf5 !important;
+    background-color: #07beb8 !important;
 }
 
 .food{
-    background-color: #fbf8cc !important;
+    background-color: #b9e769 !important;
 }
 
 .train{
-    background-color:#b9fbc0 !important;
+    background-color:#fe6d73 !important;
+}
+
+.navbar {
+    /*background-color: #b5e48c !important;*/
+    background-color: #b9e769 !important;
+    width:100%;
+    
+}
+
+.nav-item a{
+    color:#fe6d73 !important;
+    /*color:#ffffff !important;*/
+}
+
+.active a {
+    font-weight:bold !important;
+    /*text-decoration:underline solid #ffffff 2px!important;*/
+    text-decoration:underline solid #fe6d73 2px!important;
+}
+
+.nav-item a:hover {
+    font-weight:bolder !important;
+}
+
+.logo {
+    height:40px;
+}
+
+body {
+    background-color:#f0ffeb !important;
+}
+
+#menu-left {
+    background-color: #b9e769;
+    float:left;
+    width:15%;
+    border-top: 1px solid #fefae0;
+    border-bottom: 1px solid #fefae0;
+}
+
+#content{
+    width: 85%;
+    background-color:#f0ffeb;
+    /*float:right;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.list-group-item{
+    margin: 20px;
+    border-radius: 10px!important;
+}
+
+#footer {
+    width: 100%;
+    background-color:#b9e769;
+    /*color:#ffffff;*/
+    color:#fe6d73;
+    text-align:center;
+    font-style: italic;
 }
