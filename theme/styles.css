@@ -34,7 +34,7 @@
 
 #content{
     width: 85%;
-    background-color:#fefae0;
+    background-color:#f0ffeb;
     /*float:right;*/
     display: flex;
     flex-direction: column;
@@ -58,15 +58,17 @@
 #content-charts{
     width: auto;
     margin: 30px;
-    /*background-color:#fefae0;*/
+    background-color:#f0ffeb;
     /*float:right;*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-#charts-container{
-    background-color:#ffffff;
+
+
+body {
+    background-color:#f0ffeb !important;
 }
 
 .foodIcon{
