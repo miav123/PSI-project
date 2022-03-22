@@ -1,18 +1,19 @@
 .navbar {
-    background-color: #b5e48c !important;
+    /*background-color: #b5e48c !important;*/
+    background-color: #b9e769 !important;
     width:100%;
     
 }
 
 .nav-item a{
-    /*color:#fe6d73 !important;*/
-    color:#ffffff !important;
+    color:#fe6d73 !important;
+    /*color:#ffffff !important;*/
 }
 
 .active a {
     font-weight:bold !important;
-    text-decoration:underline solid #ffffff 2px!important;
-    
+    /*text-decoration:underline solid #ffffff 2px!important;*/
+    text-decoration:underline solid #fe6d73 2px!important;
 }
 
 .nav-item a:hover {
@@ -24,7 +25,7 @@
 }
 
 #menu-left {
-    background-color: #b5e48c;
+    background-color: #b9e769;
     float:left;
     width:15%;
     border-top: 1px solid #fefae0;
@@ -43,8 +44,9 @@
 
 #footer {
     width: 100%;
-    background-color:#b5e48c;
-    color:#ffffff;
+    background-color:#b9e769;
+    /*color:#ffffff;*/
+    color:#fe6d73;
     text-align:center;
     font-style: italic;
 }
@@ -68,17 +70,17 @@
 }
 
 .foodIcon{
-    background-color:#b5e48c !important;
-    border-color:#b5e48c !important;
+    background-color:#b9e769 !important;
+    border-color:#b9e769 !important;
     
 }
 
 .waterIcon{
-    background-color:#8ecae6 !important;
-    border-color: #8ecae6 !important;
+    background-color:#07beb8 !important;
+    border-color: #07beb8 !important;
 }
 
 .trainingIcon{
-    background-color:#ffadad !important;
-    border-color: #ffadad !important;
+    background-color:#fe6d73 !important;
+    border-color: #fe6d73 !important;
 }
