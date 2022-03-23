@@ -33,7 +33,7 @@
 }
 
 .logo {
-    height:40px;
+    height:60px;
 }
 
 body {
@@ -55,7 +55,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 30px;
+    padding-left: 15%;
+    padding-right: 15%;
 }
 
 .list-group-item{
