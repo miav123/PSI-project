@@ -1,0 +1,10 @@
+Izmene koje je potrebno uraditi na fajlu Template.html
+
+Za pocetak, kada ga otvorite u VS Code, ako nije lepo formatiran, idite na desni klik i Format Document
+
+1. Linija 12 - Promenite ime title-a da odgovara imenu html fajla
+2. Linija 14 - Promenite ime .css dokumenta da odgovara nazivu .html dokumenta. Ako .css dokument ne postoji, napravite ga
+3. Linija 22 - Ako koristite javascript, ovde ih povezite sa fajlom
+4. Promenite putanju slika u "../images/picture_name" (dve tacke (..) oznacavaju da se vracamo jedan folder u nazad)
+5. Kada pravite nove .html fajlove, imenujte ih kao sto je dato od linije 64 do linije 87
+6. Svoj sadrzaj mozete kopirati od linije 118 do linije 122
