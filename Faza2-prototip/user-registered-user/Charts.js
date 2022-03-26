@@ -1,4 +1,6 @@
-
+/*
+    Mia Vucinic
+*/
 
 CALORIES_CONSUMED_COLOR = "#b9e769";
 WATER_COLOR = "#07beb8";
