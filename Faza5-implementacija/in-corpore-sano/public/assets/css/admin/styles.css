@@ -1,0 +1,73 @@
+.water{
+    background-color: #adcce9 !important;
+}
+
+.food{
+    background-color: #d3e58a !important;
+}
+
+.train{
+    background-color:#f1b5b8 !important;
+}
+
+.navbar {
+    background-color: #d3e58a !important;
+    width:100%;
+}
+
+.nav-item a{
+    color:#e06a86 !important;
+    /*color:#ffffff !important;*/
+}
+
+
+.active a {
+    font-weight:bold !important;
+    /*text-decoration:underline solid #ffffff 2px!important;*/
+    text-decoration:underline solid #d6355b 2px!important;
+}
+
+.nav-item a:hover {
+    font-weight:bolder !important;
+}
+
+.logo {
+    height:60px;
+}
+
+#menu-left {
+    background-color: #b9e769;
+    float:left;
+    width:15%;
+    border-top: 1px solid #fefae0;
+    border-bottom: 1px solid #fefae0;
+}
+
+body {
+    background-color:#e9f1d0 !important;
+}
+
+#content{
+    width: 85%;
+    background-color:#e9f1d0;
+    /*float:right;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.list-group-item{
+    margin: 20px;
+    border-radius: 10px!important;
+}
+
+#footer {
+    width: 100%;
+    background-color:#d3e58a;
+    /*color:#ffffff;*/
+    color:#fe6d73;
+    text-align:center;
+    font-style: italic;
+}
