@@ -13,11 +13,6 @@
 - [ ] addtraining
 - [ ] addmeal
 - [ ] addwater
-
-### <b>TrainerController</b>
-- [ ] mychallenges
-- [ ] newchallenge
-- [ ] account
 - [ ] currentchallenges
 - [ ] acceptchallenge
 - [ ] mychallenges
@@ -34,6 +29,11 @@
 - [ ] updatepassword
 - [ ] changeweight
 - [ ] changetraining
+
+### <b>TrainerController</b>
+- [ ] mychallenges
+- [ ] newchallenge
+- [ ] account
 
 ### <b>AdminController</b>
 - [ ] challenges
