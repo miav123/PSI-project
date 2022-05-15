@@ -29,7 +29,7 @@ DROP TABLE IF EXISTS `in_corpore_sano`.`admin` ;
 CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`admin` (
   `id_kor` INT NOT NULL,
   PRIMARY KEY (`id_kor`),
-  UNIQUE INDEX `idKor_UNIQUE` (`id_kor` ASC) VISIBLE,
+  UNIQUE INDEX `idKor_UNIQUE` (`id_kor` ASC) ,
   CONSTRAINT `id_kor_admin_FK`
     FOREIGN KEY (`id_kor`)
     REFERENCES `in_corpore_sano`.`korisnik` (`id_kor`)
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`bedz` (
   `tip_bedza_vreme` INT NOT NULL,
   `slika` LONGBLOB NOT NULL,
   PRIMARY KEY (`id_bedz`),
-  UNIQUE INDEX `id_bedz_UNIQUE` (`id_bedz` ASC) VISIBLE)
+  UNIQUE INDEX `id_bedz_UNIQUE` (`id_bedz` ASC) )
 ENGINE = InnoDB;
 
 
@@ -62,7 +62,7 @@ DROP TABLE IF EXISTS `in_corpore_sano`.`bedz_logovanje` ;
 CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`bedz_logovanje` (
   `id_bedz` INT NOT NULL,
   PRIMARY KEY (`id_bedz`),
-  UNIQUE INDEX `id_bedz_UNIQUE` (`id_bedz` ASC) VISIBLE,
+  UNIQUE INDEX `id_bedz_UNIQUE` (`id_bedz` ASC) ,
   CONSTRAINT `id_bedz_logovanje_FK`
     FOREIGN KEY (`id_bedz`)
     REFERENCES `in_corpore_sano`.`bedz` (`id_bedz`)
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`bedz_unos_hrane` (
   `id_bedz` INT NOT NULL,
   `kolicina_kcal` INT NOT NULL,
   PRIMARY KEY (`id_bedz`),
-  UNIQUE INDEX `id_bedz_UNIQUE` (`id_bedz` ASC) VISIBLE,
+  UNIQUE INDEX `id_bedz_UNIQUE` (`id_bedz` ASC) ,
   CONSTRAINT `id_bedz_unos_hrane_FK`
     FOREIGN KEY (`id_bedz`)
     REFERENCES `in_corpore_sano`.`bedz` (`id_bedz`)
@@ -99,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`bedz_unos_trening` (
   `idTipTren` INT NOT NULL,
   `vreme_tren` INT NOT NULL,
   PRIMARY KEY (`id_bedz`),
-  UNIQUE INDEX `id_bedz_UNIQUE` (`id_bedz` ASC) VISIBLE,
+  UNIQUE INDEX `id_bedz_UNIQUE` (`id_bedz` ASC) ,
   CONSTRAINT `id_bedz_unos_trening_FK`
     FOREIGN KEY (`id_bedz`)
     REFERENCES `in_corpore_sano`.`bedz` (`id_bedz`)
@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`bedz_unos_vode` (
   `id_bedz` INT NOT NULL,
   `kolicina_vode` INT NOT NULL,
   PRIMARY KEY (`id_bedz`),
-  UNIQUE INDEX `id_bedz_UNIQUE` (`id_bedz` ASC) VISIBLE,
+  UNIQUE INDEX `id_bedz_UNIQUE` (`id_bedz` ASC) ,
   CONSTRAINT `id_bedz_unos_vode_FK`
     FOREIGN KEY (`id_bedz`)
     REFERENCES `in_corpore_sano`.`bedz` (`id_bedz`)
@@ -136,8 +136,8 @@ CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`gotovi_izazovi` (
   `id_kor` INT NOT NULL,
   `id_izazov` INT NOT NULL,
   PRIMARY KEY (`id_veze`),
-  INDEX `id_kor_FK_idx` (`id_kor` ASC) VISIBLE,
-  INDEX `id_izazov_FK_idx` (`id_izazov` ASC) VISIBLE,
+  INDEX `id_kor_FK_idx` (`id_kor` ASC) ,
+  INDEX `id_izazov_FK_idx` (`id_izazov` ASC) ,
   CONSTRAINT `id_kor_gotovi_izazovi_FK`
     FOREIGN KEY (`id_kor`)
     REFERENCES `in_corpore_sano`.`registrovani_korisnik` (`id_kor`)
@@ -167,8 +167,8 @@ CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`izazov` (
   `nivo` VARCHAR(1) NOT NULL,
   `br_lajkova` INT NOT NULL,
   PRIMARY KEY (`id_izazov`),
-  INDEX `id_tren_FK_idx` (`id_tren` ASC) VISIBLE,
-  UNIQUE INDEX `id_izazov_UNIQUE` (`id_izazov` ASC) VISIBLE,
+  INDEX `id_tren_FK_idx` (`id_tren` ASC) ,
+  UNIQUE INDEX `id_izazov_UNIQUE` (`id_izazov` ASC) ,
   CONSTRAINT `id_tren_izazov_FK`
     FOREIGN KEY (`id_tren`)
     REFERENCES `in_corpore_sano`.`trener` (`id_kor`)
@@ -186,7 +186,7 @@ CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`izazov_hrana` (
   `id_izazov` INT NOT NULL,
   `broj_kalorija_koje_treba_uneti_svakog_dana` INT NOT NULL,
   PRIMARY KEY (`id_izazov`),
-  UNIQUE INDEX `id_izazov_UNIQUE` (`id_izazov` ASC) VISIBLE,
+  UNIQUE INDEX `id_izazov_UNIQUE` (`id_izazov` ASC) ,
   CONSTRAINT `id_izazov_hrana_FK`
     FOREIGN KEY (`id_izazov`)
     REFERENCES `in_corpore_sano`.`izazov` (`id_izazov`)
@@ -205,8 +205,8 @@ CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`izazov_trening` (
   `id_tip` INT NOT NULL,
   `vreme_koje_treba_trenirati_svakog_dana` INT NOT NULL,
   PRIMARY KEY (`id_izazov`),
-  INDEX `id_tip_FK_idx` (`id_tip` ASC) VISIBLE,
-  UNIQUE INDEX `id_izazov_UNIQUE` (`id_izazov` ASC) VISIBLE,
+  INDEX `id_tip_FK_idx` (`id_tip` ASC) ,
+  UNIQUE INDEX `id_izazov_UNIQUE` (`id_izazov` ASC) ,
   CONSTRAINT `id_izazov_trening_FK`
     FOREIGN KEY (`id_izazov`)
     REFERENCES `in_corpore_sano`.`izazov` (`id_izazov`)
@@ -229,7 +229,7 @@ CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`izazov_voda` (
   `id_izazov` INT NOT NULL,
   `kolicina_koju_treba_piti_svakog_dana` INT NOT NULL,
   PRIMARY KEY (`id_izazov`),
-  UNIQUE INDEX `id_izazov_UNIQUE` (`id_izazov` ASC) VISIBLE,
+  UNIQUE INDEX `id_izazov_UNIQUE` (`id_izazov` ASC) ,
   CONSTRAINT `id_izazov_voda_FK`
     FOREIGN KEY (`id_izazov`)
     REFERENCES `in_corpore_sano`.`izazov` (`id_izazov`)
@@ -248,8 +248,8 @@ CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`korisnik` (
   `kor_ime` VARCHAR(45) NOT NULL,
   `sifra` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_kor`),
-  UNIQUE INDEX `korIme_UNIQUE` (`kor_ime` ASC) VISIBLE,
-  UNIQUE INDEX `id_kor_UNIQUE` (`id_kor` ASC) VISIBLE)
+  UNIQUE INDEX `korIme_UNIQUE` (`kor_ime` ASC) ,
+  UNIQUE INDEX `id_kor_UNIQUE` (`id_kor` ASC) )
 ENGINE = InnoDB;
 
 
@@ -263,9 +263,9 @@ CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`korisnik_bedz` (
   `id_kor` INT NOT NULL,
   `id_bedz` INT NOT NULL,
   PRIMARY KEY (`id_veze`),
-  INDEX `id_kor_FK_idx` (`id_kor` ASC) VISIBLE,
-  INDEX `id_bedz_FK_idx` (`id_bedz` ASC) VISIBLE,
-  UNIQUE INDEX `id_veze_UNIQUE` (`id_veze` ASC) VISIBLE,
+  INDEX `id_kor_FK_idx` (`id_kor` ASC) ,
+  INDEX `id_bedz_FK_idx` (`id_bedz` ASC) ,
+  UNIQUE INDEX `id_veze_UNIQUE` (`id_veze` ASC) ,
   CONSTRAINT `id_kor_bedz_FK`
     FOREIGN KEY (`id_kor`)
     REFERENCES `in_corpore_sano`.`registrovani_korisnik` (`id_kor`)
@@ -291,9 +291,9 @@ CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`moji_izazovi` (
   `dana_uzastopno_ispunjeno` INT NOT NULL,
   `propusteno` TINYINT NOT NULL,
   PRIMARY KEY (`id_veze`),
-  INDEX `id_kor_FK_idx` (`id_kor` ASC) VISIBLE,
-  INDEX `id_izazov_FK_idx` (`id_izazov` ASC) VISIBLE,
-  UNIQUE INDEX `id_veze_UNIQUE` (`id_veze` ASC) VISIBLE,
+  INDEX `id_kor_FK_idx` (`id_kor` ASC) ,
+  INDEX `id_izazov_FK_idx` (`id_izazov` ASC) ,
+  UNIQUE INDEX `id_veze_UNIQUE` (`id_veze` ASC) ,
   CONSTRAINT `id_kor_moji_izazovi_FK`
     FOREIGN KEY (`id_kor`)
     REFERENCES `in_corpore_sano`.`registrovani_korisnik` (`id_kor`)
@@ -317,7 +317,7 @@ CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`namirnica` (
   `naziv` VARCHAR(45) NOT NULL,
   `kcal_na_100g` INT NOT NULL,
   PRIMARY KEY (`id_nam`),
-  UNIQUE INDEX `id_nam_UNIQUE` (`id_nam` ASC) VISIBLE)
+  UNIQUE INDEX `id_nam_UNIQUE` (`id_nam` ASC) )
 ENGINE = InnoDB;
 
 
@@ -332,9 +332,9 @@ CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`obork_sadrzi_namirnice` (
   `id_nam` INT NOT NULL,
   `kolicina_svake_nam_u_g` INT NOT NULL,
   PRIMARY KEY (`id_vez`),
-  INDEX `id_nam_FK_idx` (`id_nam` ASC) VISIBLE,
-  INDEX `id_obr_FK_idx` (`id_obr` ASC) VISIBLE,
-  UNIQUE INDEX `id_vez_UNIQUE` (`id_vez` ASC) VISIBLE,
+  INDEX `id_nam_FK_idx` (`id_nam` ASC) ,
+  INDEX `id_obr_FK_idx` (`id_obr` ASC) ,
+  UNIQUE INDEX `id_vez_UNIQUE` (`id_vez` ASC) ,
   CONSTRAINT `id_nam_obr_sad_nam_FK`
     FOREIGN KEY (`id_nam`)
     REFERENCES `in_corpore_sano`.`namirnica` (`id_nam`)
@@ -357,7 +357,7 @@ CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`obrok` (
   `id_obr` INT NOT NULL AUTO_INCREMENT,
   `naziv` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_obr`),
-  UNIQUE INDEX `id_obr_UNIQUE` (`id_obr` ASC) VISIBLE)
+  UNIQUE INDEX `id_obr_UNIQUE` (`id_obr` ASC) )
 ENGINE = InnoDB;
 
 
@@ -374,7 +374,7 @@ CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`registrovani_korisnik` (
   `bodovi` INT NOT NULL,
   `datum_posl_logovanja` DATETIME NOT NULL,
   `broj_uzast_logovanja` INT NOT NULL,
-  UNIQUE INDEX `idKor_UNIQUE` (`id_kor` ASC) VISIBLE,
+  UNIQUE INDEX `idKor_UNIQUE` (`id_kor` ASC) ,
   PRIMARY KEY (`id_kor`),
   CONSTRAINT `id_kor_reg_kor_FK`
     FOREIGN KEY (`id_kor`)
@@ -394,7 +394,7 @@ CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`tip_treninga` (
   `naziv` VARCHAR(45) NOT NULL,
   `kcal_za_pola_sata_tren` INT NOT NULL,
   PRIMARY KEY (`id_tip`),
-  UNIQUE INDEX `id_tip_UNIQUE` (`id_tip` ASC) VISIBLE)
+  UNIQUE INDEX `id_tip_UNIQUE` (`id_tip` ASC) )
 ENGINE = InnoDB;
 
 
@@ -406,7 +406,7 @@ DROP TABLE IF EXISTS `in_corpore_sano`.`trener` ;
 CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`trener` (
   `id_kor` INT NOT NULL,
   PRIMARY KEY (`id_kor`),
-  UNIQUE INDEX `idKor_UNIQUE` (`id_kor` ASC) VISIBLE,
+  UNIQUE INDEX `idKor_UNIQUE` (`id_kor` ASC) ,
   CONSTRAINT `id_kor_trener_FK`
     FOREIGN KEY (`id_kor`)
     REFERENCES `in_corpore_sano`.`korisnik` (`id_kor`)
@@ -426,9 +426,9 @@ CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`unos_hrane` (
   `datum` DATETIME NOT NULL,
   `id_obr` INT NOT NULL,
   PRIMARY KEY (`id_un`),
-  INDEX `id_kor_FK_idx` (`id_kor` ASC) VISIBLE,
-  INDEX `id_obr_FK_idx` (`id_obr` ASC) VISIBLE,
-  UNIQUE INDEX `id_un_UNIQUE` (`id_un` ASC) VISIBLE,
+  INDEX `id_kor_FK_idx` (`id_kor` ASC) ,
+  INDEX `id_obr_FK_idx` (`id_obr` ASC) ,
+  UNIQUE INDEX `id_un_UNIQUE` (`id_un` ASC) ,
   CONSTRAINT `id_kor_unos_hrane_FK`
     FOREIGN KEY (`id_kor`)
     REFERENCES `in_corpore_sano`.`registrovani_korisnik` (`id_kor`)
@@ -454,9 +454,9 @@ CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`unos_treninga` (
   `vreme_trajanja` INT NOT NULL,
   `id_tip` INT NOT NULL,
   PRIMARY KEY (`id_un`),
-  INDEX `id_kor_FK_idx` (`id_kor` ASC) VISIBLE,
-  INDEX `id_tip_FK_idx` (`id_tip` ASC) VISIBLE,
-  UNIQUE INDEX `id_un_UNIQUE` (`id_un` ASC) VISIBLE,
+  INDEX `id_kor_FK_idx` (`id_kor` ASC) ,
+  INDEX `id_tip_FK_idx` (`id_tip` ASC) ,
+  UNIQUE INDEX `id_un_UNIQUE` (`id_un` ASC) ,
   CONSTRAINT `id_kor_unos_treninga_FK`
     FOREIGN KEY (`id_kor`)
     REFERENCES `in_corpore_sano`.`registrovani_korisnik` (`id_kor`)
@@ -481,8 +481,8 @@ CREATE TABLE IF NOT EXISTS `in_corpore_sano`.`unos_vode` (
   `datum` DATETIME NOT NULL,
   `kolicina` INT NOT NULL,
   PRIMARY KEY (`id_un`),
-  INDEX `id_kor_FK_idx` (`id_kor` ASC) VISIBLE,
-  UNIQUE INDEX `id_un_UNIQUE` (`id_un` ASC) VISIBLE,
+  INDEX `id_kor_FK_idx` (`id_kor` ASC) ,
+  UNIQUE INDEX `id_un_UNIQUE` (`id_un` ASC) ,
   CONSTRAINT `id_kor_unos_vode_FK`
     FOREIGN KEY (`id_kor`)
     REFERENCES `in_corpore_sano`.`registrovani_korisnik` (`id_kor`)
