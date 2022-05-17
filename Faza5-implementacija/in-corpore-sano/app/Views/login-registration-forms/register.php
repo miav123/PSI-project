@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="ICON" href="../images/logo.png" type="image/x-icon">
+    <link rel="ICON" href="/assets/images/logo/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
@@ -30,12 +30,12 @@
                                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign Up</p>
 
                                 <form class="mx-1 mx-md-4" id="registrationform1"
-                                      action="/registerFirstPage" method="post">
+                                      action="/register" method="post">
 
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="text" id="usernameRegistration" class="form-control" required/>
+                                            <input type="text" id="usernameRegistration" name="usernameRegistration" class="form-control" required/>
                                             <label class="form-label" for="usernameRegistration">Username</label>
                                         </div>
                                     </div>
@@ -43,7 +43,7 @@
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="email" id="email" class="form-control" required/>
+                                            <input type="email" id="email" name="email" class="form-control" required/>
                                             <label class="form-label" for="email">Email</label>
                                         </div>
                                     </div>
@@ -51,7 +51,7 @@
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="password" id="passwordRegistration" class="form-control" required/>
+                                            <input type="password" id="passwordRegistration" name="passwordRegistration" class="form-control" required/>
                                             <label class="form-label" for="passwordRegistration">Password</label>
                                         </div>
                                     </div>
@@ -59,7 +59,7 @@
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="password" id="repeatPassword" class="form-control" required/>
+                                            <input type="password" id="repeatPassword" name="repeatPassword" class="form-control" required/>
                                             <label class="form-label" for="repeatPassword">Repeat your
                                                 password</label>
                                         </div>
@@ -95,7 +95,7 @@
 
                             </div>
                             <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                                <img src="<?= base_url() ?>/images/logo.png" class="img-fluid" alt="Sample image"
+                                <img src="/assets/images/logo/logo.png" class="img-fluid" alt="Sample image"
                                      style="margin:auto;width:70%">
 
                             </div>
@@ -107,6 +107,7 @@
     </div>
 </section>
 
+<!--
 <div class="modal" id="modalRegister">
     <div class="modal-dialog  modal-dialog-centered">
         <div class="modal-content">
@@ -125,6 +126,7 @@
         </div>
     </div>
 </div>
+-->
 
 </body>
 

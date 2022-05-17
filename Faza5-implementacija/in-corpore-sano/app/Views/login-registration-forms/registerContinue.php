@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="ICON" href="../images/logo.png" type="image/x-icon">
+    <link rel="ICON" href="/assets/images/logo/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
@@ -30,13 +30,13 @@
                                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign Up</p>
 
                                 <form class="mx-1 mx-md-4" id="registrationform2"
-                                      action="/registerSecondPage" method="post">
+                                      action="/registercontinue" method="post">
 
 
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="number" min="150" id="height" class="form-control" required />
+                                            <input type="number" min="150" id="height" name="height" class="form-control" required />
                                             <label class="form-label" for="height">Height (cm)</label>
                                         </div>
                                     </div>
@@ -44,7 +44,7 @@
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="number" min="40" id="weight" class="form-control" required/>
+                                            <input type="number" min="40" id="weight" name="weight" class="form-control" required/>
                                             <label class="form-label" for="weight">Weight (kg)</label>
                                         </div>
                                     </div>
@@ -53,7 +53,7 @@
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="number" id="hours" class="form-control" required/>
+                                            <input type="number" id="hours" name="hours" class="form-control" required/>
                                             <label class="form-label" for="hours">Hours of training per week</label>
                                         </div>
                                     </div>
@@ -72,7 +72,7 @@
                                     <hr class="my-4">
 
                                     <div class="d-flex justify-content-center">
-                                        <a href="/registerFirstPage">Back</a>
+                                        <a href="/register">Back</a>
                                     </div>
 
 
@@ -80,7 +80,7 @@
 
                             </div>
                             <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                                <img src="<?= base_url() ?>/images/logo.png" class="img-fluid" alt="Sample image"
+                                <img src="/assets/images/logo/logo.png" class="img-fluid" alt="Sample image"
                                      style="margin:auto;width:70%">
 
                             </div>
@@ -92,7 +92,7 @@
     </div>
 </section>
 
-
+<!--
 <div class="modal" id="modalRegisterContinue">
     <div class="modal-dialog  modal-dialog-centered">
         <div class="modal-content">
@@ -111,6 +111,7 @@
         </div>
     </div>
 </div>
+-->
 
 </body>
 
