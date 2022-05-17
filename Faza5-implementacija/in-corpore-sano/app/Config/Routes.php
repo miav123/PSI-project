@@ -31,9 +31,38 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Usercontroller::index');
-$routes->match(['post', 'get'],'registerFirstPage', 'Usercontroller::registerFirstPage');
-$routes->match(['post', 'get'],'registerSecondPage', 'Usercontroller::registerSecondPage');
+
+/*
+ *  LOGIN/REGISTER ROUTES
+ */
+$routes->match(['post', 'get'],'/', 'Loginregister\Logincontroller::login');
+$routes->match(['post', 'get'],'register', 'Loginregister\Registercontroller::register');
+$routes->match(['post', 'get'],'registercontinue', 'Loginregister\Registercontroller::registercontinue');
+$routes->get('logout', 'Loginregister\Logincontroller::logout');
+
+/*
+ *  ADMIN ROUTES
+ */
+$routes->group('admin', function ($routes) {
+    $routes->get('challenges', 'Admin\Challengescontroller::allchallenges');
+    $routes->get('deletechallenge/(:any)', 'Admin\Challengescontroller::deletechallenge/$1');
+    $routes->add('trainers', 'Admin\Trainercontroller::alltrainers');
+    $routes->get('deletetrainer/(:any)', 'Admin\Trainercontroller::deletetrainer/$1');
+    $routes->add('users', 'Admin\Usercontroller::allusers');
+    $routes->get('deleteuser/(:any)', 'Admin\Usercontroller::deleteuser/$1');
+});
+
+/*
+ *  USER ROUTES
+ */
+$routes->group('user', function ($routes) {
+    $routes->add('charts', 'User\Chartscontroller::chart');
+});
+
+/*
+ *  TRAINER ROUTES
+ */
+
 
 /*
  * --------------------------------------------------------------------
