@@ -12,10 +12,12 @@
     </div>
     <div class="row text-sm-center text-md-right">
         <div class="col-sm-12 col-md-12">
-            <a href="/admin/deleteuser/<?= $id ?>" class="btn btn-primary btn-floating btn-delete nice-font" >
-                <i class="fas fa-trash-alt"></i>
-                DELETE
-            </a>
+            <form action="/admin/deleteuser/<?= $id ?>" method="post">
+                <button type="submit" class="btn btn-primary btn-floating btn-delete nice-font" name="deletebtn">
+                    <i class="fas fa-trash-alt"></i>
+                    DELETE
+                </button>
+            </form>
         </div>
     </div>
 </div>
