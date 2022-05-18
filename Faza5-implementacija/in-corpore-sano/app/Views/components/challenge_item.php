@@ -1,4 +1,3 @@
-
 <div class="list-group-item <?= $type ?>">
     <div class="row align-items-center text-sm-center text-md-left">
         <div class="col-sm-12 col-md-2 text-center">
@@ -32,10 +31,12 @@
     </div>
     <div class="row text-sm-center text-md-right">
         <div class="col-sm-12 col-md-12">
-            <a href="/admin/deletechallenge/<?= $id ?>" class="btn btn-primary btn-floating btn-delete nice-font" >
-                <i class="fas fa-trash-alt"></i>
-                DELETE
-            </a>
+            <form action="/admin/deletechallenge/<?= $id ?>" method="post">
+                <button type="submit" class="btn btn-primary btn-floating btn-delete nice-font" name="deletebtn">
+                    <i class="fas fa-trash-alt"></i>
+                    DELETE
+                </button>
+            </form>
         </div>
     </div>
 </div>

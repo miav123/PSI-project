@@ -1,0 +1,12 @@
+.errors li{
+    list-style: none;
+    width: 100%;
+}
+.errors ul{
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.round {
+    border-radius: 31px !important;
+}

@@ -35,7 +35,6 @@ class Challengescontroller extends BaseController
                     'level' => $challenge['nivo']
                 ];
             }
-
         }
 
         $data['challenges'] = $challenges;
@@ -47,11 +46,13 @@ class Challengescontroller extends BaseController
 
     public function deletechallenge($id)
     {
-        $model = new IzazovModel();
-        $challenge = $model->find($id);
-        if($challenge) {
-            $challenge['izbrisan'] = 1;
-            $model->save($challenge);
+        if(array_key_exists('deletebtn', $_POST)) {
+            $model = new IzazovModel();
+            $challenge = $model->find($id);
+            if($challenge) {
+                $challenge['izbrisan'] = 1;
+                $model->save($challenge);
+            }
         }
         return redirect()->to('admin/challenges');
     }

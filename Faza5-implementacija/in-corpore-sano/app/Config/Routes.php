@@ -45,11 +45,11 @@ $routes->get('logout', 'Loginregister\Logincontroller::logout');
  */
 $routes->group('admin', function ($routes) {
     $routes->get('challenges', 'Admin\Challengescontroller::allchallenges');
-    $routes->get('deletechallenge/(:any)', 'Admin\Challengescontroller::deletechallenge/$1');
-    $routes->add('trainers', 'Admin\Trainercontroller::alltrainers');
-    $routes->get('deletetrainer/(:any)', 'Admin\Trainercontroller::deletetrainer/$1');
-    $routes->add('users', 'Admin\Usercontroller::allusers');
-    $routes->get('deleteuser/(:any)', 'Admin\Usercontroller::deleteuser/$1');
+    $routes->post('deletechallenge/(:any)', 'Admin\Challengescontroller::deletechallenge/$1');
+    $routes->get('trainers', 'Admin\Trainercontroller::alltrainers');
+    $routes->post('deletetrainer/(:any)', 'Admin\Trainercontroller::deletetrainer/$1');
+    $routes->get('users', 'Admin\Usercontroller::allusers');
+    $routes->post('deleteuser/(:any)', 'Admin\Usercontroller::deleteuser/$1');
 });
 
 /*

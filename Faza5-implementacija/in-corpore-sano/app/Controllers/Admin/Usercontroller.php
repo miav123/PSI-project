@@ -29,7 +29,6 @@ class Usercontroller extends BaseController
                     'points' => $regUser['bodovi'],
                 ];
             }
-
         }
 
         $data['users'] = $users;
@@ -42,11 +41,13 @@ class Usercontroller extends BaseController
 
     public function deleteuser($id)
     {
-        $modelUser = new KorisnikModel();
-        $user = $modelUser->find($id);
-        if($user) {
-            $user['izbrisan'] = 1;
-            $modelUser->save($user);
+        if(array_key_exists('deletebtn', $_POST)) {
+            $modelUser = new KorisnikModel();
+            $user = $modelUser->find($id);
+            if($user) {
+                $user['izbrisan'] = 1;
+                $modelUser->save($user);
+            }
         }
         return redirect()->to('admin/users');
     }
