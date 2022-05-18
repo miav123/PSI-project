@@ -9,49 +9,70 @@ use App\Models\TrenerModel;
 
 class Logincontroller extends BaseController
 {
+
+    private function setUserSession($user){
+
+        $data = [
+            'id' => $user['id_kor'],
+            'username' => $user['kor_ime'],
+            'isLoggedIn' => true,
+        ];
+
+        session()->set($data);
+        return true;
+    }
+
     public function login() {
+
+        helper(['form']);
+        $data = [];
 
         if($this->request->getMethod() == 'post') {
 
-            $username = $_POST['usernameLogIn'];
-            $password =  $_POST['passwordLogIn'];
+            $rules = [
+                'username'=> 'required',
+                'password'=> 'required|validUser[username,password]'
+            ];
 
-            $modelUser = new KorisnikModel();
-            $modelAdmin = new AdminModel();
-            $modelTrainer = new TrenerModel();
+            $errors = [
+                'password' => [
+                    'validUser' => 'Please check your username and password'
+                ]
+            ];
 
-            $user = $modelUser->where('kor_ime', $username)->findAll();
+            if(!$this->validate($rules, $errors)) {
 
-            if($user && !$user[0]['izbrisan']) {
-
-                // check if password is correct
-                if($user[0]['sifra'] == $password) {
-
-                    // check if user is admin
-                    if($modelAdmin->find($user[0]['id_kor'])) {
-                        return redirect()->to('admin/challenges');
-                    }
-
-                    // check if user is trainer
-                    if($modelTrainer->find($user[0]['id_kor'])) {
-                        return redirect()->to('trainer/challenges');
-                    }
-
-                    return redirect()->to('user/challenges');
-
-                } else {
-                    print_r('password not correct');
-                }
+                $data['validation'] = $this->validator;
 
             } else {
-                print_r('username doesn\'t exists or account is banned');
+
+                $modelUser = new KorisnikModel();
+                $modelAdmin = new AdminModel();
+                $modelTrainer = new TrenerModel();
+
+                $user = $modelUser->where('kor_ime', $this->request->getVar('username'))->first();
+
+                $this->setUserSession($user); // create session
+
+                // check if user is admin
+                if($modelAdmin->find($user['id_kor'])) {
+                    return redirect()->to('admin/challenges');
+                }
+
+                // check if user is trainer
+                if($modelTrainer->find($user['id_kor'])) {
+                    return redirect()->to('trainer/challenges');
+                }
+
+                return redirect()->to('user/challenges');
 
             }
         }
-        else echo view("login-registration-forms/login.php");
+        echo view("login-registration-forms/login.php", $data);
     }
 
     public function logout() {
+        session()->destroy();
         return redirect()->to('/');
     }
 
