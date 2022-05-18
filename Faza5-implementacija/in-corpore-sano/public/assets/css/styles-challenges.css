@@ -68,3 +68,11 @@
 .challenge-description {
     font-size: 1.125rem;
 }
+
+.trainer-user {
+    background-color:#d3e58a !important;
+}
+
+.fa-user {
+    color:#d6355b;
+}
