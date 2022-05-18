@@ -28,7 +28,6 @@ class Trainercontroller extends BaseController
                     'username' => $user['kor_ime'],
                 ];
             }
-
         }
 
         $data['trainers'] = $trainers;
@@ -41,11 +40,13 @@ class Trainercontroller extends BaseController
 
     public function deletetrainer($id)
     {
-        $modelUser = new KorisnikModel();
-        $user = $modelUser->find($id);
-        if($user) {
-            $user['izbrisan'] = 1;
-            $modelUser->save($user);
+        if(array_key_exists('deletebtn', $_POST)) {
+            $modelUser = new KorisnikModel();
+            $user = $modelUser->find($id);
+            if ($user) {
+                $user['izbrisan'] = 1;
+                $modelUser->save($user);
+            }
         }
         return redirect()->to('admin/trainers');
     }
