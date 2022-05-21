@@ -52,7 +52,7 @@
     
                     </li>
                     <li class="nav-item <?= ($uri->getSegment(2) == 'charts' ? 'active' : null) ?>">
-                        <a class="nav-link" href="/user/charts">CHARTS</a>
+                        <a class="nav-link" href="/user/charts/water">CHARTS</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">BADGES</a>
