@@ -56,7 +56,7 @@ $routes->group('admin', function ($routes) {
  *  USER ROUTES
  */
 $routes->group('user', function ($routes) {
-    $routes->add('charts', 'User\Chartscontroller::chart');
+    $routes->add('charts/(:any)', 'User\Chartscontroller::chart/$1');
 });
 
 /*
