@@ -1,0 +1,46 @@
+.chart{
+    height: 350px !important;
+}
+
+#content-charts{
+    width: auto;
+    margin: 30px;
+    background-color:#e9f1d0;
+    /*float:right;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+body {
+    background-color:#e9f1d0 !important;
+}
+
+.foodIcon{
+    background-color:#d3e58a !important;
+    border-color:#d3e58a !important;
+    color:#000000 !important;
+    border-radius: 31px !important;
+}
+
+.foodIcon:hover, .waterIcon:hover, .trainingIcon:hover  {
+    background-color: #e06a86 !important;
+}
+
+.foodIcon:active {
+    outline-color: #d3e58a !important;
+}
+
+.waterIcon{
+    background-color:#adcce9 !important;
+    border-color: #adcce9 !important;
+    color:#000000 !important;
+    border-radius: 31px !important;
+}
+
+.trainingIcon{
+    background-color:#f1b5b8 !important;
+    border-color: #f1b5b8 !important;
+    color:#000000 !important;
+    border-radius: 31px !important;
+}
