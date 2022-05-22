@@ -12,8 +12,6 @@
     justify-content: space-between;
 }
 
-
-
 body {
     background-color:#e9f1d0 !important;
 }
@@ -22,7 +20,7 @@ body {
     background-color:#d3e58a !important;
     border-color:#d3e58a !important;
     color:#000000 !important;
-    border-radius: 20%;
+    border-radius: 31px !important;
 }
 
 .foodIcon:hover, .waterIcon:hover, .trainingIcon:hover  {
@@ -37,12 +35,12 @@ body {
     background-color:#adcce9 !important;
     border-color: #adcce9 !important;
     color:#000000 !important;
-    border-radius: 20%;
+    border-radius: 31px !important;
 }
 
 .trainingIcon{
     background-color:#f1b5b8 !important;
     border-color: #f1b5b8 !important;
     color:#000000 !important;
-    border-radius: 20%;
+    border-radius: 31px !important;
 }
