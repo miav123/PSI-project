@@ -1,44 +1,11 @@
 # Plan za implementaciju:
 
-## Controllers
+## Mia
 
-### <b>UserController</b>
-- [ ] login
-- [ ] register
-- [ ] registertrainer
-- [ ] logout
-
-### <b>RegisteredUserController</b>
-- [ ] dailylog
-- [ ] addtraining
-- [ ] addmeal
-- [ ] addwater
-- [ ] currentchallenges
-- [ ] acceptchallenge
-- [ ] mychallenges
-- [ ] leavechallenge
-- [ ] donechallenges
-- [ ] ratechallenge
-- [ ] chartscaloriesconsumed
-- [ ] chartswater
-- [ ] chartscaloriesburned
-- [ ] badges
-- [ ] rank
-- [ ] myaccount
-- [ ] updateusername
-- [ ] updatepassword
-- [ ] changeweight
-- [ ] changetraining
-
-### <b>TrainerController</b>
-- [ ] mychallenges
-- [ ] newchallenge
-- [ ] account
-
-### <b>AdminController</b>
-- [ ] challenges
-- [ ] deletechallenge
-- [ ] trainers
-- [ ] deletetrainer
-- [ ] users
-- [ ] deleteuser
+### <b>Controllers</b>
+- [ ] Loginregister/Logincontroller -> login, logout
+- [ ] Loginregister/Registercontroller -> register, registercontinue
+- [ ] User/Chartscontroller -> chart
+- [ ] Admin/Challengescontroller -> allchallenges, deletechallenge
+- [ ] Admin/Trainercontroller -> alltrainers, deletetrainer
+- [ ] Admin/Usercontroller -> allusers, deleteuser
