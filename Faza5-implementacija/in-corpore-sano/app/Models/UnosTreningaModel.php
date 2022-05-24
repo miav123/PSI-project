@@ -16,7 +16,7 @@ class UnosTreningaModel {
         return $this->db->query("
                                 SELECT DAYOFWEEK(DATE(datum)) AS day_in_week, DAY(DATE(datum)) AS day_in_month, SUM(vreme_trajanja * kcal_za_pola_sata_tren * 2) AS result
                                 FROM `unos_treninga`, `tip_treninga`
-                                WHERE DATE(datum) >= DATE(NOW() - INTERVAL 7 DAY) AND id_kor = {$user_id} AND `unos_treninga`.id_tip = `tip_treninga`.`id_tip`
+                                WHERE YEARWEEK(DATE(datum), 1) = YEARWEEK(DATE(NOW()), 1) AND id_kor = {$user_id} AND `unos_treninga`.id_tip = `tip_treninga`.`id_tip`
                                 GROUP BY DATE(datum)
                                 ORDER BY day_in_month ASC")
             ->getResultArray();
@@ -42,7 +42,7 @@ class UnosTreningaModel {
                                     (
                                         SELECT SUM(vreme_trajanja * kcal_za_pola_sata_tren * 2) AS result, datum
                                         FROM `unos_treninga`, `tip_treninga`
-                                        WHERE DATE(datum) >= DATE(NOW() - INTERVAL 365 DAY) AND id_kor = {$user_id} AND `unos_treninga`.id_tip = `tip_treninga`.`id_tip`
+                                        WHERE YEAR(NOW()) = YEAR(DATE(datum)) AND id_kor = {$user_id} AND `unos_treninga`.id_tip = `tip_treninga`.`id_tip`
                                         GROUP BY DATE(datum)
                                     ) q
                                     WHERE MONTH(DATE(datum)) = id

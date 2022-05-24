@@ -25,7 +25,7 @@ class UnosVodeModel {
         return $this->db->query("
                                 SELECT DAYOFWEEK(DATE(datum)) AS day_in_week, DAY(DATE(datum)) AS day_in_month, SUM(kolicina) AS result
                                 FROM `unos_vode` 
-                                WHERE DATE(datum) >= DATE(NOW() - INTERVAL 7 DAY) AND id_kor = {$user_id}
+                                WHERE YEARWEEK(DATE(datum), 1) = YEARWEEK(DATE(NOW()), 1) AND id_kor = {$user_id}
                                 GROUP BY DATE(datum)
                                 ORDER BY day_in_month ASC")
             ->getResultArray();
@@ -50,7 +50,7 @@ class UnosVodeModel {
                                 (
                                     SELECT SUM(kolicina) as result, datum
                                     FROM `unos_vode` 
-                                    WHERE DATE(datum) >= DATE(NOW() - INTERVAL 365 DAY) AND id_kor = {$user_id}
+                                    WHERE YEAR(NOW()) = YEAR(DATE(datum)) AND id_kor = {$user_id}
                                     GROUP BY DATE(datum)
                                 ) q
                                 WHERE MONTH(DATE(datum)) = id
