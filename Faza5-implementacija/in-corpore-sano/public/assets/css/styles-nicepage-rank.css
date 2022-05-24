@@ -1,0 +1,21 @@
+/* Tijana Mitrovic */
+
+.u-section-1 {
+  background-image: none;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 560px;
+}
+
+.table, .table td, .table th, .table thead th,
+.table {
+    border-top-color: #d6355b;
+    border-bottom-color: #d6355b;
+    color: #d6355b;
+    text-align: center;
+  }
+.table,
+.table-2{
+  margin-top: 100px;
+}
