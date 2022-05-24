@@ -56,7 +56,17 @@ $routes->group('admin', function ($routes) {
  *  USER ROUTES
  */
 $routes->group('user', function ($routes) {
+    //DAILY LOG
+    $routes->get('current-challenges', 'User\Currentchallengescontroller::currChallenges');
+    $routes->post('acceptchallenge/(:any)', 'User\Currentchallengescontroller::acceptchallenge/$1');
+    $routes->get('my-challenges', 'User\Mychallengescontroller::myChallenges');
+    $routes->post('leavechallenge/(:any)', 'User\Mychallengescontroller::leavechallenge/$1');
+    $routes->get('done-challenges', 'User\Donechallengescontroller::doneChallenges');
+    $routes->post('likechallenge/(:any)', 'User\DonechallengesController::likechallenge/$1');
     $routes->add('charts/(:any)', 'User\Chartscontroller::chart/$1');
+    //BADGES
+    $routes->get('rank', 'User\Rankcontroller::allRegUsers');
+    //MY ACCOUNT
 });
 
 /*
