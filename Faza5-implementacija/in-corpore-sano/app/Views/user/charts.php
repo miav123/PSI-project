@@ -1,3 +1,4 @@
+<!-- Mia Vucinic 0224/2019 -->
 <?php
 $uri = service('uri');
 ?>
@@ -64,6 +65,8 @@ $uri = service('uri');
         colorArray["food"] = "#d3e58a";
         colorArray["training"] = "#f1b5b8";
 
+        let type = "<?php echo $uri->getSegment(3) ?>";
+
         let chart_data_week = JSON.parse('<?php echo $chart_week_data ?>');
         let chart_data_month = JSON.parse('<?php echo $chart_month_data ?>');
         let chart_data_year = JSON.parse('<?php echo $chart_year_data ?>');
@@ -71,9 +74,9 @@ $uri = service('uri');
         data_week = {
             labels: chart_data_week.label,
             datasets: [{
-                label: "<?= ($uri->getSegment(3) == 'water' ? 'ml' : 'kcal') ?>",
-                backgroundColor: colorArray["<?php echo $uri->getSegment(3) ?>"],
-                borderColor: colorArray["<?php echo $uri->getSegment(3) ?>"],
+                label: type === "water" ? "ml" : "kcal",
+                backgroundColor: colorArray[type],
+                borderColor: colorArray[type],
                 data: chart_data_week.data, // INSERT DATA
             }]
         };
@@ -103,9 +106,9 @@ $uri = service('uri');
         data_month = {
             labels: chart_data_month.label,
             datasets: [{
-                label: "<?= ($uri->getSegment(3) == 'water' ? 'ml' : 'kcal') ?>",
-                backgroundColor: colorArray["<?php echo $uri->getSegment(3) ?>"],
-                borderColor: colorArray["<?php echo $uri->getSegment(3) ?>"],
+                label: type === "water" ? "ml" : "kcal",
+                backgroundColor: colorArray[type],
+                borderColor: colorArray[type],
                 data: chart_data_month.data, // INSERT DATA
             }]
         };
@@ -135,9 +138,9 @@ $uri = service('uri');
         data_year = {
             labels: chart_data_year.label,
             datasets: [{
-                label: "<?= ($uri->getSegment(3) == 'water' ? 'ml' : 'kcal') ?>",
-                backgroundColor: colorArray["<?php echo $uri->getSegment(3) ?>"],
-                borderColor: colorArray["<?php echo $uri->getSegment(3) ?>"],
+                label: type === "water" ? "ml" : "kcal",
+                backgroundColor: colorArray[type],
+                borderColor: colorArray[type],
                 data: chart_data_year.data, // INSERT DATA
             }]
         };
@@ -158,7 +161,7 @@ $uri = service('uri');
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Past 12 months average data'
+                        text: 'Current year data'
                     }
                 }
             }

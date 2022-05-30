@@ -1,5 +1,9 @@
 <?php
 
+/*
+ *  Mia Vucinic 0224/2019
+ */
+
 namespace App\Controllers\User;
 
 use App\Controllers\BaseController;
@@ -7,9 +11,20 @@ use App\Models\UnosHraneModel;
 use App\Models\UnosTreningaModel;
 use App\Models\UnosVodeModel;
 
+
+/**
+ * Chartscontroller - controller class that is used for fetching data that will be plotted on charts
+ * @version 1.0
+ */
 class Chartscontroller extends BaseController
 {
-    private function getWeekData($type)
+    /**
+     * Function that is used for fetching current week data from database.
+     * @param $type
+     * @param $user
+     * @return mixed
+     */
+    private function getWeekData($type, $user)
     {
         $db = db_connect();
         $model = new UnosVodeModel($db);
@@ -25,10 +40,16 @@ class Chartscontroller extends BaseController
                 $model = new UnosTreningaModel($db);
                 break;
         }
-        return $model->getLastWeekDataForUser(2);
+        return $model->getLastWeekDataForUser($user);
     }
 
-    private function getMonthData($type)
+    /**
+     * Function that is used for fetching current month data from database.
+     * @param $type
+     * @param $user
+     * @return mixed
+     */
+    private function getMonthData($type, $user)
     {
         $db = db_connect();
         $model = new UnosVodeModel($db);
@@ -44,10 +65,16 @@ class Chartscontroller extends BaseController
                 $model = new UnosTreningaModel($db);
                 break;
         }
-        return $model->getLastMonthDataForUser(2);
+        return $model->getLastMonthDataForUser($user);
     }
 
-    private function getYearData($type)
+    /**
+     * Function that is used for fetching current year data from database.
+     * @param $type
+     * @param $user
+     * @return mixed
+     */
+    private function getYearData($type, $user)
     {
         $db = db_connect();
         $model = new UnosVodeModel($db);
@@ -63,9 +90,15 @@ class Chartscontroller extends BaseController
                 $model = new UnosTreningaModel($db);
                 break;
         }
-        return $model->getLastYearDataForUser(2);
+        return $model->getLastYearDataForUser($user);
     }
 
+    /**
+     * Function that checks if there is record in database for day passed as parameter.
+     * @param $month_data_sql
+     * @param $day
+     * @return null
+     */
     private function recordForCurrentDay($month_data_sql, $day)
     {
         $r = null;
@@ -78,6 +111,12 @@ class Chartscontroller extends BaseController
         return $r;
     }
 
+    /**
+     * Function that checks if there is record in database for day in week passed as parameter.
+     * @param $week_data_sql
+     * @param $day
+     * @return null
+     */
     private function recordForCurrentDayInWeek($week_data_sql, $day)
     {
         $r = null;
@@ -90,14 +129,21 @@ class Chartscontroller extends BaseController
         return $r;
     }
 
+    /**
+     * Function that collects chart data for given type(e.g. water, food, training) and passes it to chart view page for plotting.
+     * @param $type
+     * @return void
+     */
     public function chart($type)
     {
 
         helper(array('url', 'html', 'form'));
 
-        $week_data_sql = $this->getWeekData($type);
-        $month_data_sql = $this->getMonthData($type);
-        $year_data_sql = $this->getYearData($type);
+        $user = session()->get('id');
+
+        $week_data_sql = $this->getWeekData($type, $user);
+        $month_data_sql = $this->getMonthData($type, $user);
+        $year_data_sql = $this->getYearData($type, $user);
         $week_data = [];
         $month_data = [];
         $year_data = [];
