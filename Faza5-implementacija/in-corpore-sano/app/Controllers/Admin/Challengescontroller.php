@@ -11,8 +11,16 @@ use App\Models\IzazovModel;
 use App\Models\KorisnikModel;
 use App\Models\TrenerModel;
 
+/**
+ * Challengescontroller - controller class that manages challenges for admin
+ * @version 1.0
+ */
 class Challengescontroller extends BaseController
 {
+    /**
+     * Function that lists all challenges.
+     * @return void
+     */
     public function allchallenges() {
 
         $data = [];
@@ -48,6 +56,12 @@ class Challengescontroller extends BaseController
         echo view('templates/footer/footer.php');
     }
 
+    /**
+     * Function that deletes challenge with given id.
+     * @param $id
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     * @throws \ReflectionException
+     */
     public function deletechallenge($id)
     {
         if(array_key_exists('deletebtn', $_POST)) {

@@ -10,8 +10,16 @@ use App\Controllers\BaseController;
 use App\Models\RegistrovaniKorisnikModel;
 use App\Models\KorisnikModel;
 
+/**
+ * Usercontroller - controller class that manages users for admin
+ * @version 1.0
+ */
 class Usercontroller extends BaseController
 {
+    /**
+     * Function that lists all users.
+     * @return void
+     */
     public function allusers() {
 
         $data = [];
@@ -43,6 +51,12 @@ class Usercontroller extends BaseController
 
     }
 
+    /**
+     * Function that deletes user with given id.
+     * @param $id
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     * @throws \ReflectionException
+     */
     public function deleteuser($id)
     {
         if(array_key_exists('deletebtn', $_POST)) {
