@@ -35,15 +35,18 @@ $routes->setAutoRoute(true);
 /*
  *  LOGIN/REGISTER ROUTES
  */
-$routes->match(['post', 'get'],'/', 'Loginregister\Logincontroller::login');
-$routes->match(['post', 'get'],'register', 'Loginregister\Registercontroller::register');
-$routes->match(['post', 'get'],'registercontinue', 'Loginregister\Registercontroller::registercontinue');
-$routes->get('logout', 'Loginregister\Logincontroller::logout');
+$routes->match(['post', 'get'],'/', 'Loginregister\Logincontroller::login', ['filter' => 'guest']);
+$routes->match(['post', 'get'],'register', 'Loginregister\Registercontroller::register', ['filter' => 'guest']);
+$routes->match(['post', 'get'],'registercontinue', 'Loginregister\Registercontroller::registercontinue', ['filter' => 'guest']);
+$routes->get('logout', 'Loginregister\Logincontroller::logout', ['filter' => 'logout']);
 
 /*
  *  ADMIN ROUTES
  */
-$routes->group('admin', function ($routes) {
+$routes->get('admin', function() {
+    return redirect()->to('admin/challenges');
+}, ['filter' => 'admin']);
+$routes->group('admin', ['filter' => 'admin'], function ($routes) {
     $routes->get('challenges', 'Admin\Challengescontroller::allchallenges');
     $routes->post('deletechallenge/(:any)', 'Admin\Challengescontroller::deletechallenge/$1');
     $routes->get('trainers', 'Admin\Trainercontroller::alltrainers');
@@ -55,7 +58,10 @@ $routes->group('admin', function ($routes) {
 /*
  *  USER ROUTES
  */
-$routes->group('user', function ($routes) {
+$routes->get('user', function() {
+    return redirect()->to('user/daily-log');
+}, ['filter' => 'user']);
+$routes->group('user', ['filter' => 'user'],function ($routes) {
     //DAILY LOG
     $routes->get('current-challenges', 'User\Currentchallengescontroller::currChallenges');
     $routes->post('acceptchallenge/(:any)', 'User\Currentchallengescontroller::acceptchallenge/$1');
@@ -72,7 +78,9 @@ $routes->group('user', function ($routes) {
 /*
  *  TRAINER ROUTES
  */
-
+$routes->get('trainer', function() {
+    return redirect()->to('trainer/challenges');
+}, ['filter' => 'trainer']);
 
 /*
  * --------------------------------------------------------------------
