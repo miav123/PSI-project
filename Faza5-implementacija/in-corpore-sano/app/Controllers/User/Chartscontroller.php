@@ -19,7 +19,7 @@ use App\Models\UnosVodeModel;
 class Chartscontroller extends BaseController
 {
     /**
-     * Function that is used for fetching current week data from database.
+     * Function that is used for fetching current week data from the database.
      * @param $type
      * @param $user
      * @return mixed
@@ -44,7 +44,7 @@ class Chartscontroller extends BaseController
     }
 
     /**
-     * Function that is used for fetching current month data from database.
+     * Function that is used for fetching current month data from the database.
      * @param $type
      * @param $user
      * @return mixed
@@ -69,7 +69,7 @@ class Chartscontroller extends BaseController
     }
 
     /**
-     * Function that is used for fetching current year data from database.
+     * Function that is used for fetching current year data from the database.
      * @param $type
      * @param $user
      * @return mixed
@@ -94,7 +94,7 @@ class Chartscontroller extends BaseController
     }
 
     /**
-     * Function that checks if there is record in database for day passed as parameter.
+     * Function that checks if there is record in the database for a day passed as a parameter.
      * @param $month_data_sql
      * @param $day
      * @return null
@@ -112,7 +112,7 @@ class Chartscontroller extends BaseController
     }
 
     /**
-     * Function that checks if there is record in database for day in week passed as parameter.
+     * Function that checks if there is record in the database for a day in a week passed as parameter.
      * @param $week_data_sql
      * @param $day
      * @return null
@@ -130,7 +130,7 @@ class Chartscontroller extends BaseController
     }
 
     /**
-     * Function that collects chart data for given type(e.g. water, food, training) and passes it to chart view page for plotting.
+     * Function that collects chart data for given type, e.g. water, food and training, and passes it to the chart view page for plotting.
      * @param $type
      * @return void
      */
