@@ -18,7 +18,7 @@ use App\Models\RegistrovaniKorisnikModel;
 class Registercontroller extends BaseController
 {
     /**
-     * Function that is used on first page of register form. If all fields are valid, user will be redirected to next page.
+     * Function that is used on first page of register form. If all fields are valid, user will be redirected to the next page.
      *
      * @return \CodeIgniter\HTTP\RedirectResponse|void
      */
@@ -31,12 +31,25 @@ class Registercontroller extends BaseController
 
             $rules = [
                 'username' => 'required|min_length[1]|max_length[50]|is_unique[korisnik.kor_ime]',
-                'email' => 'required|min_length[6]|max_length[50]|valid_email|is_unique[korisnik.email]',
+                'email' => 'required|min_length[5]|max_length[50]|valid_email|is_unique[korisnik.email]',
                 'password' => 'required|min_length[8]|max_length[50]',
                 'password_repeat' => 'matches[password]',
             ];
 
-            if (! $this->validate($rules)) {
+            $error = [
+                'username' => [
+                    'is_unique' => 'The username is already taken.'
+                ],
+                'email' => [
+                    'is_unique' => 'The email is already taken.',
+                    'valid_email' => 'The email must be in format a@b.c .'
+                ],
+                'password_repeat' => [
+                    'matches' => 'Password and repeated password must be same.'
+                ],
+            ];
+
+            if (! $this->validate($rules, $error)) {
 
                 $data['validation'] = $this->validator;
 
@@ -58,7 +71,7 @@ class Registercontroller extends BaseController
     }
 
     /**
-     * Function that is used on second page of register form. If registration is successful, user will be redirected to log in screen and appropriate message will be shown.
+     * Function that is used on the second page of the register form. If the registration is successful, user will be redirected to the log in screen and an appropriate message will be shown.
      *
      * @throws \ReflectionException
      */

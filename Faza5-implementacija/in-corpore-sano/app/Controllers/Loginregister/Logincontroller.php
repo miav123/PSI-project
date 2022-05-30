@@ -35,7 +35,7 @@ class Logincontroller extends BaseController
     }
 
     /**
-     * Function that is used for logging in. After successful authentication users will be redirected to the first page of application that corresponds to their role. If authentication is not successful, error message will be shown.
+     * Function that is used for logging in. After successful authentication user will be redirected to the first page of the application that corresponds to their role. If authentication is not successful, error message will be shown.
      * @return \CodeIgniter\HTTP\RedirectResponse|void
      */
     public function login() {
@@ -71,25 +71,25 @@ class Logincontroller extends BaseController
                 // check if user is admin
                 if($modelAdmin->find($user['id_kor'])) {
                     $this->setUserSession($user, 'admin'); // create session
-                    return redirect()->to('admin/challenges');
+                    return redirect()->to('admin');
                 }
 
                 // check if user is trainer
                 if($modelTrainer->find($user['id_kor'])) {
                     $this->setUserSession($user, 'trainer'); // create session
-                    return redirect()->to('trainer/challenges');
+                    return redirect()->to('trainer');
                 }
 
                 // registered user
-                $this->setUserSession($user, 'reg-user'); // create session
-                return redirect()->to('user/daily-log');
+                $this->setUserSession($user, 'user'); // create session
+                return redirect()->to('user');
             }
         }
         echo view("login-registration-forms/login.php", $data);
     }
 
     /**
-     * Function that is used for logging out. Current user's session will be destroyed, and he will be redirected to the first page.
+     * Function that is used for logging out. Current user's session will be destroyed, and they will be redirected to the login page.
      * @return \CodeIgniter\HTTP\RedirectResponse
      */
     public function logout() {
