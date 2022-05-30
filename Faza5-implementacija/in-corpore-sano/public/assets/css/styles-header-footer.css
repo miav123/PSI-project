@@ -24,7 +24,6 @@
     height:100px;
 }
 
-
 body {
     background-color:#e9f1d0 !important;
 }
@@ -34,8 +33,23 @@ body {
     color:#d6355b;
     font-style: italic;
     font-size:large;
-    padding: 1%;
-    margin: auto;
+    text-align: center;
+    margin-top: 30px;
+    display: table-row;
+    height: 70px;
+}
+
+#footer div {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: table;
 }
 
 .dropdown-menu a:hover {
