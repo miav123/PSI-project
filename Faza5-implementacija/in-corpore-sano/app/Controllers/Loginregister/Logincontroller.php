@@ -1,7 +1,7 @@
 <?php
 
 /*
- *  Mia Vucinic
+ *  Mia Vucinic 0224/2019
  */
 
 namespace App\Controllers\Loginregister;
@@ -35,7 +35,7 @@ class Logincontroller extends BaseController
     }
 
     /**
-     * Function that is used for logging in. After successful authentication users will be redirected to the first page of application corresponding to their role. If authentication is not successful, error message will be shown.
+     * Function that is used for logging in. After successful authentication users will be redirected to the first page of application that corresponds to their role. If authentication is not successful, error message will be shown.
      * @return \CodeIgniter\HTTP\RedirectResponse|void
      */
     public function login() {
@@ -82,7 +82,7 @@ class Logincontroller extends BaseController
 
                 // registered user
                 $this->setUserSession($user, 'reg-user'); // create session
-                return redirect()->to('user/challenges');
+                return redirect()->to('user/daily-log');
             }
         }
         echo view("login-registration-forms/login.php", $data);
