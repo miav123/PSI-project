@@ -19,7 +19,6 @@ class Registercontroller extends BaseController
 {
     /**
      * Function that is used on first page of register form. If all fields are valid, user will be redirected to the next page.
-     *
      * @return \CodeIgniter\HTTP\RedirectResponse|void
      */
     public function register() {
@@ -72,7 +71,6 @@ class Registercontroller extends BaseController
 
     /**
      * Function that is used on the second page of the register form. If the registration is successful, user will be redirected to the log in screen and an appropriate message will be shown.
-     *
      * @throws \ReflectionException
      */
     public function registercontinue() {
