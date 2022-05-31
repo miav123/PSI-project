@@ -7,9 +7,9 @@
 namespace App\Controllers\User;
 
 use App\Controllers\BaseController;
-use App\Models\UnosHraneModel;
-use App\Models\UnosTreningaModel;
-use App\Models\UnosVodeModel;
+use App\Models\UnosHraneModel_charts;
+use App\Models\UnosTreningaModel_charts;
+use App\Models\UnosVodeModel_charts;
 
 
 /**
@@ -19,6 +19,28 @@ use App\Models\UnosVodeModel;
 class Chartscontroller extends BaseController
 {
     /**
+     * Function that returns a model corresponding to the type.
+     * @param $type
+     * @return UnosHraneModel_charts|UnosTreningaModel_charts|UnosVodeModel_charts|null
+     */
+    private function getModel($type) {
+        $model = null;
+        $db = db_connect();
+        switch ($type) {
+            case "food":
+                $model = new UnosHraneModel_charts($db);
+                break;
+            case "water":
+                $model = new UnosVodeModel_charts($db);
+                break;
+            case "training":
+                $model = new UnosTreningaModel_charts($db);
+                break;
+        }
+        return $model;
+    }
+
+    /**
      * Function that is used for fetching current week data from the database.
      * @param $type
      * @param $user
@@ -26,21 +48,7 @@ class Chartscontroller extends BaseController
      */
     private function getWeekData($type, $user)
     {
-        $db = db_connect();
-        $model = new UnosVodeModel($db);
-
-        switch ($type) {
-            case "food":
-                $model = new UnosHraneModel($db);
-                break;
-            case "water":
-                $model = new UnosVodeModel($db);
-                break;
-            case "training":
-                $model = new UnosTreningaModel($db);
-                break;
-        }
-        return $model->getLastWeekDataForUser($user);
+        return $this->getModel($type)->getCurrentWeekDataForUser($user);
     }
 
     /**
@@ -51,21 +59,7 @@ class Chartscontroller extends BaseController
      */
     private function getMonthData($type, $user)
     {
-        $db = db_connect();
-        $model = new UnosVodeModel($db);
-
-        switch ($type) {
-            case "food":
-                $model = new UnosHraneModel($db);
-                break;
-            case "water":
-                $model = new UnosVodeModel($db);
-                break;
-            case "training":
-                $model = new UnosTreningaModel($db);
-                break;
-        }
-        return $model->getLastMonthDataForUser($user);
+        return $this->getModel($type)->getCurrentMonthDataForUser($user);
     }
 
     /**
@@ -76,21 +70,7 @@ class Chartscontroller extends BaseController
      */
     private function getYearData($type, $user)
     {
-        $db = db_connect();
-        $model = new UnosVodeModel($db);
-
-        switch ($type) {
-            case "food":
-                $model = new UnosHraneModel($db);
-                break;
-            case "water":
-                $model = new UnosVodeModel($db);
-                break;
-            case "training":
-                $model = new UnosTreningaModel($db);
-                break;
-        }
-        return $model->getLastYearDataForUser($user);
+        return $this->getModel($type)->getCurrentYearDataForUser($user);
     }
 
     /**
@@ -112,7 +92,7 @@ class Chartscontroller extends BaseController
     }
 
     /**
-     * Function that checks if there is record in the database for a day in a week passed as parameter.
+     * Function that checks if there is record in the database for a day in a week passed as a parameter.
      * @param $week_data_sql
      * @param $day
      * @return null
