@@ -9,10 +9,10 @@ namespace App\Models;
 use CodeIgniter\Database\ConnectionInterface;
 
 /**
- * UnosVodeModel_charts - class that fetches current week's, month's or average year's data for daily water intake from the database.
- * @version 1.0
+ * UnosVodeModel_chartsV0 - class that fetches current week's, month's or average year's data for daily water intake from the database.
+ * @version 0.0
  */
-class UnosVodeModel_charts {
+class UnosVodeModel_charts_v0 {
     /**
      * @var $db ConnectionInterface
      */

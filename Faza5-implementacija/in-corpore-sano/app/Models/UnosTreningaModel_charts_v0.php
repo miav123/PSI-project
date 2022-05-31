@@ -9,10 +9,10 @@ namespace App\Models;
 use CodeIgniter\Database\ConnectionInterface;
 
 /**
- * UnosTreningaModel_charts - class that fetches current week's, month's or average year's training data from the database.
- * @version 1.0
+ * UnosTreningaModel_chartsV0 - class that fetches current week's, month's or average year's training data from the database.
+ * @version 0.0
  */
-class UnosTreningaModel_charts {
+class UnosTreningaModel_charts_v0 {
     /**
      * @var $db ConnectionInterface
      */
