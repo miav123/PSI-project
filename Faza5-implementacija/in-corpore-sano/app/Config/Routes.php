@@ -63,6 +63,11 @@ $routes->get('user', function() {
 }, ['filter' => 'user']);
 $routes->group('user', ['filter' => 'user'],function ($routes) {
     //DAILY LOG
+    $routes->post('water', 'User\Dailylogcontroller::waterInput');
+    $routes->post('training','User\Dailylogcontroller::trainingInput');
+    $routes->post('food', 'User\Dailylogcontroller::foodInput');
+    $routes->post('dailyLog', 'User\Dailylogcontroller::dailyLog');
+	
     $routes->get('current-challenges', 'User\Currentchallengescontroller::currChallenges');
     $routes->post('acceptchallenge/(:any)', 'User\Currentchallengescontroller::acceptchallenge/$1');
     $routes->get('my-challenges', 'User\Mychallengescontroller::myChallenges');
@@ -71,6 +76,7 @@ $routes->group('user', ['filter' => 'user'],function ($routes) {
     $routes->post('likechallenge/(:any)', 'User\DonechallengesController::likechallenge/$1');
     $routes->add('charts/(:any)', 'User\Chartscontroller::chart/$1');
     //BADGES
+    $routes->post('badges', 'User\Badgescontroller::allBadges');
     $routes->get('rank', 'User\Rankcontroller::allRegUsers');
     //MY ACCOUNT
 });
