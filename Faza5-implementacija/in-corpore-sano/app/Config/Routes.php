@@ -66,7 +66,8 @@ $routes->group('user', function ($routes) {
     $routes->add('charts/(:any)', 'User\Chartscontroller::chart/$1');
     //BADGES
     $routes->get('rank', 'User\Rankcontroller::allRegUsers');
-    //MY ACCOUNT
+    $routes->get('my-account', 'User\Myaccountcontroller::myAccountUser');
+    $routes->match(['post', 'get'],'changeHeight', 'User\Myaccountcontroller::changeHeight');
 });
 
 /*
