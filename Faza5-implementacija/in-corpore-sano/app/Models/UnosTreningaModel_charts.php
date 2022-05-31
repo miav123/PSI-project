@@ -1,17 +1,37 @@
 <?php
 
+/*
+ *  Mia Vucinic 0224/2019
+ */
+
 namespace App\Models;
 
 use CodeIgniter\Database\ConnectionInterface;
 
-class UnosTreningaModel {
+/**
+ * UnosTreningaModel_charts - class that fetches current week's, month's or average year's training data from the database.
+ * @version 1.0
+ */
+class UnosTreningaModel_charts {
+    /**
+     * @var $db ConnectionInterface
+     */
     protected $db;
 
+    /**
+     * Constructor
+     * @param ConnectionInterface $db
+     */
     public function __construct(ConnectionInterface &$db) {
         $this->db = &$db;
     }
 
-    public function getLastWeekDataForUser($user_id) {
+    /**
+     * Function that fetches this week's data for user whose id is passed as parameter.
+     * @param $user_id
+     * @return array|array[]
+     */
+    public function getCurrentWeekDataForUser($user_id) {
         $user_id = $this->db->escape($user_id);
         return $this->db->query("
                                 SELECT DAYOFWEEK(DATE(datum)) AS day_in_week, DAY(DATE(datum)) AS day_in_month, SUM(vreme_trajanja * kcal_za_pola_sata_tren * 2) AS result
@@ -22,7 +42,12 @@ class UnosTreningaModel {
             ->getResultArray();
     }
 
-    public function getLastMonthDataForUser($user_id) {
+    /**
+     * Function that fetches current month's data for user whose id is passed as parameter.
+     * @param $user_id
+     * @return array|array[]
+     */
+    public function getCurrentMonthDataForUser($user_id) {
         $user_id = $this->db->escape($user_id);
         return $this->db->query("
                                 SELECT DAY(DATE(datum)) AS day_in_month, MONTH(DATE(datum)) AS month, SUM(vreme_trajanja * kcal_za_pola_sata_tren * 2) AS result
@@ -33,7 +58,12 @@ class UnosTreningaModel {
             ->getResultArray();
     }
 
-    public function getLastYearDataForUser($user_id) {
+    /**
+     * Function that fetches current year's data for user whose id is passed as parameter.
+     * @param $user_id
+     * @return array|array[]
+     */
+    public function getCurrentYearDataForUser($user_id) {
         $user_id = $this->db->escape($user_id);
         return $this->db->query("
                                 SELECT id as month, (

@@ -1,17 +1,37 @@
 <?php
 
+/*
+ *  Mia Vucinic 0224/2019
+ */
+
 namespace App\Models;
 
 use CodeIgniter\Database\ConnectionInterface;
 
-class UnosVodeModel {
+/**
+ * UnosVodeModel_charts - class that fetches current week's, month's or average year's data for daily water intake from the database.
+ * @version 1.0
+ */
+class UnosVodeModel_charts {
+    /**
+     * @var $db ConnectionInterface
+     */
     protected $db;
 
+    /**
+     * Constructor
+     * @param ConnectionInterface $db
+     */
     public function __construct(ConnectionInterface &$db) {
         $this->db = &$db;
     }
 
-    public function getLastWeekDataForUser($user_id) {
+    /**
+     * Function that fetches this week's data for user whose id is passed as parameter.
+     * @param $user_id
+     * @return array|array[]
+     */
+    public function getCurrentWeekDataForUser($user_id) {
         $user_id = $this->db->escape($user_id);
 //        return $this->db->query("
 //                                SELECT id as day_of_week, (
@@ -31,17 +51,28 @@ class UnosVodeModel {
             ->getResultArray();
     }
 
-    public function getLastMonthDataForUser($user_id) {
+    /**
+     * Function that fetches current month's data for user whose id is passed as parameter.
+     * @param $user_id
+     * @return array|array[]
+     */
+    public function getCurrentMonthDataForUser($user_id) {
         $user_id = $this->db->escape($user_id);
         return $this->db->query("
                                 SELECT DAY(DATE(datum)) AS day_in_month, MONTH(DATE(datum)) AS month,SUM(kolicina) AS result
                                 FROM `unos_vode` 
                                 WHERE MONTH(NOW()) = MONTH(DATE(datum)) AND id_kor = {$user_id}
                                 GROUP BY DATE(datum)
-                                ORDER BY day_in_month ASC")->getResultArray();
+                                ORDER BY day_in_month ASC")
+            ->getResultArray();
     }
 
-    public function getLastYearDataForUser($user_id) {
+    /**
+     * Function that fetches current year's data for user whose id is passed as parameter.
+     * @param $user_id
+     * @return array|array[]
+     */
+    public function getCurrentYearDataForUser($user_id) {
         $user_id = $this->db->escape($user_id);
         return $this->db->query("
                             SELECT id as month, (
@@ -57,6 +88,7 @@ class UnosVodeModel {
                                 GROUP BY MONTH(datum)
                             ) as result
                             FROM `months`
-                            ORDER BY month ASC")->getResultArray();
+                            ORDER BY month ASC")
+            ->getResultArray();
     }
 }
