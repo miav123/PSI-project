@@ -1,0 +1,91 @@
+
+
+/*Unos novog imena i/ili sifre*/
+
+
+.forma_A {
+    display: flex;
+    flex-direction: row;
+}
+.forma_A table{
+    /*padding-right: 300px;*/
+    /*padding-left: 100px;*/
+}
+#info{
+    display: flex;
+    flex-direction: row;
+    padding-left: 100px;
+    padding-top: 50px;
+}
+#tabela{
+    /*align-content: flex-end;*/
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+    padding-bottom: 50px;
+
+}
+
+.forma_A td{
+    color: #fe6d73;
+    font-size: 18px;
+}
+.forma_A label{
+    font-size: 25px;
+}
+.forma_A button{
+    /*border-radius: 5px !important;*/
+    /*border-width: 1px;*/
+    /*background-color: ;*/
+    background-color: #d3e58a!important;
+    border-radius: 15px;
+    border-color:#d6355b!important;
+    height: max-content;
+    color: #fe6d73;
+    /*font-size: 20px;*/
+    font-weight: bolder;
+}
+.forma_A input{
+    border-radius: 5px !important;
+    border-color: transparent;
+}
+
+/*Slika korisnicko ime lozinka broj lajkova*/
+
+.forma_B{
+    /*background-color: #9bb828;*/
+    display: flex;
+        flex-direction: column;
+        /*text-align: left;*/
+
+}
+.forma_B table{
+    align-self: center;
+    text-align: center;
+}
+
+/*.forma_B td{*/
+/*    display: flex;*/
+/*       flex-direction: column;*/
+/*        text-align: center;*/
+/*}*/
+
+.userPhoto{
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+    border-color: #b350f1 !important;
+    /*border-width: thick;*/
+    border-style: solid;
+    align-self: center;
+}
+
+.forma_B label{
+    color: #fe6d73;
+    /*font-weight: bolder;*/
+    font-size: 20px;
+    padding-top: 0px ;
+    padding-bottom: 0px;
+
+}
