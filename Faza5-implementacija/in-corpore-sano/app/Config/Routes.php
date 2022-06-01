@@ -67,7 +67,12 @@ $routes->group('user', function ($routes) {
     //BADGES
     $routes->get('rank', 'User\Rankcontroller::allRegUsers');
     $routes->get('my-account', 'User\Myaccountcontroller::myAccountUser');
-    $routes->match(['post', 'get'],'changeHeight', 'User\Myaccountcontroller::changeHeight');
+    $routes->post('changeUsername', 'User\Myaccountcontroller::changeUsername');
+    $routes->post('changeHeight', 'User\Myaccountcontroller::changeHeight');
+    $routes->post('changeWeight', 'User\Myaccountcontroller::changeWeight');
+    $routes->post('changeHours', 'User\Myaccountcontroller::changeHours');
+    $routes->post('changePassword', 'User\Myaccountcontroller::changePassword');
+    $routes->post('changeEmail', 'User\Myaccountcontroller::changeEmail');
 });
 
 /*
