@@ -35,7 +35,8 @@
 <!--              </div>
               <div class="modal-footer" style="background-color: #d3e58a;">-->
                 <button type="submit" class="btn btn-danger"  name= "acceptbtn1">OK</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" >Cancel</button>
+                   
                   </form>
               </div>
             </div>

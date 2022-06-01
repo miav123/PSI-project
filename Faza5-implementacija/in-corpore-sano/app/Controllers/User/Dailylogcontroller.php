@@ -12,6 +12,8 @@ class Dailylogcontroller extends BaseController {
     
     public function dailyLog(){
         
+        
+        //Podaci koji se prosledjuju view-ovima
         $data_intake = [];
         $data_workOut = [];
         $data_food = [];
@@ -20,44 +22,52 @@ class Dailylogcontroller extends BaseController {
         
         $workArray = array();
         $waterArray = array();
-        $dateNow = date("Y-m-d");
-        $kcalDaily = 0;
+        $dateNow = date("Y-m-d"); //danasnji datum
+        $kcalDaily = 0; //ukupan unos kalorija tog dana
+        
+        
         //PRIKAZ DAILY TRENINGA
         $data_workOutModel = new \App\Models\UnosTreningaModel();
         $data_workOutDB = $data_workOutModel->where('id_kor', session('id'))->findAll(); 
-        $tipTreningaModel = new \App\Models\TipTreningaModel();
+        
+        $typeTreningModel = new \App\Models\TipTreningaModel();
         $dateArray = [];
-        $tipTreningaM = new \App\Models\TipTreningaModel();
-        $tipTreningaDB = $tipTreningaM->findAll();
-        $opcijeTreninga = [];
-        foreach ($tipTreningaDB as $trening){
-            $opcijeTreninga[]=[
+        
+        //OPCIJE TRENINGA ZA VIEW
+        $typeTreningDB = $typeTreningModel->findAll();
+        $optionsTraining = [];
+        foreach ($typeTreningDB as $trening){
+            $optionsTraining[]=[
                 'option' => $trening['naziv']
             ];
-
         }
         
         
+        //IZVLACENJE IZ BAZE O TRENINZIMA  ZA PRIKAZ U DAILY LOG-U
         $ukupnaPotrosnja = 0;
         foreach ($data_workOutDB as $work){
             $dateArray = explode(' ',$work['datum']);
             if($dateArray[0] == $dateNow){
-                $tipTreningaModelDB = $tipTreningaModel->where('id_tip',$work['id_tip'])->findAll()[0];
+                $pictureP = $work['id_tip']%10;
+                $tipTreningaModelDB = $typeTreningModel->where('id_tip',$work['id_tip'])->findAll()[0];
                 $potrosnjaZaPolaSata = $tipTreningaModelDB['kcal_za_pola_sata_tren'];
-                $ukupnaPotrosnja += $work['vreme_trajanja']*$potrosnjaZaPolaSata;
+                $ukupnaPotrosnja += ($work['vreme_trajanja']*$potrosnjaZaPolaSata)*2;
                 $workArray[] = [
+                    'picturePath'=>"/assets/images/dailylog/training/".$pictureP.".jpg",
                     'name' => $tipTreningaModelDB['naziv'],
                     'time' =>$work['vreme_trajanja'],
-                    'kcal' => $work['vreme_trajanja']*$potrosnjaZaPolaSata
+                    'kcal' => ($work['vreme_trajanja']*$potrosnjaZaPolaSata)*2
                 ];
             }
         }
         
+        //PODACI KOJI IDU U VIEW
         $data_workOut['lostKcal'] = $ukupnaPotrosnja;
         $data_workOut['dailyWorkouts'] = $workArray;
-        $data_workOut['trainingOptions'] = $opcijeTreninga;
+        $data_workOut['trainingOptions'] = $optionsTraining;
         $kcalDaily -= $ukupnaPotrosnja;
-        
+        //--------------------------------------------------------------
+        //
         //PRIKAZ HRANE
         $foodArray = array();
         $grooceriesArray = array();
@@ -70,34 +80,45 @@ class Dailylogcontroller extends BaseController {
         
         
         $data_unosHraneDB = $data_unosHraneModel->where('id_kor',session('id'))->findAll();
-        $brojac = 0;
+        $brojac = 0; //brojac za modal prikaza hrane odredjenog obroka
         $obrokPotrosnja = 0;
         
         //$probaNamirnice = array();
-        $probaSveNamirnice = array();
+        $allGrooceriesInMeals = array();
          foreach ($data_unosHraneDB as $unos){
             $dateArray = explode(' ',$unos['datum']);
+            
+            //ZA DANASNJI DATUM
             if($dateArray[0] == $dateNow){
-                $probaNamirnice = array();
+                $grooceriesInOneMeal = array();
                 $brojac++;
                 $dataObrokDB = $data_obrokModel->where('id_obr',$unos['id_obr'])->findAll()[0];
                 $dataObrokSadrzniNamirniceDB = $data_obrokSadrziNamirnicuModel->where('id_obr',$unos['id_obr'])->findAll();
                 foreach ($dataObrokSadrzniNamirniceDB as $namirnica){
+                    //SVE NAMIRNICE U JEDNOM OBROKU
+                    
                     $namirnicaDB = $data_namirniceModel->where('id_nam',$namirnica['id_nam'])->findAll()[0];
                     $obrokPotrosnja += ($namirnica['kolicina_svake_nam_u_g']/100)*$namirnicaDB['kcal_na_100g'];
-                     $probaNamirnice[] =[
+                     $grooceriesInOneMeal[] =[
                         'ime' => $namirnicaDB['naziv'],
                         'kolicina'=>$namirnica['kolicina_svake_nam_u_g'],
                         '100/kcal'=>$namirnicaDB['kcal_na_100g']
                      ];
+                     
+                     
                 }
-                $probaSveNamirnice[] =[
-                    'namirniceZaObrok'=>$probaNamirnice,
+                
+                //DODAVANJE NAMIRNICA JEDNOG OBROKA U LISTU NAMIRNICA OBROKA
+                $allGrooceriesInMeals[] =[
+                    'namirniceZaObrok'=>$grooceriesInOneMeal,
                     'idModal'=>$brojac
                 ];
-                $probaNamirnice = null;
-                $probaNamirnice = array();
+                
+                $grooceriesInOneMeal = null;
+                $grooceriesInOneMeal = array();
+                $picturePath = $unos['id_obr']%13;
                 $foodArray[] = [
+                    'picturePath'=>"/assets/images/dailylog/food/".$picturePath.".jpg",
                     'modalNum' => $brojac,
                     'name' => $dataObrokDB['naziv'],
                     'kcalObroka'=>$obrokPotrosnja
@@ -107,6 +128,7 @@ class Dailylogcontroller extends BaseController {
             $obrokPotrosnja = 0;
         }
         
+        //ZA ODABIR NAMIRNICA U ISKACUCEM MODALU, DODAVANJE SVIH OPCIJA
         $data_namirnice = [];
         $data_namirniceDB = $data_namirniceModel->findAll();
         foreach ($data_namirniceDB as $nam){
@@ -123,9 +145,8 @@ class Dailylogcontroller extends BaseController {
        
         $posalji = array();
         $data_food['nam'] = $posalji;
-        
+        //-----------------------------------------------------------------------------------------------
         //PRIKAZ UNOSA VODE
-        
         $ukupanUnosVode = 0;
         $data_waterModel = new \App\Models\UnosVodeModel();
         $data_waterDB = $data_waterModel->where('id_kor',session('id'))->findAll();
@@ -138,26 +159,36 @@ class Dailylogcontroller extends BaseController {
         }
         $data_water['unos']=$ukupanUnosVode;
         
+        //-------------------------------------------------------------------------------------------------
+        //
         //PRIKAZ POCETKA STRANICE
         
         $data_intake['kcalDaily'] = $kcalDaily;
+        //!!!!!!!!!TO DO
+        //$recommended_intake = ...
+        //$data_intake['recommended_itake'] = $recommended_intake
+        
         
         //PRIKAZ NA STRANICI
          echo view('templates/header-nicepage/header-dailylog.php');
          echo view('user/dailylog/caloriesIntake.php',$data_intake);
-          echo view('user/dailylog/dailyWorkOuts.php',$data_workOut);
-          echo view('user/dailylog/dailyFood.php',$data_food);
+         echo view('user/dailylog/dailyWorkOuts.php',$data_workOut);
+         echo view('user/dailylog/dailyFood.php',$data_food);
           
-          //MODALI ZA OBROKE
-          foreach ($probaSveNamirnice as $proba){
+          //MODALI ZA PRIKAZ NAMIRNICA U OBROCIMA TOG DANA
+          foreach ($allGrooceriesInMeals as $proba){
               $posalji['namirnice'] = $proba['namirniceZaObrok'];
-               $posalji['modal'] = $proba['idModal'];
-                echo view('components/dailylog-items/daily_groceries_item.php',$posalji);
+              $posalji['modal'] = $proba['idModal'];
+              echo view('components/dailylog-items/daily_groceries_item.php',$posalji);
           }
           echo view('user/dailylog/dailyWater.php',$data_water);
           echo view('templates/footer/footer.php');
         
     }
+    
+    
+    
+    //UNOS TRENINGA FUNCKIJA
     public function trainingInput(){
         helper(['form']);
         date_default_timezone_set("Europe/Belgrade");
@@ -173,9 +204,10 @@ class Dailylogcontroller extends BaseController {
                'vreme_trajanja'=>$this->request->getVar('time')
            ]);
         }
-        return redirect()->to('user/Dailylogcontroller/dailyLog');
+        return redirect()->to('user/Dailylogcontroller/daily-log');
     }
     
+    //UNOS HRANE FUNKCIJA
     public function foodInput(){
         helper(['form']);
          date_default_timezone_set("Europe/Belgrade");
@@ -226,11 +258,12 @@ class Dailylogcontroller extends BaseController {
            }
            
         }
-        return redirect()->to('user/Dailylogcontroller/dailyLog');
+        return redirect()->to('user/Dailylogcontroller/daily-log');
         
     }
     
     
+    //UNOS VODE FUNKCIJA
     public function waterInput(){
         helper(['form']);
         date_default_timezone_set("Europe/Belgrade");
@@ -243,6 +276,11 @@ class Dailylogcontroller extends BaseController {
                'kolicina'=>$this->request->getVar('water')
            ]);
         }
-        return redirect()->to('user/Dailylogcontroller/dailyLog');
+        return redirect()->to('user/Dailylogcontroller/daily-log');
+    }
+    
+    //ZA CANCEL DUGMICE ALI JOS JE POD UPITNIKOM
+    public function cancel(){
+        return redirect()->to('user/Dailylogcontroller/daily-log');
     }
 }

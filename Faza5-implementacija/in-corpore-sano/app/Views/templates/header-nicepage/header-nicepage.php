@@ -59,16 +59,16 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">DAILY LOG</a>
+                        <a class="nav-link" href="/user/daily-log">DAILY LOG</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">CHALLENGES</a>
     
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">CURRENT CHALLENGES</a>
-                            <a class="dropdown-item" href="#">MY CHALLENGES</a>
-                            <a class="dropdown-item" href="#">DONE CHALLENGES</a>
+                            <a class="dropdown-item" href="/user/current-challenges">CURRENT CHALLENGES</a>
+                            <a class="dropdown-item" href="/user/my-challenges">MY CHALLENGES</a>
+                            <a class="dropdown-item" href="/user/done-challenges">DONE CHALLENGES</a>
                         </div>
     
                     </li>
@@ -76,10 +76,10 @@
                         <a class="nav-link" href="/user/charts">CHARTS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">BADGES</a>
+                        <a class="nav-link" <?= ($uri->getSegment(2) == 'badges' ? 'active' : null) ?> href="/user/badges">BADGES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">RANK</a>
+                        <a class="nav-link" href="/user/rank">RANK</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">MY ACCOUNT</a>

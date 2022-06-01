@@ -5,9 +5,6 @@
         <hr>
       </div>
     </div>
- 
- 
- 
     <div class="row">
       <div class="col-sm-12">
         <input class="add" type="button" data-toggle="modal" data-target="#myModal0" value="+Add Meal">
@@ -30,12 +27,11 @@
                   
                   
                   Food:
-                  <input list="food1" name="food1" style="background-color: #ffffff !important;">
+                  <input list="food1"  name="food1" style="background-color: #ffffff !important; color: black">
                   <datalist id="food1" style="background-color: #e9f1d0; color: black">
-                    <option name="foodOption" value="Sok od borovnice">
-                    <option name="foodOption"  value="Rakija">
-                    <option name="foodOption" value="Jogurt">
-                    <option name="foodOption" value="...">
+                     <?php foreach ($foodOptions as $option) : ?>
+                        <?php echo view("components/dailylog-items/groceries_option_item.php",$option)?> 
+                    <?php endforeach; ?>
                   </datalist>
                   <input type="number" name="g1" style="color:black; background-color: #ffffff !important;"> g <br><br>
                   
@@ -45,8 +41,10 @@
                 </form>
               </div>
               <div class="modal-footer" style="background-color: #d3e58a;">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">OK</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <form acion='/user/cancel/' method="post">
+                    <button type="submit" class="btn btn-danger" >Cancel</button>
+                </form>
+                
               </div>
             </div>
           </div>
