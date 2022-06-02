@@ -11,8 +11,9 @@ use App\Models\KorisnikModel;
 use App\Models\TrenerModel;
 
 /**
- * Trainercontroller - controller class that manages trainers for admin
+ * Trainercontroller - controller class that manages trainers for admin.
  * @version 1.0
+ * @author Mia Vucinic
  */
 class Trainercontroller extends BaseController
 {
