@@ -11,7 +11,7 @@ $uri = service('uri');
         <div class="col-1">
             <form action="/user/charts/water" method="post">
                 <button type="submit" class="btn btn-primary btn-floating waterIcon">
-                    <img src="/assets/images/challenge/glass.png" style="height:50px"><br>Water consumed
+                    <img src="/assets/images/challenge/glass.png" style="height:50px"><br>Water<br>consumed
                 </button>
             </form>
         </div>
@@ -19,7 +19,7 @@ $uri = service('uri');
         <div class="col-1 offset-2">
             <form action="/user/charts/food" method="post">
                 <button type="submit" class="btn btn-primary btn-floating foodIcon">
-                    <img src="/assets/images/challenge/apple.png" style="height:50px"><br>Calories consumed
+                    <img src="/assets/images/challenge/apple.png" style="height:50px"><br>Calories<br>consumed
                 </button>
             </form>
         </div>
@@ -27,7 +27,7 @@ $uri = service('uri');
         <div class="col-1 offset-2">
             <form action="/user/charts/training" method="post">
                 <button type="submit" class="btn btn-primary btn-floating trainingIcon">
-                    <img src="/assets/images/challenge/runner.png" style="height:50px"><br>Calories burned
+                    <img src="/assets/images/challenge/runner.png" style="height:50px"><br>Calories<br>burned
                 </button>
             </form>
         </div>
