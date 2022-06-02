@@ -35,15 +35,18 @@ $routes->setAutoRoute(true);
 /*
  *  LOGIN/REGISTER ROUTES
  */
-$routes->match(['post', 'get'],'/', 'Loginregister\Logincontroller::login');
-$routes->match(['post', 'get'],'register', 'Loginregister\Registercontroller::register');
-$routes->match(['post', 'get'],'registercontinue', 'Loginregister\Registercontroller::registercontinue');
-$routes->get('logout', 'Loginregister\Logincontroller::logout');
+$routes->match(['post', 'get'],'/', 'Loginregister\Logincontroller::login', ['filter' => 'guest']);
+$routes->match(['post', 'get'],'register', 'Loginregister\Registercontroller::register', ['filter' => 'guest']);
+$routes->match(['post', 'get'],'registercontinue', 'Loginregister\Registercontroller::registercontinue', ['filter' => 'guest']);
+$routes->get('logout', 'Loginregister\Logincontroller::logout', ['filter' => 'logout']);
 
 /*
  *  ADMIN ROUTES
  */
-$routes->group('admin', function ($routes) {
+$routes->get('admin', function() {
+    return redirect()->to('admin/challenges');
+}, ['filter' => 'admin']);
+$routes->group('admin', ['filter' => 'admin'], function ($routes) {
     $routes->get('challenges', 'Admin\Challengescontroller::allchallenges');
     $routes->post('deletechallenge/(:any)', 'Admin\Challengescontroller::deletechallenge/$1');
     $routes->get('trainers', 'Admin\Trainercontroller::alltrainers');
@@ -55,8 +58,17 @@ $routes->group('admin', function ($routes) {
 /*
  *  USER ROUTES
  */
-$routes->group('user', function ($routes) {
+$routes->get('user', function() {
+    return redirect()->to('user/daily-log');
+}, ['filter' => 'user']);
+$routes->group('user', ['filter' => 'user'],function ($routes) {
     //DAILY LOG
+    $routes->post('water', 'User\Dailylogcontroller::waterInput');
+    $routes->post('training','User\Dailylogcontroller::trainingInput');
+    $routes->post('food', 'User\Dailylogcontroller::foodInput');
+    $routes->get('daily-log', 'User\Dailylogcontroller::dailyLog');
+    $routes->get('cancel', 'User\Dailylogcontroller::cancel');
+    $routes->add('charts', function() { return redirect()->to('user/charts/water'); });
     $routes->get('current-challenges', 'User\Currentchallengescontroller::currChallenges');
     $routes->post('acceptchallenge/(:any)', 'User\Currentchallengescontroller::acceptchallenge/$1');
     $routes->get('my-challenges', 'User\Mychallengescontroller::myChallenges');
@@ -64,8 +76,8 @@ $routes->group('user', function ($routes) {
     $routes->get('done-challenges', 'User\Donechallengescontroller::doneChallenges');
     $routes->post('likechallenge/(:any)', 'User\DonechallengesController::likechallenge/$1');
     $routes->add('charts/(:any)', 'User\Chartscontroller::chart/$1');
-    //BADGES
-     $routes->get('rank', 'User\Rankcontroller::allRegUsers');
+    $routes->get('badges', 'User\Badgescontroller::allBadges');
+    $routes->get('rank', 'User\Rankcontroller::allRegUsers');
     $routes->get('my-account', 'User\Myaccountcontroller::myAccountUser');
     $routes->post('changeUsername', 'User\Myaccountcontroller::changeUsername');
     $routes->post('changeHeight', 'User\Myaccountcontroller::changeHeight');
@@ -79,6 +91,14 @@ $routes->group('user', function ($routes) {
 /*
  *  TRAINER ROUTES
  */
+$routes->get('trainer', function() {
+    return redirect()->to('trainer/challenges');
+}, ['filter' => 'trainer']);
+$routes->group('trainer', ['filter' => 'trainer'], function ($routes) {
+    $routes->get('challenges', 'Trainer\Currentchallengescontroller::index');
+    $routes->get('make-new-challenge', 'Trainer\Newchallengecontroller::index');
+    $routes->get('my-account', 'Trainer\Namechange::index');
+});
 
 
 /*
