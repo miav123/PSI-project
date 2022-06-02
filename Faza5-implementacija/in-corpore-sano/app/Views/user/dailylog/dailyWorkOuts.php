@@ -1,3 +1,4 @@
+<!--        Teodora Glisic 19/0572-->
 <div class="row">
       <div class="col-sm-12">
         <h3 class="hh3">Training Log</h3>

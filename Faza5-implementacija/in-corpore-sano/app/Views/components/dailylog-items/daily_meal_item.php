@@ -1,4 +1,4 @@
-
+<!--        Teodora Glisic 19/0572-->
             <div data-toggle="modal" data-target="#myModal<?= $modalNum ?>"
               class="u-align-center u-border-12 colorFood u-container-style u-custom-border u-list-item u-radius-27 u-repeater-item u-shape-round u-white
               u-list-item-<?= $modalNum ?>">

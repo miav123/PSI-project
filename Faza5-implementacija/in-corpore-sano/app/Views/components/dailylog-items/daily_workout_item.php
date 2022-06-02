@@ -1,9 +1,10 @@
+<!--        Teodora Glisic 19/0572-->
 <div class="row">
       <div class=" offset-2 col-sm-8">
         <div class="d-flex w-100 justify-content-between"
           style="height: 70%; padding: 2%; border-radius: 20px !important; background-color: #f7f44c;">
 
-            <img src="<?=$picurePath ?>" style="border-radius: 50%;">
+            <img src="<?=$picturePath ?>" style="border-radius: 50%;">
          
           <div class="container" style="text-align: center; background-color: #f7f44c !important;">
             <div class="row">
