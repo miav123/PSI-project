@@ -211,7 +211,7 @@ class Dailylogcontroller extends BaseController {
                'vreme_trajanja'=>$this->request->getVar('time')
            ]);
         }
-        return redirect()->to('user/Dailylogcontroller/daily-log');
+        return redirect()->to('user/daily-log');
     }
     
     //UNOS HRANE FUNKCIJA
@@ -265,7 +265,7 @@ class Dailylogcontroller extends BaseController {
            }
            
         }
-        return redirect()->to('user/Dailylogcontroller/daily-log');
+        return redirect()->to('user/daily-log');
         
     }
     
@@ -283,11 +283,11 @@ class Dailylogcontroller extends BaseController {
                'kolicina'=>$this->request->getVar('water')
            ]);
         }
-        return redirect()->to('user/Dailylogcontroller/daily-log');
+        return redirect()->to('user/daily-log');
     }
     
     //ZA CANCEL DUGMICE ALI JOS JE POD UPITNIKOM
     public function cancel(){
-        return redirect()->to('user/Dailylogcontroller/daily-log');
+        return redirect()->to('user/daily-log');
     }
 }
