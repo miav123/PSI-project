@@ -65,7 +65,7 @@ $routes->group('user', function ($routes) {
     $routes->post('likechallenge/(:any)', 'User\DonechallengesController::likechallenge/$1');
     $routes->add('charts/(:any)', 'User\Chartscontroller::chart/$1');
     //BADGES
-    $routes->get('rank', 'User\Rankcontroller::allRegUsers');
+     $routes->get('rank', 'User\Rankcontroller::allRegUsers');
     $routes->get('my-account', 'User\Myaccountcontroller::myAccountUser');
     $routes->post('changeUsername', 'User\Myaccountcontroller::changeUsername');
     $routes->post('changeHeight', 'User\Myaccountcontroller::changeHeight');
@@ -73,6 +73,7 @@ $routes->group('user', function ($routes) {
     $routes->post('changeHours', 'User\Myaccountcontroller::changeHours');
     $routes->post('changePassword', 'User\Myaccountcontroller::changePassword');
     $routes->post('changeEmail', 'User\Myaccountcontroller::changeEmail');
+    $routes->post('changeImage', 'User\Myaccountcontroller::changeImage');
 });
 
 /*
