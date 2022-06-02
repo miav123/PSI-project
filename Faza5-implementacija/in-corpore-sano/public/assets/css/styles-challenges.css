@@ -1,3 +1,11 @@
+#proba{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
 .water {
     background-color: #adcce9 !important;
 }
@@ -15,10 +23,31 @@
     border-radius: 31px !important;
     border-style: none !important;
     text-align: left;
+    width: 70%;
+    /*height: 190px;*/
+    align-self: center;
 }
 
 .challenge-image {
     height: 100px;
+    margin-bottom: 0px;
+}
+.heart{
+    height: 30px;
+    /*margin-left: 67px;*/
+    margin-bottom: 0px;
+}
+.likes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0px;
+    margin-top: 10px !important;;
+}
+.likes p{
+    font-size: 20px;
+    margin-left: 3px;
 }
 
 .btn-delete {
@@ -31,10 +60,12 @@
     text-transform: uppercase !important;
     font-size: 0.875rem !important;
     letter-spacing: 1px !important;
+    /*padding-top: 100px;*/
+    margin-right: 20px !important;
 }
 
 .level-image {
-    height: 40px;
+    height: 70px;
 }
 
 #content {
@@ -45,7 +76,7 @@
 }
 
 .challenge-points {
-    font-size: 2.25rem;
+    font-size: 1.75rem;
     font-weight: 400;
 }
 

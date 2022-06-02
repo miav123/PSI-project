@@ -116,6 +116,10 @@
 
 <body onload="grabUsername()">
 
+<?php
+$uri = service('uri');
+?>
+
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
         <img class="logo" src="/assets/images/logo/logo.png">
@@ -128,21 +132,27 @@
                 <li class="nav-item">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MY CHALLENGES</a>
-
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">FINISHED CHALLENGES</a>
-                        <a class="dropdown-item" href="#">ONGOING CHALLENGES</a>
-                    </div>
-
+<!--                <li class="nav-item dropdown">-->
+<!--                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MY CHALLENGES</a>-->
+<!---->
+<!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
+<!--                        <a class="dropdown-item" href="#">FINISHED CHALLENGES</a>-->
+<!--                        <a class="dropdown-item" href="#">ONGOING CHALLENGES</a>-->
+<!--                    </div>-->
+<!---->
+<!--                </li>-->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">MY CHALLENGES</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">MAKE A NEW CHALLENGE</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">MY ACCOUNT</a>
+                <li class="nav-item <?= ($uri->getSegment(2) == 'my-account' ? 'active' : null) ?>">
+                    <a class="nav-link" href="/trener/manageaccount">MY ACCOUNT</a>
                 </li>
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#">MY ACCOUNT</a>-->
+<!--                </li>-->
                 <li class="nav-item">
                     <a class="nav-link" href="#">LOG OUT</a>
                 </li>
@@ -172,26 +182,18 @@
 
 
     <div class="forma_A">
-        <div class="col-lg-6 col-sm-12">
-            <table id="info">
-                <tr>
-                    <td>
-                        <h2>Email adress:</h2>
-                        <br>
-                        <label id="email"> mirko@gmail.com</label>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td >
-                        <br>
-                        <h2>Number of likes:</h2>
-                        <br>
-                        <label id="likes">150</label>
-                    </td>
-                </tr>
-            </table>
-        </div>
+<!--        <div class="col-lg-6 col-sm-12">-->
+<!--            <table id="info">-->
+<!--                <tr>-->
+<!--                    <td>-->
+<!--                        <h2>Email adress:</h2>-->
+<!--                        <br>-->
+<!--                        <label id="email"> mirko@gmail.com</label>-->
+<!---->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--            </table>-->
+<!--        </div>-->
 
         <div class=" col-lg-6 col-sm-12">
             <table id="tabela">

@@ -208,14 +208,18 @@
                     <li class="nav-item">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MY CHALLENGES</a>
+<!--                    <li class="nav-item dropdown">-->
+<!--                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MY CHALLENGES</a>-->
+<!---->
+<!--                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
+<!--                            <a class="dropdown-item" href="#">FINISHED CHALLENGES</a>-->
+<!--                            <a class="dropdown-item" href="#">ONGOING CHALLENGES</a>-->
+<!--                        </div>-->
+<!---->
+<!--                    </li>-->
 
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">FINISHED CHALLENGES</a>
-                            <a class="dropdown-item" href="#">ONGOING CHALLENGES</a>
-                        </div>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">MY CHALLENGES</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">MAKE A NEW CHALLENGE</a>
@@ -294,7 +298,7 @@
             <div class="sliderRange">
                 <p>POINTS</p>
                 <label for="range">
-                    <input class="slider" type="range" name="range" id="numPoints" min="0" max="300" step="5" value="175"/>
+                    <input class="slider" type="range" name="range" id="numPoints" min="0" max="1000" step="5" value="175"/>
                 </label>
                 <output for="range" class="output"></output>
             </div>

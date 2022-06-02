@@ -25,14 +25,16 @@ class Namechange extends BaseController
 
     public function addUserName()
     {
+
         $id = $this->session->get('trenerId');
         $username = $this->request->getVar('username');
-        $trainer = new KorisnikModel();
-        $trainer->save([
-            'id_kor' => $id,
-            'kor_ime' => $username
-
-        ]);
+        if($username != ""){
+            $trainer = new KorisnikModel();
+            $trainer->save([
+                'id_kor' => $id,
+                'kor_ime' => $username
+            ]);
+        }
         //return "usli smo";
     }
 
@@ -45,7 +47,7 @@ class Namechange extends BaseController
             'sifra' => $password
 
         ]);
-        echo("usli smo sifra");
+//        echo("usli smo sifra");
     }
 
     public function checkUserName()

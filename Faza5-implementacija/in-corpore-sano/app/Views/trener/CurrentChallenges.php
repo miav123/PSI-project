@@ -145,21 +145,24 @@
                 <li class="nav-item">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MY CHALLENGES</a>
+<!--                <li class="nav-item dropdown">-->
+<!--                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MY CHALLENGES</a>-->
+<!---->
+<!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
+<!--                        <a class="dropdown-item" href="/trener/FinnishedChallenges">FINISHED CHALLENGES</a>-->
+<!--                        <a class="dropdown-item" href="/trener/CurrentChallenges">ONGOING CHALLENGES</a>-->
+<!--                    </div>-->
+<!---->
+<!--                </li>-->
 
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="/trener/FinnishedChallenges">FINISHED CHALLENGES</a>
-                        <a class="dropdown-item" href="/trener/CurrentChallenges">ONGOING CHALLENGES</a>
-                    </div>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="#">MY CHALLENGES</a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="#">MAKE A NEW CHALLENGE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/trener/manageaccount">MY ACCOUNT</a>
+                    <a class="nav-link" href="#">MY ACCOUNT</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">LOG OUT</a>
