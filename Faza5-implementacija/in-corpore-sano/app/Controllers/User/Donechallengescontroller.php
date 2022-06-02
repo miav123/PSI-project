@@ -1,5 +1,7 @@
 <?php
 
+/* Tijana Mitrovic 2019/0001 */
+
 namespace App\Controllers\User;
 
 use App\Controllers\BaseController;
@@ -7,7 +9,18 @@ use App\Models\IzazovModel;
 use App\Models\GotoviIzazoviModel;
 use App\Models\KorisnikModel;
 
+/**
+ * Donechallengescontroller - controller class that manages done challenges for registered user.
+ * @version 1.0
+ * @author Tijana Mitrovic
+ */
+
 class Donechallengescontroller extends BaseController {
+
+    /**
+     * Function that lists all done challenges for registered user.
+     * @return void
+     */
 
     public function doneChallenges() {
         $data = [];
@@ -45,6 +58,13 @@ class Donechallengescontroller extends BaseController {
         echo view('user/done-challenges.php', $data);
         echo view('templates/footer/footer-nicepage.php');
     }
+
+    /**
+     * Function that likes challenge with given id.
+     * @param $i
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     * @throws \ReflectionException
+     */
 
     public function likechallenge($i)
     {

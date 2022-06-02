@@ -1,4 +1,4 @@
-<!-- Tijana Mitrovic -->
+<!-- Tijana Mitrovic 2019/0001 -->
 
 <!DOCTYPE html>
 <html style="font-size: 16px;">
@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="/assets/css/styles-nicepage-rank.css" media="screen">
     <link rel="stylesheet" href="/assets/css/styles-nicepage-challenges.css" media="screen">
     <link rel="stylesheet" href="/assets/css/styles-challenges.css" media="screen">
+    <link rel="stylesheet" href="/assets/css/styles-my-account.css" media="screen">
     <link rel="stylesheet" href="/assets/css/styles-charts.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script class="u-script" type="text/javascript" src="/assets/js/jquery.js" defer=""></script>

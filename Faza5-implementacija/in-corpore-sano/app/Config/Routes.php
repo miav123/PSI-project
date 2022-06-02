@@ -76,10 +76,16 @@ $routes->group('user', ['filter' => 'user'],function ($routes) {
     $routes->get('done-challenges', 'User\Donechallengescontroller::doneChallenges');
     $routes->post('likechallenge/(:any)', 'User\DonechallengesController::likechallenge/$1');
     $routes->add('charts/(:any)', 'User\Chartscontroller::chart/$1');
-    //BADGES
     $routes->get('badges', 'User\Badgescontroller::allBadges');
     $routes->get('rank', 'User\Rankcontroller::allRegUsers');
-    //MY ACCOUNT
+    $routes->get('my-account', 'User\Myaccountcontroller::myAccountUser');
+    $routes->post('changeUsername', 'User\Myaccountcontroller::changeUsername');
+    $routes->post('changeHeight', 'User\Myaccountcontroller::changeHeight');
+    $routes->post('changeWeight', 'User\Myaccountcontroller::changeWeight');
+    $routes->post('changeHours', 'User\Myaccountcontroller::changeHours');
+    $routes->post('changePassword', 'User\Myaccountcontroller::changePassword');
+    $routes->post('changeEmail', 'User\Myaccountcontroller::changeEmail');
+    $routes->post('changeImage', 'User\Myaccountcontroller::changeImage');
 });
 
 /*

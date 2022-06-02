@@ -1,5 +1,7 @@
 <?php
 
+/* Tijana Mitrovic 2019/0001 */
+
 namespace App\Controllers\User;
 
 use App\Controllers\BaseController;
@@ -8,7 +10,19 @@ use App\Models\MojiIzazoviModel;
 use App\Models\GotoviIzazoviModel;
 use App\Models\KorisnikModel;
 
+/**
+ * Currentchallengescontroller - controller class that manages current challenges for registered user.
+ * @version 1.0
+ * @author Tijana Mitrovic
+ */
+
 class Currentchallengescontroller extends BaseController {
+
+    /**
+     * Function that lists all current challenges.
+     * @return void
+     */
+
     public function currChallenges() {
         $data = [];
         
@@ -75,6 +89,13 @@ class Currentchallengescontroller extends BaseController {
         echo view('templates/footer/footer-nicepage.php');
         
     }
+
+    /**
+     * Function that acceptes challenge with given id.
+     * @param $id
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     * @throws \ReflectionException
+     */
 
     public function acceptchallenge($id)
     {
