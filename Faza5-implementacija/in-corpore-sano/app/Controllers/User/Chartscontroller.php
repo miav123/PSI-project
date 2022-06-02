@@ -13,8 +13,9 @@ use App\Models\UnosVodeModel_charts_v1;
 
 
 /**
- * Chartscontroller - controller class that is used for fetching data that will be plotted on charts
+ * Chartscontroller - controller class that is used for fetching data that will be plotted on charts.
  * @version 1.0
+ * @author Mia Vucinic
  */
 class Chartscontroller extends BaseController
 {
@@ -132,7 +133,7 @@ class Chartscontroller extends BaseController
 
         echo view('templates/header-user/header.php');
         echo view('user/charts.php', $data);
-        echo view('templates/footer/footer.php');
+        echo view('templates/footer/footer-nicepage.php');
     }
 
 }
