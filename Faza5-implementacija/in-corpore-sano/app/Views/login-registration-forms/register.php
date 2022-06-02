@@ -93,7 +93,7 @@
                                     <hr class="my-4">
 
                                     <div class="d-flex justify-content-center">
-                                        Want to be a trainer?&nbsp;<a href="#">Become a trainer</a>
+                                        Want to be a trainer?&nbsp;<a href="/registerTrainer">Become a trainer</a>
                                     </div>
 
 
