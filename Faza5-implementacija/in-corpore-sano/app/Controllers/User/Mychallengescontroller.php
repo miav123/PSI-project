@@ -1,5 +1,7 @@
 <?php
 
+/* Tijana Mitrovic 2019/0001 */
+
 namespace App\Controllers\User;
 
 use App\Controllers\BaseController;
@@ -7,8 +9,19 @@ use App\Models\IzazovModel;
 use App\Models\MojiIzazoviModel;
 use App\Models\KorisnikModel;
 
+/**
+ * MyChallengesController - controller class that manages my challenges for registered user.
+ * @version 1.0
+ * @author Tijana Mitrovic
+ */
+
 class MyChallengesController extends BaseController
 {
+    /**
+     * Function that lists all challenges for registered user.
+     * @return void
+     */
+
     public function mychallenges() {
         $data = [];
 
@@ -48,6 +61,13 @@ class MyChallengesController extends BaseController
         echo view('user/my-challenges.php', $data);
         echo view('templates/footer/footer-nicepage.php');
     }
+
+    /**
+     * Function that leaves challenge with given id.
+     * @param $i
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     * @throws \ReflectionException
+     */
 
     public function leavechallenge($i)
     {

@@ -1,12 +1,25 @@
 <?php
 
+/* Tijana Mitrovic 2019/0001 */
+
 namespace App\Controllers\User;
 
 use App\Controllers\BaseController;
 use App\Models\KorisnikModel;
 use App\Models\RegistrovaniKorisnikModel;
 
+/**
+ * Rankcontroller - controller class that is used to display user rankings.
+ * @version 1.0
+ * @author Tijana Mitrovic
+ */
+
 class Rankcontroller extends BaseController {
+
+    /**
+     * Function that lists all registered user.
+     * @return void
+     */
 
     public function allRegUsers() {
         helper('array');
