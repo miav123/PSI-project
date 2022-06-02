@@ -1,3 +1,5 @@
+<!-- Tijana Mitrovic 2019/0001 -->
+
 <div class="list-group-item <?= $type ?>">
     <div class="row align-items-center text-sm-center text-md-left">
         <div class="col-sm-12 col-md-2 text-center">
