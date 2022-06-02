@@ -38,6 +38,7 @@ $routes->setAutoRoute(true);
 $routes->match(['post', 'get'],'/', 'Loginregister\Logincontroller::login', ['filter' => 'guest']);
 $routes->match(['post', 'get'],'register', 'Loginregister\Registercontroller::register', ['filter' => 'guest']);
 $routes->match(['post', 'get'],'registercontinue', 'Loginregister\Registercontroller::registercontinue', ['filter' => 'guest']);
+$routes->match(['post', 'get'],'registerTrainer', 'Loginregister\Registertrainercontroller::register', ['filter' => 'guest']);
 $routes->get('logout', 'Loginregister\Logincontroller::logout', ['filter' => 'logout']);
 
 /*
