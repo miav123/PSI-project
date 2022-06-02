@@ -84,11 +84,10 @@ class Logincontroller extends BaseController
 
                 // registered user
                 $this->setUserSession($user, 'user'); // create session
+                (new Checkchallengescontroller())->checkMyChallenges();
                 return redirect()->to('user');
             }
         }
-
-        (new Checkchallengescontroller())->checkMyChallenges();
 
         echo view("login-registration-forms/login.php", $data);
     }

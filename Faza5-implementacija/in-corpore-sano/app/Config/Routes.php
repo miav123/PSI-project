@@ -66,9 +66,9 @@ $routes->group('user', ['filter' => 'user'],function ($routes) {
     $routes->post('water', 'User\Dailylogcontroller::waterInput');
     $routes->post('training','User\Dailylogcontroller::trainingInput');
     $routes->post('food', 'User\Dailylogcontroller::foodInput');
-    $routes->get('dailyl-log', 'User\Dailylogcontroller::dailyLog');
+    $routes->get('daily-log', 'User\Dailylogcontroller::dailyLog');
     $routes->get('cancel', 'User\Dailylogcontroller::cancel');
-	
+    $routes->add('charts', function() { return redirect()->to('user/charts/water'); });
     $routes->get('current-challenges', 'User\Currentchallengescontroller::currChallenges');
     $routes->post('acceptchallenge/(:any)', 'User\Currentchallengescontroller::acceptchallenge/$1');
     $routes->get('my-challenges', 'User\Mychallengescontroller::myChallenges');
@@ -88,6 +88,12 @@ $routes->group('user', ['filter' => 'user'],function ($routes) {
 $routes->get('trainer', function() {
     return redirect()->to('trainer/challenges');
 }, ['filter' => 'trainer']);
+$routes->group('trainer', ['filter' => 'trainer'], function ($routes) {
+    $routes->get('challenges', 'Trainer\Currentchallengescontroller::index');
+    $routes->get('make-new-challenge', 'Trainer\Newchallengecontroller::index');
+    $routes->get('my-account', 'Trainer\Namechange::index');
+});
+
 
 /*
  * --------------------------------------------------------------------
