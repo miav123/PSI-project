@@ -9,8 +9,9 @@ namespace App\Models;
 use CodeIgniter\Database\ConnectionInterface;
 
 /**
- * CheckChallengesForUser - class that fetches challenge data for user.
+ * CheckChallengesForUser - class that fetches challenge data for the user.
  * @version 1.0
+ * @author Mia Vucinic
  */
 class CheckChallengesForUser {
     /**
@@ -28,6 +29,7 @@ class CheckChallengesForUser {
 
     /**
      * Function that fetches challenge data for water challenge and user passed as parameters.
+     * Returns the amount of water that user consumed daily (result) for each day (date) of the challenge that passed and the required amount of water by the challenge (required).
      * @param $user_id
      * @param $challenge_id
      * @return array|array[]
@@ -57,7 +59,7 @@ class CheckChallengesForUser {
                                             FROM `unos_vode`
                                             WHERE id_kor = {$user_id} AND DATE(datum) = date
                                             GROUP BY DATE(datum)
-                                    ), 0) as result, amount_of_water
+                                    ), 0) as result, amount_of_water as required
                                     FROM `days`
                                     ORDER BY id_day ASC;")
             ->getResultArray();
@@ -65,6 +67,7 @@ class CheckChallengesForUser {
 
     /**
      * Function that fetches challenge data for food challenge and user passed as parameters.
+     * Returns number of calories that user consumed daily (result) for each day (date) of the challenge that passed and the required number of calories by the challenge (required).
      * @param $user_id
      * @param $challenge_id
      * @return array|array[]
@@ -94,7 +97,7 @@ class CheckChallengesForUser {
                                             FROM `obrok_sadrzi_namirnice`, `namirnica`, `unos_hrane`
                                             WHERE id_kor = {$user_id} AND DATE(datum) = date AND `obrok_sadrzi_namirnice`.id_nam = `namirnica`.id_nam AND `unos_hrane`.`id_obr` = `obrok_sadrzi_namirnice`.`id_obr`
                                             GROUP BY DATE(datum)
-                                        ), 0) as result, kcal
+                                        ), 0) as result, kcal as required
                                     FROM `days`
                                     ORDER BY id_day ASC;")
             ->getResultArray();
@@ -102,6 +105,7 @@ class CheckChallengesForUser {
 
     /**
      * Function that fetches challenge data for training challenge and user passed as parameters.
+     * Returns number of hours that user trained daily (result) for each day (date) of the challenge that passed and the required number of hours by the challenge (required).
      * @param $user_id
      * @param $challenge_id
      * @return array|array[]
@@ -131,7 +135,7 @@ class CheckChallengesForUser {
                                             FROM `unos_treninga`
                                             WHERE id_kor = {$user_id} AND DATE(datum) = date AND id_tip = id_type
                                             GROUP BY DATE(datum)
-                                        ), 0) as result, time
+                                        ), 0) as result, time as required
                                     FROM `days`
                                     ORDER BY id_day ASC;")
             ->getResultArray();
