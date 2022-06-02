@@ -4,29 +4,35 @@
 namespace App\Controllers\Trainer;
 
 use App\Controllers\BaseController;
-use App\Models\IzazovModel;
-use App\Models\IzazovVodaModel;
-use App\Models\IzazovHranaModel;
-use App\Models\IzazovTreningModel;
-use App\Models\TipTreningaModel;
-use App\Models\TrenerModel;
+use App\Models\elena\IzazovModel;
+use App\Models\elena\IzazovVodaModel;
+use App\Models\elena\IzazovHranaModel;
+use App\Models\elena\IzazovTreningModel;
+use App\Models\elena\TipTreningaModel;
+use App\Models\elena\TrenerModel;
 use CodeIgniter\Model;
-use App\Models\KorisnikModel;
+use App\Models\elena\KorisnikModel;
+
 
 class Newchallengecontroller extends \App\Controllers\BaseController
 {
+    /**
+     *
+     * This controller enables the creation of a new challenge
+     */
     public function index(){
         echo view('trener/NewChallenge.php');
         echo view('templates/footer/footer.php');
     }
+
+    /**
+     *
+     * Author: Elena Vidic 2019/0081
+     */
 var $id_Challenge = 0;
     public function createChallenge(){
 
-        echo('okej');
-
         $id = $this->session->get('trenerId');
-/*['id_izazov', 'id_tren', 'naziv', 'opis', 'tip_izazova',
-        'br_poena', 'trajanje_u_danima', 'nivo', 'br_lajkova', 'izbrisan', 'datum_dodavanja'];*/
         $type = $this->request->getVar('type');
         $name = $this->request->getVar('name');
         $description = $this->request->getVar('description');
@@ -49,15 +55,25 @@ var $id_Challenge = 0;
             'br_lajkova'=> '0',
             'izbrisan'=> '0',
         ]);
-        //$id_Challenge = $newChallenge['id_izazov'];
-       // echo($newChallenge['id_izazov']);
 
     }
+
+    /**
+     *
+     * Function createChallenge creates a new row in the table 'izazov'
+     */
+
     public function dohvati(){
         $lastChallenge = new IzazovModel();
         $last = $lastChallenge->findlastChallenge();
         echo json_encode($last);
     }
+
+    /**
+     *
+     * Function dohvati collects the last row (the most recently added challenge) from the table 'izazov',
+     * and returns it encapsulated into a JSON object
+     */
 
     public function getExTypes(){
         $tmp_tipTreninga=new TipTreningaModel();
@@ -77,6 +93,12 @@ var $id_Challenge = 0;
         echo json_encode($data);
     }
 
+    /**
+     * @throws \ReflectionException
+     * Function getExTypes collects types of challenges from the table 'tip_treninga',
+     * and returns them encapsulated into a JSON object
+     */
+
 
     public function addSpecifications(){
         $type = $this->request->getVar('type');
@@ -89,14 +111,11 @@ var $id_Challenge = 0;
             //echo("usli u if");
             $newWChallenge = new IzazovVodaModel();
             $newWChallenge->insert([
-                //'id_izazov', 'kolicina_koju_treba_piti_svakog_dana'
                 'id_izazov' => $id,
                 'kolicina_koju_treba_piti_svakog_dana'=> $kolicinaMl,
             ]);
         }
         else if($type=='food'){
-//                            'amount_of_hours' : numofHours,
-//                            'name_of_exercise' : nameofEx
             $newWChallenge = new IzazovHranaModel();
             $newWChallenge->insert([
                 'id_izazov' => $id,
@@ -120,5 +139,12 @@ var $id_Challenge = 0;
         }
 
     }
+
+    /**
+     *
+     * Function addSpecifications adds a new row to the table 'izazov_voda' or 'izazov_hrana' or
+     * 'izazov_trening' depending on the type of the challenge that is being made, (water challenge,
+     * food challenge, train challenge).
+     */
 
 }
