@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- Author: Elena Vidic 2019/0081-->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -132,29 +132,17 @@ $uri = service('uri');
                 <li class="nav-item">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </li>
-<!--                <li class="nav-item dropdown">-->
-<!--                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MY CHALLENGES</a>-->
-<!---->
-<!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
-<!--                        <a class="dropdown-item" href="#">FINISHED CHALLENGES</a>-->
-<!--                        <a class="dropdown-item" href="#">ONGOING CHALLENGES</a>-->
-<!--                    </div>-->
-<!---->
-<!--                </li>-->
                 <li class="nav-item">
-                    <a class="nav-link" href="#">MY CHALLENGES</a>
+                    <a class="nav-link" href="Currentchallengescontroller">MY CHALLENGES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">MAKE A NEW CHALLENGE</a>
+                    <a class="nav-link" href="Newchallengecontroller">MAKE A NEW CHALLENGE</a>
                 </li>
-                <li class="nav-item <?= ($uri->getSegment(2) == 'my-account' ? 'active' : null) ?>">
-                    <a class="nav-link" href="/trener/manageaccount">MY ACCOUNT</a>
-                </li>
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" href="#">MY ACCOUNT</a>-->
-<!--                </li>-->
                 <li class="nav-item">
-                    <a class="nav-link" href="#">LOG OUT</a>
+                    <a class="nav-link" href="Namechange">MY ACCOUNT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">LOG OUT</a>
                 </li>
             </ul>
         </div>
@@ -182,24 +170,8 @@ $uri = service('uri');
 
 
     <div class="forma_A">
-<!--        <div class="col-lg-6 col-sm-12">-->
-<!--            <table id="info">-->
-<!--                <tr>-->
-<!--                    <td>-->
-<!--                        <h2>Email adress:</h2>-->
-<!--                        <br>-->
-<!--                        <label id="email"> mirko@gmail.com</label>-->
-<!---->
-<!--                    </td>-->
-<!--                </tr>-->
-<!--            </table>-->
-<!--        </div>-->
-
         <div class=" col-lg-6 col-sm-12">
             <table id="tabela">
-                <!-- <tr>
-                    <td colspan="2"><b>Fill out the form to make a new challenge</b></td>
-                </tr> -->
                 <tr>
                     <td>
                         <label for="newUsername">New username:</label>
@@ -214,7 +186,6 @@ $uri = service('uri');
                         <label for="newPassword">New password:</label>
                         <br><span class="errorPassword" id="passwordError"></span><br>
                         <input type="text" id="newPassword" placeholder="password here...">
-                        <!-- <button onclick="commitChangestoPassword()">Commit changes!</button> -->
                     </td>
                 </tr>
                 <tr>

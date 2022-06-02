@@ -3,9 +3,9 @@
 namespace App\Controllers\Trainer;
 
 use App\Controllers\BaseController;
-use App\Models\AdminModel;
-use App\Models\KorisnikModel;
-use App\Models\TrenerModel;
+use App\Models\elena\AdminModel;
+use App\Models\elena\KorisnikModel;
+use App\Models\elena\TrenerModel;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Model;
@@ -13,14 +13,26 @@ use Psr\Log\LoggerInterface;
 
 class Namechange extends BaseController
 {
+    /**
+     *
+     * This controller enables the display of the view manageaccount
+     * and change of trainers username and/or password
+     */
     public function index()
     {
         echo view('trener/manageaccount.php');
-        //echo ($this->session->get('info'));
-        #session_start();
-        #echo $prom;
         echo view('templates/footer/footer.php');
     }
+
+    /**
+     *
+     * Author: Elena Vidic 2019/0081
+     */
+
+    /**
+     * @throws \ReflectionException
+     *
+     */
 
 
     public function addUserName()
@@ -35,8 +47,12 @@ class Namechange extends BaseController
                 'kor_ime' => $username
             ]);
         }
-        //return "usli smo";
     }
+
+    /**
+     * @throws \ReflectionException
+     * Function addUserName changes the username of the trainer to the desired one
+     */
 
     public function addPassword(){
         $id = $this->session->get('trenerId');
@@ -50,9 +66,13 @@ class Namechange extends BaseController
 //        echo("usli smo sifra");
     }
 
+    /**
+     *
+     * Function addPassword changes the password of the trainer to the desired one
+     */
+
     public function checkUserName()
     {
-
         $id = $this->session->get('trenerId');
         $username = $this->request->getVar('username');
 
@@ -61,14 +81,19 @@ class Namechange extends BaseController
 
         if($allUsers != null){
             echo("0");
-            //return 0;
         }
         else{
             echo("1");
-            //return 1;
         }
-
     }
+
+    /**
+     *
+     * Function checkUserName checks if there is already a user with the same username.
+     * If the username is not unique the function
+     * returns the value "0", and if it is it returns "1".
+     * The function returns string value.
+     */
 
     public function UsernamefromDB(){
       $id = $this->session->get('trenerId');
@@ -80,4 +105,10 @@ class Namechange extends BaseController
         echo($username);
        // echo ("onload=");
     }
+
+    /**
+     *
+     * Function UsernamefromDB gets the username of the trainer from the database
+     * and returns it as a string
+     */
 }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Author: Elena Vidic 2019/0081-->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,8 +43,6 @@
                 ,
                 function (vr) {
                     let data=JSON.parse(vr);
-                    // let izazov = $("<div style='background-color: #07beb8'>HELLO</div>");
-                    // $("#proba").append(izazov);
 
                     for(let i=0;i<data.length;i++){
                         let idC = data[i]['id'];
@@ -145,27 +144,18 @@
                 <li class="nav-item">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </li>
-<!--                <li class="nav-item dropdown">-->
-<!--                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MY CHALLENGES</a>-->
-<!---->
-<!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
-<!--                        <a class="dropdown-item" href="/trener/FinnishedChallenges">FINISHED CHALLENGES</a>-->
-<!--                        <a class="dropdown-item" href="/trener/CurrentChallenges">ONGOING CHALLENGES</a>-->
-<!--                    </div>-->
-<!---->
-<!--                </li>-->
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">MY CHALLENGES</a>
+                    <a class="nav-link" href="Currentchallengescontroller">MY CHALLENGES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">MAKE A NEW CHALLENGE</a>
+                    <a class="nav-link" href="Newchallengecontroller">MAKE A NEW CHALLENGE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">MY ACCOUNT</a>
+                    <a class="nav-link" href="Namechange">MY ACCOUNT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">LOG OUT</a>
+                    <a class="nav-link" href="/logout">LOG OUT</a>
                 </li>
             </ul>
         </div>
@@ -174,7 +164,7 @@
 </nav>
 
 
-<div id="proba"></div>
+<div id="proba" class="list-group"></div>
 
 </body>
 
