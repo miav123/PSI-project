@@ -109,14 +109,14 @@ class Registercontroller extends BaseController
 
                 $id_kor = $modelUser->where('kor_ime', $userreg['username'])->first()['id_kor'];
 
-                $modelRegUser->save([
+                $modelRegUser->insert([
 
                     'id_kor' => $id_kor,
                     'visina' => $this->request->getVar('height'),
                     'tezina' => $this->request->getVar('weight'),
                     'br_tren' => $this->request->getVar('hours'),
                     'bodovi' => 0,
-                    'broj_uzast_logovanja' => 0
+                    'url_profilne_slike' => 'assets/images/user-image/profileImage.jpg'
 
                 ]);
 
