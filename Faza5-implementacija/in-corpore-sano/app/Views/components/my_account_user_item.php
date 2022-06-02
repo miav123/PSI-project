@@ -23,7 +23,7 @@
             <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-2">
                 <p class="u-text u-text-custom-color-10 u-text-1">USERNAME:&nbsp; &nbsp;
 					<span style="font-weight: 700;"><?= $username ?> </span>
-                	<br>MAIL:&nbsp; &nbsp;<span style="font-weight: 700;"><?= $mail ?></span>
+                	<br>EMAIL:&nbsp; &nbsp;<span style="font-weight: 700;"><?= $mail ?></span>
                 	<br>HEIGHT:&nbsp; &nbsp;<span style="font-weight: 700;"> <?= $height ?> cm</span>
                 	<br>WEIGHT:&nbsp; &nbsp;<span style="font-weight: 700;"> <?= $weight ?> kg</span>
                 	<br>HOURS OF TRAINING PER WEEK:&nbsp; &nbsp;<span style="font-weight: 700;"> <?= $numTraining ?></span>
