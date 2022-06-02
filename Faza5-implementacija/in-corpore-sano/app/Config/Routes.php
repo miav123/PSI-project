@@ -68,7 +68,7 @@ $routes->group('user', ['filter' => 'user'],function ($routes) {
     $routes->post('food', 'User\Dailylogcontroller::foodInput');
     $routes->get('daily-log', 'User\Dailylogcontroller::dailyLog');
     $routes->get('cancel', 'User\Dailylogcontroller::cancel');
-	
+    $routes->add('charts', function() { return redirect()->to('user/charts/water'); });
     $routes->get('current-challenges', 'User\Currentchallengescontroller::currChallenges');
     $routes->post('acceptchallenge/(:any)', 'User\Currentchallengescontroller::acceptchallenge/$1');
     $routes->get('my-challenges', 'User\Mychallengescontroller::myChallenges');
