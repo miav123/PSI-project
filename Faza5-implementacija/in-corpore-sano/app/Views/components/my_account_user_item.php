@@ -1,3 +1,22 @@
+<!-- Tijana Mitrovic 2019/0001 -->
+
+<div class="u-custom-color-10 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-shape u-shape-rectangle u-shape-1"></div>
+    <div class="u-container-style u-group u-shape-rectangle u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+            <div class="u-custom-color-6 u-shape u-shape-circle u-shape-2"></div>
+            <img alt=""src="<?= $url_image ?>"  class="u-align-left u-image u-image-circle u-image-1" data-image-width="1280" data-image-height="839"></img>
+            <button data-toggle="modal" data-target="#myModalImage" class="u-border-4 u-border-custom-color-6 train u-icon u-icon-circle u-text-custom-color-6 u-icon-1">
+                <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 60 60" style="" >
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1695"></use>
+                </svg>
+                <svg class="u-svg-content" viewBox="0 0 60 60" x="0px" y="0px" id="svg-1695" style="enable-background:new 0 0 60 60;">
+                    <g><path d="M30,20.5c-6.617,0-12,5.383-12,12s5.383,12,12,12s12-5.383,12-12S36.617,20.5,30,20.5z"></path>
+                    <path d="M55.201,15.5h-8.524l-4-10H17.323l-4,10H12v-5H6v5H4.799C2.152,15.5,0,17.652,0,20.299v29.368 C0,52.332,2.168,54.5,4.833,54.5h50.334c2.665,0,4.833-2.168,4.833-4.833V20.299C60,17.652,57.848,15.5,55.201,15.5z M10,15.5H8v-3 h2V15.5z M30,50.5c-9.925,0-18-8.075-18-18s8.075-18,18-18s18,8.075,18,18S39.925,50.5,30,50.5z M52,27.5c-2.206,0-4-1.794-4-4 s1.794-4,4-4s4,1.794,4,4S54.206,27.5,52,27.5z"></path>
+                    </g>
+                </svg>
+</button>
+        </div>
+    </div>
 <div class="u-expanded-width-xs u-list u-list-1">
     <div class="u-repeater u-repeater-1">
         <div class="u-align-left u-container-style u-custom-color-6 u-list-item u-repeater-item u-shape-rectangle u-list-item-1">
@@ -124,4 +143,19 @@
             </div>
           </div>
         </div>
-      </div>
+		<?php if (session()->get('success')): ?>
+			<div class="alert alert-success round" role="alert">
+				<?= session()->get('success') ?>
+			</div>
+		<?php endif; ?>
+		<?php if (session()->get('msg')): ?>
+			<div class="alert alert-danger round" role="alert">
+				<?= session()->get('msg') ?>
+			</div>
+		<?php endif; ?>
+		<?php  if (isset($validation)): ?>
+			<div class="alert alert-danger round" role="alert" id="alertreg" >
+				<?= $validation->listErrors() ?>
+			</div>
+		<?php endif;  unset($_SESSION['success']);  unset($_SESSION['msg']); ?>
+	</div>
