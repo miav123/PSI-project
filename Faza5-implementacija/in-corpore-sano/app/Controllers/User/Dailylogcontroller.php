@@ -9,9 +9,12 @@ namespace App\Controllers\User;
 use App\Controllers\BaseController;
 class Dailylogcontroller extends BaseController {
     
+    /**
+     * 
+     * Funkcija za pregled Daily Log-a
+     */
     
     public function dailyLog(){
-        
         
         //Podaci koji se prosledjuju view-ovima
         $data_intake = [];
@@ -162,8 +165,12 @@ class Dailylogcontroller extends BaseController {
         //-------------------------------------------------------------------------------------------------
         //
         //PRIKAZ POCETKA STRANICE
+        $modelKorisnik = new \App\Models\RegistrovaniKorisnikModel();
+        $korisnik = $modelKorisnik->where('id_kor',session('id'))->findAll()[0];
+        $recommended = $korisnik['tezina']*10 + 6.25*$korisnik['visina']+5*$korisnik['br_tren']-81;
         
         $data_intake['kcalDaily'] = $kcalDaily;
+        $data_intake['recommendedKcal'] = $recommended;
         //!!!!!!!!!TO DO
         //$recommended_intake = ...
         //$data_intake['recommended_itake'] = $recommended_intake

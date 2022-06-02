@@ -143,7 +143,7 @@
                         <a class="nav-link" href="/user/rank">RANK</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">MY ACCOUNT</a>
+                        <a class="nav-link" href="/user/my-account">MY ACCOUNT</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/logout">LOG OUT</a>
