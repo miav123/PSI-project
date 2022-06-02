@@ -1,5 +1,10 @@
+/*
+    Mia Vucinic 0224/2019
+ */
+
 .navbar {
     background-color: #d3e58a !important;
+    height:120px;
 }
 
 .nav-item a{
@@ -21,7 +26,8 @@
 }
 
 .logo {
-    height:100px;
+    height:109.11px;
+    width:149px;
 }
 
 body {

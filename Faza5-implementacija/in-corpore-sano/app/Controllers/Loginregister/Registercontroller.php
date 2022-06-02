@@ -12,8 +12,9 @@ use App\Models\RegistrovaniKorisnikModel;
 
 
 /**
- * Registercontroller - controller class that is used for registering new users
+ * Registercontroller - controller class that is used for registering new users.
  * @version 1.0
+ * @author Mia Vucinic
  */
 class Registercontroller extends BaseController
 {

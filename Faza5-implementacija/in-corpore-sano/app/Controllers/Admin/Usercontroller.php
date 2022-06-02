@@ -11,8 +11,9 @@ use App\Models\RegistrovaniKorisnikModel;
 use App\Models\KorisnikModel;
 
 /**
- * Usercontroller - controller class that manages users for admin
+ * Usercontroller - controller class that manages users for admin.
  * @version 1.0
+ * @author Mia Vucinic
  */
 class Usercontroller extends BaseController
 {

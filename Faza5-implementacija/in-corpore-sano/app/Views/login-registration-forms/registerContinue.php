@@ -35,7 +35,7 @@
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="number" min="150" id="height" name="height" class="form-control" required />
+                                            <input type="number" min="50" max="250" id="height" name="height" class="form-control" required />
                                             <label class="form-label" for="height">Height (cm)</label>
                                         </div>
                                     </div>
@@ -43,7 +43,7 @@
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="number" min="40" id="weight" name="weight" class="form-control" required/>
+                                            <input type="number" min="10" id="weight" name="weight" class="form-control" required/>
                                             <label class="form-label" for="weight">Weight (kg)</label>
                                         </div>
                                     </div>

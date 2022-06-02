@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 class RegistrovaniKorisnikModel extends Model
 {
     protected $table      = 'registrovani_korisnik';
-    protected $allowedFields = ['id_kor', 'visina', 'tezina', 'br_tren', 'bodovi', 'datum_posl_logovanja', 'br_uzast_logovanja'];
-    protected $primaryKey = 'id_izazov';
+    protected $allowedFields = ['id_kor', 'visina', 'tezina', 'br_tren', 'bodovi'];
+    protected $primaryKey = 'id_kor';
 
 }

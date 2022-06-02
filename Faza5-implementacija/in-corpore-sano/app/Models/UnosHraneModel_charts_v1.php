@@ -11,6 +11,7 @@ use CodeIgniter\Database\ConnectionInterface;
 /**
  * UnosHraneModel_charts_v1 - class that fetches current week's, month's or average year's training data from the database.
  * @version 1.0
+ * @author Mia Vucinic
  */
 class UnosHraneModel_charts_v1 {
     /**
@@ -27,7 +28,9 @@ class UnosHraneModel_charts_v1 {
     }
 
     /**
-     * Function that fetches this week's data for user whose id is passed as parameter.
+     * Function that fetches current week's data for user whose id is passed as parameter.
+     * Returns number of calories (result) consumed by the user for each day of the current week (day_of_week).
+     * Only days for which record exists are counted.
      * @param $user_id
      * @return array|array[]
      */
@@ -53,6 +56,8 @@ class UnosHraneModel_charts_v1 {
 
     /**
      * Function that fetches current month's data for user whose id is passed as parameter.
+     * Returns number of calories (result) consumed by the user for each day of the current month (day_in_month).
+     * Only days for which record exists are counted.
      * @param $user_id
      * @return array|array[]
      */
@@ -87,6 +92,8 @@ class UnosHraneModel_charts_v1 {
 
     /**
      * Function that fetches current year's data for user whose id is passed as parameter.
+     * Returns average number of calories (result) consumed by the user for each month (month) of the current year.
+     * Only days for which record exists are counted.
      * @param $user_id
      * @return array|array[]
      */

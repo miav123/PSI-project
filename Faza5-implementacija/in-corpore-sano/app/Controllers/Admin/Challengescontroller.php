@@ -12,8 +12,9 @@ use App\Models\KorisnikModel;
 use App\Models\TrenerModel;
 
 /**
- * Challengescontroller - controller class that manages challenges for admin
+ * Challengescontroller - controller class that manages challenges for admin.
  * @version 1.0
+ * @author Mia Vucinic
  */
 class Challengescontroller extends BaseController
 {

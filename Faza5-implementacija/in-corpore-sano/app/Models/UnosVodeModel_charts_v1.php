@@ -11,6 +11,7 @@ use CodeIgniter\Database\ConnectionInterface;
 /**
  * UnosVodeModel_charts_v1 - class that fetches current week's, month's or average year's data for daily water intake from the database.
  * @version 1.0
+ * @author Mia Vucinic
  */
 class UnosVodeModel_charts_v1 {
     /**
@@ -28,6 +29,8 @@ class UnosVodeModel_charts_v1 {
 
     /**
      * Function that fetches this week's data for user whose id is passed as parameter.
+     * Returns amount of water (result) consumed by the user for each day of the current week (day_of_week).
+     * Only days for which record exists are counted.
      * @param $user_id
      * @return array|array[]
      */
@@ -53,6 +56,8 @@ class UnosVodeModel_charts_v1 {
 
     /**
      * Function that fetches current month's data for user whose id is passed as parameter.
+     * Returns amount of water (result) consumed by the user for each day of the current month (day_in_month).
+     * Only days for which record exists are counted.
      * @param $user_id
      * @return array|array[]
      */
@@ -87,6 +92,8 @@ class UnosVodeModel_charts_v1 {
 
     /**
      * Function that fetches current year's data for user whose id is passed as parameter.
+     * Returns average amount of water (result) consumed by the user for each month (month) of the current year.
+     * Only days for which record exists are counted.
      * @param $user_id
      * @return array|array[]
      */

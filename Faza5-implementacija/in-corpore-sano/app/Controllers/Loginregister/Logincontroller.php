@@ -7,13 +7,15 @@
 namespace App\Controllers\Loginregister;
 
 use App\Controllers\BaseController;
+use App\Controllers\User\Checkchallengescontroller;
 use App\Models\AdminModel;
 use App\Models\KorisnikModel;
 use App\Models\TrenerModel;
 
 /**
- * Logincontroller - controller class that is used for logging in
+ * Logincontroller - controller class that is used for logging in.
  * @version 1.0
+ * @author Mia Vucinic
  */
 class Logincontroller extends BaseController
 {
@@ -85,6 +87,9 @@ class Logincontroller extends BaseController
                 return redirect()->to('user');
             }
         }
+
+        (new Checkchallengescontroller())->checkMyChallenges();
+
         echo view("login-registration-forms/login.php", $data);
     }
 
