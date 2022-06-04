@@ -35,7 +35,7 @@
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="text" id="usernameRegistration" name="username" class="form-control" required/>
+                                            <input type="text" id="usernameRegistration" name="username" class="form-control" required value="<?= set_value('username') ?>"/>
                                             <label class="form-label" for="usernameRegistration">Username</label>
                                         </div>
                                     </div>
@@ -43,7 +43,7 @@
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="email" id="email" name="email" class="form-control" required/>
+                                            <input type="email" id="email" name="email" class="form-control" required value="<?= set_value('email') ?>"/>
                                             <label class="form-label" for="email">Email</label>
                                         </div>
                                     </div>
