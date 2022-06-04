@@ -124,7 +124,7 @@ class Registercontroller extends BaseController
                     'tezina' => $this->request->getVar('weight'),
                     'br_tren' => $this->request->getVar('hours'),
                     'bodovi' => 0,
-                    'url_profilne_slike' => 'assets/images/user-image/profileImage.jpg'
+                    'url_profilne_slike' => '/assets/images/user-image/profileImage.jpg'
 
                 ]);
 

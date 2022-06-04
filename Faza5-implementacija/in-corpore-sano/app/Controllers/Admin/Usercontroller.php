@@ -42,6 +42,7 @@ class Usercontroller extends BaseController
                     'id' => $regUser['id_kor'],
                     'username' => $user['kor_ime'],
                     'points' => $regUser['bodovi'],
+                    'imageURL' => $regUser['url_profilne_slike']
                 ];
             }
         }

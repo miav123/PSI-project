@@ -2,7 +2,7 @@
 <div class="list-group-item trainer-user" id="user_<?= $id ?>">
     <div class="row align-items-center text-sm-center text-md-left">
         <div class="col-sm-12 col-md-2 text-center">
-            <i class="fas fa-user fa-6x"></i>
+            <img class="profile-image" src="<?= $imageURL ?>" alt="">
         </div>
         <div class="col-sm-12 col-md-7 col-lg-8">
             <p class="trainer-name nice-font"><?= $username ?></p>
