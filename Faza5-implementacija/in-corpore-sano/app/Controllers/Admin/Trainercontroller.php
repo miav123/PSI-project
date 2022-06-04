@@ -9,6 +9,7 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\KorisnikModel;
 use App\Models\TrenerModel;
+use ReflectionException;
 
 /**
  * Trainercontroller - controller class that manages trainers for admin.
@@ -54,8 +55,8 @@ class Trainercontroller extends BaseController
     /**
      * Function that deletes trainer with given id.
      * @param $id
-     * @return \CodeIgniter\HTTP\RedirectResponse
-     * @throws \ReflectionException
+     * @return void
+     * @throws ReflectionException
      */
     public function deletetrainer($id)
     {
@@ -67,7 +68,6 @@ class Trainercontroller extends BaseController
                 $modelUser->save($user);
             }
         }
-        return redirect()->to('admin/trainers');
     }
 
 }

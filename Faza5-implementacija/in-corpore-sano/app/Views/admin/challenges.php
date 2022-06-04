@@ -11,4 +11,11 @@
         </div>
 </div>
 
-
+<script>
+    $(".btn-delete").click(function () {
+        $.post("/admin/deletechallenge/" + $(this).attr("id"), {
+            'deletebtn' : "deletebtn"
+        });
+        $("#challenge_" + $(this).attr("id")).hide(1000);
+    });
+</script>

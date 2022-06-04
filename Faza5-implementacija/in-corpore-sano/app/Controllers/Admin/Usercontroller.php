@@ -9,6 +9,8 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\RegistrovaniKorisnikModel;
 use App\Models\KorisnikModel;
+use CodeIgniter\HTTP\RedirectResponse;
+use ReflectionException;
 
 /**
  * Usercontroller - controller class that manages users for admin.
@@ -55,8 +57,8 @@ class Usercontroller extends BaseController
     /**
      * Function that deletes user with given id.
      * @param $id
-     * @return \CodeIgniter\HTTP\RedirectResponse
-     * @throws \ReflectionException
+     * @return void
+     * @throws ReflectionException
      */
     public function deleteuser($id)
     {
@@ -68,7 +70,6 @@ class Usercontroller extends BaseController
                 $modelUser->save($user);
             }
         }
-        return redirect()->to('admin/users');
     }
 
 }

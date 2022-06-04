@@ -10,3 +10,12 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(".btn-delete").click(function () {
+        $.post("/admin/deleteuser/" + $(this).attr("id"), {
+            'deletebtn' : "deletebtn"
+        });
+        $("#user_" + $(this).attr("id")).hide(1000);
+    });
+</script>

@@ -10,6 +10,7 @@ use App\Controllers\BaseController;
 use App\Models\IzazovModel;
 use App\Models\KorisnikModel;
 use App\Models\TrenerModel;
+use ReflectionException;
 
 /**
  * Challengescontroller - controller class that manages challenges for admin.
@@ -60,8 +61,8 @@ class Challengescontroller extends BaseController
     /**
      * Function that deletes challenge with given id.
      * @param $id
-     * @return \CodeIgniter\HTTP\RedirectResponse
-     * @throws \ReflectionException
+     * @return void
+     * @throws ReflectionException
      */
     public function deletechallenge($id)
     {
@@ -73,7 +74,6 @@ class Challengescontroller extends BaseController
                 $model->save($challenge);
             }
         }
-        return redirect()->to('admin/challenges');
     }
 
 }
