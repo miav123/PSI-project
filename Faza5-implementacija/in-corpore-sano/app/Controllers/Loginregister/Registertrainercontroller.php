@@ -15,6 +15,7 @@ use ReflectionException;
 
 /**
  * Registertrainercontroller - class that is used for registering trainer.
+ * reference: https://onlinewebtutorblog.com/codeigniter-4-form-validation-library/
  * @version 1.0
  */
 class Registertrainercontroller extends \App\Controllers\BaseController
@@ -31,26 +32,29 @@ class Registertrainercontroller extends \App\Controllers\BaseController
         if($this->request->getMethod() == 'post') {
 
             $rules = [
-                'username' => 'required|min_length[1]|max_length[50]|is_unique[korisnik.kor_ime]',
-                'email' => 'required|min_length[6]|max_length[50]|valid_email|is_unique[korisnik.email]',
-                'password' => 'required|min_length[8]|max_length[255]',
-                'password_repeat' => 'matches[password]',
+
+                'username' => 'required|min_length[1]|max_length[40]|username_not_exist[username]',
+                'email' => 'required|min_length[5]|max_length[40]|valid_email|email_not_exist[email]',
+                'password' => 'required|min_length[5]|max_length[40]|passwords_are_equal[password,password_repeat]'
+
             ];
 
-            $error = [
+            $errorMessages = [
+
                 'username' => [
-                    'is_unique' => 'The username is already taken.'
+                    'username_not_exist' => 'User with this username already exists.'
                 ],
                 'email' => [
-                    'is_unique' => 'The email is already taken.',
-                    'valid_email' => 'The email must be in format a@b.c .'
+                    'email_not_exist' => 'User with this email already exists.',
+                    'valid_email' => 'The email must be in valid format.'
                 ],
-                'password_repeat' => [
-                    'matches' => 'Password and repeated password must be same.'
-                ],
+                'password' => [
+                    'passwords_are_equal' => 'Password and repeated password must be same.'
+                ]
+
             ];
 
-            if (! $this->validate($rules, $error)) {
+            if (! $this->validate($rules, $errorMessages)) {
 
                 $data['validation'] = $this->validator;
 
@@ -59,7 +63,7 @@ class Registertrainercontroller extends \App\Controllers\BaseController
                 $modelUser = new KorisnikModel();
                 $modelTrainer = new TrenerModel();
 
-                $modelUser->save([
+                $modelUser->insert([
 
                     'kor_ime' => $this->request->getVar('username'),
                     'email' => $this->request->getVar('email'),

@@ -9,10 +9,13 @@ namespace App\Controllers\Loginregister;
 use App\Controllers\BaseController;
 use App\Models\KorisnikModel;
 use App\Models\RegistrovaniKorisnikModel;
+use CodeIgniter\HTTP\RedirectResponse;
+use ReflectionException;
 
 
 /**
  * Registercontroller - controller class that is used for registering new users.
+ * reference: https://onlinewebtutorblog.com/codeigniter-4-form-validation-library/
  * @version 1.0
  * @author Mia Vucinic
  */
@@ -20,7 +23,7 @@ class Registercontroller extends BaseController
 {
     /**
      * Function that is used on first page of register form. If all fields are valid, user will be redirected to the next page.
-     * @return \CodeIgniter\HTTP\RedirectResponse|void
+     * @return RedirectResponse|void
      */
     public function register() {
 
@@ -30,26 +33,29 @@ class Registercontroller extends BaseController
         if($this->request->getMethod() == 'post') {
 
             $rules = [
-                'username' => 'required|min_length[1]|max_length[50]|is_unique[korisnik.kor_ime]',
-                'email' => 'required|min_length[5]|max_length[50]|valid_email|is_unique[korisnik.email]',
-                'password' => 'required|min_length[8]|max_length[50]',
-                'password_repeat' => 'matches[password]',
+
+                'username' => 'required|min_length[1]|max_length[40]|username_not_exist[username]',
+                'email' => 'required|min_length[5]|max_length[40]|valid_email|email_not_exist[email]',
+                'password' => 'required|min_length[5]|max_length[40]|passwords_are_equal[password,password_repeat]'
+
             ];
 
-            $error = [
+            $errorMessages = [
+
                 'username' => [
-                    'is_unique' => 'The username is already taken.'
+                    'username_not_exist' => 'User with this username already exists.'
                 ],
                 'email' => [
-                    'is_unique' => 'The email is already taken.',
-                    'valid_email' => 'The email must be in format a@b.c .'
+                    'email_not_exist' => 'User with this email already exists.',
+                    'valid_email' => 'The email must be in valid format.'
                 ],
-                'password_repeat' => [
-                    'matches' => 'Password and repeated password must be same.'
-                ],
+                'password' => [
+                    'passwords_are_equal' => 'Password and repeated password must be same.'
+                ]
+
             ];
 
-            if (! $this->validate($rules, $error)) {
+            if (! $this->validate($rules, $errorMessages)) {
 
                 $data['validation'] = $this->validator;
 
@@ -72,7 +78,7 @@ class Registercontroller extends BaseController
 
     /**
      * Function that is used on the second page of the register form. If the registration is successful, user will be redirected to the log in screen and an appropriate message will be shown.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function registercontinue() {
 
@@ -84,9 +90,11 @@ class Registercontroller extends BaseController
             $userreg = session()->get('userdata');
 
             $rules = [
+
                 'height' => 'required|numeric|greater_than[50]|less_than[250]',
                 'weight' => 'required|numeric|greater_than[10]',
                 'hours' => 'required|numeric|less_than[100]'
+
             ];
 
             if (! $this->validate($rules)) {
@@ -98,7 +106,7 @@ class Registercontroller extends BaseController
                 $modelUser = new KorisnikModel();
                 $modelRegUser = new RegistrovaniKorisnikModel();
 
-                $modelUser->save([
+                $modelUser->insert([
 
                     'kor_ime' => $userreg['username'],
                     'email' => $userreg['email'],
