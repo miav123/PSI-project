@@ -2,6 +2,11 @@
 
 namespace Config;
 
+use App\Filters\Admin;
+use App\Filters\Guest;
+use App\Filters\Logout;
+use App\Filters\Trainer;
+use App\Filters\User;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -23,11 +28,11 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
-        'admin' => \App\Filters\Admin::class,
-        'trainer' => \App\Filters\Trainer::class,
-        'user' => \App\Filters\User::class,
-        'guest' => \App\Filters\Guest::class,
-        'logout' => \App\Filters\Logout::class,
+        'admin' => Admin::class,
+        'trainer' => Trainer::class,
+        'user' => User::class,
+        'guest' => Guest::class,
+        'logout' => Logout::class,
     ];
 
     /**
@@ -69,5 +74,11 @@ class Filters extends BaseConfig
      *
      * @var array
      */
-    public $filters = [];
+    public $filters = [
+        'trainer' => ['before' => [
+            'trainer/Currentchallengescontroller', 'trainer/Currentchallengescontroller/*',
+            'trainer/Namechange', 'trainer/Namechange/*',
+            'trainer/Newchallengecontroller', 'trainer/Newchallengecontroller/*'
+        ]]
+    ];
 }
