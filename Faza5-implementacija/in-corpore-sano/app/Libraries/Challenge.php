@@ -8,6 +8,6 @@ namespace App\Libraries;
 
 class Challenge {
     public function challengeItem($challenge) {
-        return view('components/challenge_item', $challenge);
+        return view('components/admin/challenge_item', $challenge);
     }
 }

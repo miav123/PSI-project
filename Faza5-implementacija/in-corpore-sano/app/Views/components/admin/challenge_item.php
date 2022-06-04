@@ -32,7 +32,14 @@
     </div>
     <div class="row text-sm-center text-md-right">
         <div class="col-sm-12 col-md-12">
-            <button type="button" class="btn btn-primary btn-floating btn-delete nice-font" name="deletebtn" id="<?= $id ?>">
+            <button type="button" class="btn btn-primary btn-floating btn-delete nice-font
+                <?php if($type == 'water'): ?>
+                    blue-button
+                <?php elseif($type == 'food'): ?>
+                    green-button
+                <?php elseif($type == 'train'): ?>
+                    red-button
+                 <?php endif; ?>" name="deletebtn" id="<?= $id ?>">
                 <i class="fas fa-trash-alt"></i>
                 DELETE
             </button>
