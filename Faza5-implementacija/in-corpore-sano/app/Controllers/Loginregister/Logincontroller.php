@@ -11,9 +11,12 @@ use App\Controllers\User\Checkchallengescontroller;
 use App\Models\AdminModel;
 use App\Models\KorisnikModel;
 use App\Models\TrenerModel;
+use CodeIgniter\HTTP\RedirectResponse;
+use ReflectionException;
 
 /**
  * Logincontroller - controller class that is used for logging in.
+ * reference: https://onlinewebtutorblog.com/codeigniter-4-form-validation-library/
  * @version 1.0
  * @author Mia Vucinic
  */
@@ -24,21 +27,23 @@ class Logincontroller extends BaseController
      * @param $user
      * @param $role
      */
-    private function setUserSession($user, $role){
+    private function createSessionForUser($user, $role) {
 
-        $data = [
+        session()->set([
+
             'id' => $user['id_kor'],
             'username' => $user['kor_ime'],
             'isLoggedIn' => true,
             'role' => $role
-        ];
 
-        session()->set($data);
+        ]);
+
     }
 
     /**
      * Function that is used for logging in. After successful authentication user will be redirected to the first page of the application that corresponds to their role. If authentication is not successful, error message will be shown.
-     * @return \CodeIgniter\HTTP\RedirectResponse|void
+     * @return RedirectResponse|void
+     * @throws ReflectionException
      */
     public function login() {
 
@@ -48,17 +53,22 @@ class Logincontroller extends BaseController
         if($this->request->getMethod() == 'post') {
 
             $rules = [
-                'username'=> 'required',
-                'password'=> 'required|validUser[username,password]'
+
+                'username'=> 'required|user_exists[username]|correct_password[username,password]',
+                'password'=> 'required'
+
             ];
 
-            $errors = [
-                'password' => [
-                    'validUser' => 'Please check your username and password'
+            $errorMessages = [
+
+                'username' => [
+                    'user_exists' => 'Please check your username.',
+                    'correct_password' => 'Please check your password.'
                 ]
+
             ];
 
-            if(!$this->validate($rules, $errors)) {
+            if(!$this->validate($rules, $errorMessages)) {
 
                 $data['validation'] = $this->validator;
 
@@ -72,18 +82,18 @@ class Logincontroller extends BaseController
 
                 // check if user is admin
                 if($modelAdmin->find($user['id_kor'])) {
-                    $this->setUserSession($user, 'admin'); // create session
+                    $this->createSessionForUser($user, 'admin');
                     return redirect()->to('admin');
                 }
 
                 // check if user is trainer
                 if($modelTrainer->find($user['id_kor'])) {
-                    $this->setUserSession($user, 'trainer'); // create session
+                    $this->createSessionForUser($user, 'trainer');
                     return redirect()->to('trainer');
                 }
 
                 // registered user
-                $this->setUserSession($user, 'user'); // create session
+                $this->createSessionForUser($user, 'user');
                 (new Checkchallengescontroller())->checkMyChallenges();
                 return redirect()->to('user');
             }
@@ -94,9 +104,10 @@ class Logincontroller extends BaseController
 
     /**
      * Function that is used for logging out. Current user's session will be destroyed, and they will be redirected to the login page.
-     * @return \CodeIgniter\HTTP\RedirectResponse
+     * @return RedirectResponse
      */
-    public function logout() {
+    public function logout(): RedirectResponse
+    {
         session()->destroy();
         return redirect()->to('/');
     }
