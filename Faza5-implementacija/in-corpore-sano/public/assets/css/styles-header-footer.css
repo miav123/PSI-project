@@ -66,3 +66,7 @@ body {
     padding-right:20px !important;
     background-color: #e9f1d0!important;
 }
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #d6355b !important;
+}

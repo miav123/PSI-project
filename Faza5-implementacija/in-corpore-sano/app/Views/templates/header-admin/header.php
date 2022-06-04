@@ -9,7 +9,7 @@
 
     <link rel="ICON" href="/assets/images/logo/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="/assets/css/styles-header-footer.css">
-    <link rel="stylesheet" href="/assets/css/styles-challenges.css">
+    <link rel="stylesheet" href="/assets/css/admin/styles-admin.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
@@ -33,7 +33,7 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav" style="float:right;">
+            <div class="collapse navbar-collapse text-center justify-content-end" id="navbarNav" style="float:right;">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
