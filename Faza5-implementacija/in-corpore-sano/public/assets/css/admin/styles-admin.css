@@ -82,15 +82,7 @@
 }
 
 .red-button {
-    border-radius: 50px !important;
-    color: #ffffff !important;
     background-color: #e06a86 !important;
-    border-style: none !important;
-    border-width: 0  !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-    font-size: 0.875rem !important;
-    letter-spacing: 1px !important;
 }
 
 .blue-button {

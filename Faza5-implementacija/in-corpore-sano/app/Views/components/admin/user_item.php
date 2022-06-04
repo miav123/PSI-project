@@ -13,7 +13,7 @@
     </div>
     <div class="row text-sm-center text-md-right">
         <div class="col-sm-12 col-md-12">
-            <button type="button" class="btn btn-primary btn-floating red-button nice-font" name="deletebtn" id="<?= $id ?>">
+            <button type="button" class="btn btn-primary btn-floating btn-delete red-button nice-font" name="deletebtn" id="<?= $id ?>">
                 <i class="fas fa-trash-alt"></i>
                 DELETE
             </button>
