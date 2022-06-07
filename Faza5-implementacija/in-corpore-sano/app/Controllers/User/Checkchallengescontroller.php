@@ -7,9 +7,11 @@
 namespace App\Controllers\User;
 
 use App\Controllers\BaseController;
+use App\Models\CheckBadgesForUser;
 use App\Models\CheckChallengesForUser;
 use App\Models\GotoviIzazoviModel;
 use App\Models\IzazovModel;
+use App\Models\KorisnikBedzModel;
 use App\Models\MojiIzazoviModel;
 use App\Models\RegistrovaniKorisnikModel;
 use ReflectionException;
@@ -105,6 +107,21 @@ class Checkchallengescontroller extends BaseController
                     $user['bodovi'] += $challenge['br_poena'];
                     $userModel->save($user);
                 }
+            }
+        }
+
+        /*
+         * Checking if user has earned any new badges.
+         */
+        $checkBadgesModel = new CheckBadgesForUser($db);
+        $badges = $checkBadgesModel->checkBadges($user_id);
+        $badgesUserModel = new KorisnikBedzModel();
+        foreach ($badges as $badge) {
+            if($badge != null) {
+                $badgesUserModel->insert([
+                    'id_kor' => $user_id,
+                    'id_bedz' => $badge['id_bedz']
+                ]);
             }
         }
     }
