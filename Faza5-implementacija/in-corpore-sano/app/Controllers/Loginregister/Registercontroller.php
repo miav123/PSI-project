@@ -91,9 +91,9 @@ class Registercontroller extends BaseController
 
             $rules = [
 
-                'height' => 'required|numeric|greater_than[50]|less_than[250]',
-                'weight' => 'required|numeric|greater_than[10]',
-                'hours' => 'required|numeric|less_than[100]'
+                'height' => 'required|numeric|greater_than_equal_to[50]|less_than_equal_to[250]',
+                'weight' => 'required|numeric|greater_than_equal_to[10]|greater_than_equal_to[250]',
+                'hours' => 'required|numeric|greater_than_equal_to[0]|less_than_equal_to[150]'
 
             ];
 
