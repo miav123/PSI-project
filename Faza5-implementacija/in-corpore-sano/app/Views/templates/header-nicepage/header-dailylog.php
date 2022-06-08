@@ -145,9 +145,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/user/my-account">MY ACCOUNT</a>
                     </li>
-                    <li class="nav-item">
+<!--                    <li class="nav-item">
                         <a class="nav-link" href="/logout">LOG OUT</a>
-                    </li>
+                    </li>-->
                 </ul>
             </div>
         </div>    

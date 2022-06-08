@@ -67,6 +67,7 @@ $routes->group('user', ['filter' => 'user'],function ($routes) {
     $routes->post('water', 'User\Dailylogcontroller::waterInput');
     $routes->post('training','User\Dailylogcontroller::trainingInput');
     $routes->post('food', 'User\Dailylogcontroller::foodInput');
+    $routes->post('ok', 'User\Dailylogcontroller::okError');
     $routes->get('daily-log', 'User\Dailylogcontroller::dailyLog');
     $routes->get('cancel', 'User\Dailylogcontroller::cancel');
     $routes->add('charts', function() { return redirect()->to('user/charts/water'); });

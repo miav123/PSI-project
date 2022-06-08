@@ -169,13 +169,9 @@ class Dailylogcontroller extends BaseController {
         $modelKorisnik = new \App\Models\RegistrovaniKorisnikModel();
         $korisnik = $modelKorisnik->where('id_kor',session('id'))->findAll()[0];
         $recommended = $korisnik['tezina']*10 + 6.25*$korisnik['visina']+5*$korisnik['br_tren']-81;
-        
         $data_intake['kcalDaily'] = $kcalDaily;
         $data_intake['recommendedKcal'] = $recommended;
-        //!!!!!!!!!TO DO
-        //$recommended_intake = ...
-        //$data_intake['recommended_itake'] = $recommended_intake
-        
+       
         
         //PRIKAZ NA STRANICI
          echo view('templates/header-nicepage/header-dailylog.php');
@@ -194,16 +190,40 @@ class Dailylogcontroller extends BaseController {
         
     }
     
-    
+    public function okError(){
+        helper(['form']);
+         if(array_key_exists('ok', $_POST)) {
+           return redirect()->to('user/daily-log');
+        }
+    }
     
     //UNOS TRENINGA FUNCKIJA
     public function trainingInput(){
         helper(['form']);
+        $data = [];
         date_default_timezone_set("Europe/Belgrade");
         if(array_key_exists('acceptbtn1', $_POST)) {
            $unosTreningaM = new \App\Models\UnosTreningaModel();
            $tipTreningaM = new \App\Models\TipTreningaModel();
-           $tipTreningaDB = $tipTreningaM->where('naziv',$_POST['exercise'])->findAll()[0];
+           $tipTreningaDB = $tipTreningaM->where('naziv',$_POST['exercise'])->findAll();
+           if($tipTreningaDB == null){
+              $string =  "Niste uneli postojeci tip treninga!";
+              $data['error'] = $string;
+              echo view('templates/header-nicepage/header-dailylog.php');
+              echo view('user/dailylog/error.php',$data);
+              echo view('templates/footer/footer.php');
+              return;
+              
+           }
+           if($this->request->getVar('time') == 0){
+              $string =  "Za ime svega, ko trenira 0h!";
+              $data['error'] = $string;
+              echo view('templates/header-nicepage/header-dailylog.php');
+              echo view('user/dailylog/error.php',$data);
+              echo view('templates/footer/footer.php');
+              return;
+           }
+           $tipTreningaDB = $tipTreningaDB[0];
            $timeDate = date("Y-m-d H-i-s");
            $unosTreningaM->save([
                 'id_kor'=>session("id"),
@@ -223,6 +243,14 @@ class Dailylogcontroller extends BaseController {
         if(array_key_exists('acceptbtn2', $_POST)) {
            $counter = 1;
            $ime_obroka = $this->request->getVar("obrok");
+            if($this->request->getVar('obrok') == null){
+              $string =  "Niste uneli naziv obroka!";
+              $data['error'] = $string;
+              echo view('templates/header-nicepage/header-dailylog.php');
+              echo view('user/dailylog/error.php',$data);
+              echo view('templates/footer/footer.php');
+              return;
+           }
            date_default_timezone_set("Europe/Belgrade");
            $timeDate = date("Y-m-d H-i-s");
            
@@ -231,8 +259,27 @@ class Dailylogcontroller extends BaseController {
            $data_obrokM = new \App\Models\ObrokModel();
            $data_obrokNamirnicaM = new \App\Models\ObrokSadrziNamirniceModel();
            $data_namirnicaM = new \App\Models\NamirnicaModel();
-           
-           $data_obrokM->save([
+           while(true){
+               $imeNamirnice = "food".strval($counter) ;
+               $kolicina = "g".strval($counter);
+               $namirnica = $this->request->getVar($imeNamirnice);
+               $kolicinaNamirnice = $this->request->getVar($kolicina);
+               if($kolicinaNamirnice == null){
+                   break;
+               }
+               $namirnicaDB = $data_namirnicaM->where('naziv',$namirnica)->findAll();
+               $counter++;
+              if($namirnicaDB == null){
+                $string =  "Uneli ste pogresan naziv namirnice ".$namirnica;
+                $data['error'] = $string;
+                echo view('templates/header-nicepage/header-dailylog.php');
+                echo view('user/dailylog/error.php',$data);
+                echo view('templates/footer/footer.php');
+              return;
+           }
+           }
+                 
+         $data_obrokM->save([
                'naziv' =>$ime_obroka
             ]);
            
@@ -267,7 +314,7 @@ class Dailylogcontroller extends BaseController {
            
         }
         return redirect()->to('user/daily-log');
-        
+
     }
     
     
