@@ -73,16 +73,16 @@ class Myaccountcontroller extends BaseController {
         if (array_key_exists('btnChangeUsername', $_POST)){
 
             $rules = [
-                'username' => 'required|min_length[1]|max_length[50]|is_unique[korisnik.kor_ime]'
+                'username' => 'required|min_length[1]|max_length[40]|username_not_exist[username]',
             ];
 
-            $error = [
+            $errorM = [
                 'username' => [
-                    'is_unique' => 'The username is already taken.'
+                    'username_not_exist' => 'User with this username already exists.'
                 ]
             ];
 
-            if (! $this->validate($rules, $error)){
+            if (! $this->validate($rules, $errorM)){
 
                 $data['validation'] = $this->validator;
                 $regusers = Myaccountcontroller::findRU();
@@ -118,7 +118,7 @@ class Myaccountcontroller extends BaseController {
         if (array_key_exists('btnChangeHeight', $_POST)){
 
             $rules = [
-                'height' => 'required|numeric|greater_than[149]|less_than[251]'
+                'height' => 'required|numeric|greater_than_equal_to[50]|less_than_equal_to[250]'
             ];
 
             if (! $this->validate($rules)) {
@@ -150,7 +150,7 @@ class Myaccountcontroller extends BaseController {
         if (array_key_exists('btnChangeWeight', $_POST)){
 
             $rules = [
-                'weight' => 'required|numeric|greater_than[39]|less_than[601]'
+                'weight' => 'required|numeric|greater_than_equal_to[10]|less_than_equal_to[250]'
             ];
 
             if (! $this->validate($rules)) {
@@ -182,7 +182,7 @@ class Myaccountcontroller extends BaseController {
         if (array_key_exists('btnChangeHours', $_POST)){
            
             $rules = [
-                'hours' => 'required|numeric|less_than[101]'
+                'hours' => 'required|numeric|greater_than_equal_to[0]|less_than_equal_to[150]'
             ];
 
             if (! $this->validate($rules)) {
@@ -214,11 +214,18 @@ class Myaccountcontroller extends BaseController {
         if (array_key_exists('btnChangePassword', $_POST)){
 
             $rules = [
-                'password' => 'required|min_length[8]|max_length[50]',
-                'password_repeat' => 'matches[password]'
+                'password' => 'required|min_length[5]|max_length[40]|passwords_are_equal[password,password_repeat]'
             ];
 
-            if (! $this->validate($rules)) {
+            $errorM = [
+
+                'password' => [
+                    'passwords_are_equal' => 'Password and repeated password must be same.'
+                ]
+
+            ];
+
+            if (! $this->validate($rules, errorM)) {
                 $data['validation'] = $this->validator;
                 $regusers = Myaccountcontroller::findRU();
                 $data['regusers'] = $regusers;
@@ -255,12 +262,12 @@ class Myaccountcontroller extends BaseController {
         if (array_key_exists('btnChangeEmail', $_POST)){
 
             $rules = [
-                'email' => 'required|min_length[5]|max_length[50]|valid_email|is_unique[korisnik.email]'
+                'email' => 'required|min_length[5]|max_length[40]|valid_email|email_not_exist[email]'
             ];
             $error = [
                 'email' => [
-                    'is_unique' => 'The email is already taken.',
-                    'valid_email' => 'The email must be in format a@b.c .'
+                    'email_not_exist' => 'User with this email already exists.',
+                    'valid_email' => 'The email must be in valid format.'
                 ],
             ];
 

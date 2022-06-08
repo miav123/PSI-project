@@ -70,7 +70,7 @@
         <form action="/user/changeHeight" method="POST">
           <div class="modal-body" style="background-color: #e9f1d0; color:#d6355b!important;" id="modalBodyLogIn">
           <label for="height" class="col-form-label">New height:</label>
-          <input type="number" min="150" max="250" class="col-form-control" id="height" name="height" required/>&nbsp;cm
+          <input type="number" min="50" max="250" class="col-form-control" id="height" name="height" required/>&nbsp;cm
           </div>
           <div class="modal-footer" style="background-color: #d3e58a;">
             <button type="submit" class="btn btn-secondary"
@@ -97,7 +97,7 @@
         <form action="/user/changeWeight" method="POST">
           <div class="modal-body" style="background-color: #e9f1d0; color:#d6355b!important;" id="modalBodyLogIn">
             <label for="weight" class="col-form-label">New Weight:</label>
-            <input type="number" min="40" max="600" id="weight" name = "weight" required/>&nbsp;kg
+            <input type="number" min="10" max="250" id="weight" name = "weight" required/>&nbsp;kg
           </div>
           <div class="modal-footer" style="background-color: #d3e58a;">
             <button type="submit" class="btn btn-secondary" name = "btnChangeWeight"
@@ -124,7 +124,7 @@
         <form action="/user/changeHours" method="POST">
           <div class="modal-body" style="background-color: #e9f1d0; color:#d6355b!important;" id="modalBodyLogIn">
               <label for="hours" class="col-form-label">I want to train &nbsp;</label>
-              <input type="number" min="0" max="100"  id="hours" name="hours" required/>&nbsp;hours per week
+              <input type="number" min="0" max="150"  id="hours" name="hours" required/>&nbsp;hours per week
           </div>
           <div class="modal-footer" style="background-color: #d3e58a;">
             <button type="submit" class="btn btn-secondary" name = "btnChangeHours"
