@@ -92,7 +92,7 @@ class Registercontroller extends BaseController
             $rules = [
 
                 'height' => 'required|numeric|greater_than_equal_to[50]|less_than_equal_to[250]',
-                'weight' => 'required|numeric|greater_than_equal_to[10]|greater_than_equal_to[250]',
+                'weight' => 'required|numeric|greater_than_equal_to[10]|less_than_equal_to[250]',
                 'hours' => 'required|numeric|greater_than_equal_to[0]|less_than_equal_to[150]'
 
             ];
