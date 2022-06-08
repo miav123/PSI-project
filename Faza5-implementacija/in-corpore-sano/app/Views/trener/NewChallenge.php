@@ -59,8 +59,9 @@
             $('#nameofEXType').attr("hidden", 'hidden');
 
             document.getElementById("labelMl").hidden=false;
-            document.getElementById("numberofMl").setAttribute("type", "text");
-
+            document.getElementById("numberofMl").setAttribute("type", "number");
+            document.getElementById("numberofMl").setAttribute("min", "2000");
+            document.getElementById("numberofMl").setAttribute("max", "3500");
         }
         function addTypeF(info){
             typeofChallenge=info;
@@ -74,7 +75,9 @@
             $('#nameofEXType').attr("hidden", 'hidden');
 
             document.getElementById("labelKCAL").hidden=false;
-            document.getElementById("numberofKCAL").setAttribute("type", "text");
+            document.getElementById("numberofKCAL").setAttribute("type", "number");
+            document.getElementById("numberofKCAL").setAttribute("min", "1500");
+            document.getElementById("numberofKCAL").setAttribute("max", "4000");
         }
 
         function addTypeE(info){
@@ -83,7 +86,10 @@
             document.getElementById("numberofKCAL").setAttribute("type", "hidden");
 
             document.getElementById("labelEX").hidden=false;
-            document.getElementById("numberofEX").setAttribute("type", "text");
+            document.getElementById("numberofEX").setAttribute("type", "number");
+            document.getElementById("numberofEX").setAttribute("min", "1");
+            document.getElementById("numberofEX").setAttribute("max", "5");
+            
             document.getElementById("labelEXType").hidden=false;
              $('#nameofEXType').removeAttr('hidden');
 
@@ -93,19 +99,29 @@
         }
 
         function kliknuto(){
-
+// && (/^\d{4}$/.test(document.getElementById("numberofMl").value) === false
             let message="";
-            if(typeofChallenge === 'water' && (/^\d{4}$/.test(document.getElementById("numberofMl").value) === false)) {
+            let milliliters = parseInt(document.getElementById("numberofMl").value);
+            let calories = parseInt(document.getElementById("numberofKCAL").value);
+            let exHours = parseInt(document.getElementById("numberofEX").value);
+            // alert((document.getElementById("numberofMl").value).length);
+
+            if(typeofChallenge.length === 0){
+                message+='Error type';
+                setReturnValues("Please choose a type ! ",'#runner','right');
+            }
+
+            if((typeofChallenge === 'water') && ((((document.getElementById("numberofMl").value).length) === 0) || (milliliters < 2000 || milliliters > 3500))) {
                 message+="Error Water ";
-                setReturnValues("Please only enter a four digit number! ",'#numberofMl','right');
+                setReturnValues("Please enter a number between 2000 and 3500! ",'#numberofMl','right');
             }
-            if(typeofChallenge==='food' && (/^\d{4}$/.test(document.getElementById("numberofKCAL").value) === false)){
+            if(typeofChallenge==='food' && ( (((document.getElementById("numberofKCAL").value).length) === 0) || (calories<1500 || calories> 4000))){
                 message+="Error Food ";
-                setReturnValues("Please only enter a four digit number! ",'#numberofKCAL','right');
+                setReturnValues("Please enter a number between 1500 and 4000! ",'#numberofKCAL','right');
             }
-            if(typeofChallenge==='train' && (/^\d{1,2}$/.test(document.getElementById("numberofEX").value) === false)){
+            if(typeofChallenge==='train' && ( (((document.getElementById("numberofEX").value).length) === 0) || (exHours< 1 || exHours>5))){
                 message+="Error Train ";
-                setReturnValues("Please only enter a one or two digit number! ",'#numberofEX','right');
+                setReturnValues("Please enter a number between 1 and 5! ",'#numberofEX','right');
             }
             let tezina='';
             if($("#easy").is(':checked')){
@@ -132,9 +148,10 @@
                 setReturnValues("Please don't leave the field empty and don't don't enter more than 200 characters! "
                     ,'#description','right');
             }
-            if(message === '' &&(/^\d{1,3}$/.test(document.getElementById("duration").value) === false)){
+            let trajanje = document.getElementById("duration").value; 
+            if(message === '' && ( (((document.getElementById("duration").value).length) === 0) || (trajanje< 3 || trajanje>30))){
                 message+="Error Description ";
-                setReturnValues("Please enter a one or three digit number! ",'#duration','right');
+                setReturnValues("Please enter a number between 3 and 30! ",'#duration','right');
             }
 
             let numofMl = parseInt(document.getElementById("numberofMl").value);
@@ -146,7 +163,6 @@
             let poeni = document.getElementById("numPoints").value;
             let ime = document.getElementById("nameofChallenge").value;
             let opis = document.getElementById("description").value;
-            let trajanje = document.getElementById("duration").value;
 
             if(message===''){
                 $.post("<?php echo base_url('Trainer/Newchallengecontroller/createChallenge') ?>",
@@ -187,6 +203,7 @@
                         );
                     }
                 );
+                setReturnValues("You've made a new challenge :)! ",'#buttonCommit','right');
             }
 
         }
@@ -204,7 +221,7 @@
 
                     for(let i=0;i<data.length;i++){
                         let current_item=data[i].split(";");
-                        let exIndex=current_item[0]; //ako ti treba njegov id u tabeli
+                        let exIndex=current_item[0];
                         let exType=current_item[1];
                         types.push(exType);
                     }
@@ -242,7 +259,8 @@
             $('#description').popover('disable');
             $('#duration').popover('disable');
             $('#radioDugme').popover('disable');
-
+            $('#runner').popover('disable');
+            $('#buttonCommit').popover('disable');
 
             $('#numberofMl').popover('hide');
             $('#numberofKCAL').popover('hide');
@@ -252,6 +270,8 @@
             $('#description').popover('hide');
             $('#duration').popover('hide');
             $('#radioDugme').popover('hide');
+            $('#runner').popover('hide');
+            $('#buttonCommit').popover('hide');
         }
     </script>
 
@@ -275,7 +295,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="Currentchallengescontroller">MY CHALLENGES</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="Newchallengecontroller">MAKE A NEW CHALLENGE</a>
                     </li>
                     <li class="nav-item">
@@ -374,7 +394,7 @@
                 </div>
             </div>
         </div>
-        <button onclick="kliknuto()" class="commit" >Commit!</button>
+        <button id="buttonCommit" onclick="kliknuto()" class="commit" >Commit!</button>
     </div>
 
 </body>

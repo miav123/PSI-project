@@ -99,6 +99,7 @@ class Currentchallengescontroller extends BaseController {
 
     public function acceptchallenge($id)
     {
+        date_default_timezone_set("Europe/Belgrade");
         if(array_key_exists('acceptbtn', $_POST)) {
             $modelChallenge = new IzazovModel();
             $modelMyChallenges = new MojiIzazoviModel();
@@ -106,6 +107,7 @@ class Currentchallengescontroller extends BaseController {
             $modelMyChallenges->save([
                 'id_kor' => session('id'),
                 'id_izazov' => $id,
+                'datum_prijave_na_izazov' => date("Y-m-d H:i:s"),
                 'dana_uzastopno_ispunjeno' => 0,
                 'propusteno' => 0
             ]);

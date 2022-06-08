@@ -72,7 +72,7 @@
                             image =$("<img src='/assets/images/challenge/runner.png' class='challenge-image'>");
                         }
                         let divLikes = $("<div class='row text-sm-center text-md-left likes'></div>");
-                        let heartimg = $("<img src='/assets/images/heart-red.png' class='heart'>")
+                        let heartimg = $("<img src='/assets/images/heart/heart-red.png' class='heart'>")
                         let numLikes = $("<p class='mb-1 challenge-description nice-font'>"+likes+"</p>");
 
                         //DODAVANJE TEXTA NA ODGOVARAJUCA MESTA
@@ -145,7 +145,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </li>
 
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="Currentchallengescontroller">MY CHALLENGES</a>
                 </li>
                 <li class="nav-item">
