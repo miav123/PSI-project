@@ -242,6 +242,7 @@ class Dailylogcontroller extends BaseController {
          
         if(array_key_exists('acceptbtn2', $_POST)) {
            $counter = 1;
+           //provera za obrok
            $ime_obroka = $this->request->getVar("obrok");
             if($this->request->getVar('obrok') == null){
               $string =  "Niste uneli naziv obroka!";
@@ -259,17 +260,25 @@ class Dailylogcontroller extends BaseController {
            $data_obrokM = new \App\Models\ObrokModel();
            $data_obrokNamirnicaM = new \App\Models\ObrokSadrziNamirniceModel();
            $data_namirnicaM = new \App\Models\NamirnicaModel();
+           
+           //PROVERA DA LI JE UNOS DOBAR
            while(true){
                $imeNamirnice = "food".strval($counter) ;
                $kolicina = "g".strval($counter);
                $namirnica = $this->request->getVar($imeNamirnice);
                $kolicinaNamirnice = $this->request->getVar($kolicina);
-               if($kolicinaNamirnice == null){
-                   break;
+               if(($kolicinaNamirnice == null)){
+                $string =  "Uneli ste 0 g".$namirnica;
+                $data['error'] = $string;
+                echo view('templates/header-nicepage/header-dailylog.php');
+                echo view('user/dailylog/error.php',$data);
+                echo view('templates/footer/footer.php');
+                return;
                }
-               $namirnicaDB = $data_namirnicaM->where('naziv',$namirnica)->findAll();
+               
+               $namirnicaDB = $data_namirnicaM->where('naziv',$namirnica)->findAll(); 
                $counter++;
-              if($namirnicaDB == null){
+              if($namirnicaDB == null ){
                 $string =  "Uneli ste pogresan naziv namirnice ".$namirnica;
                 $data['error'] = $string;
                 echo view('templates/header-nicepage/header-dailylog.php');
@@ -278,7 +287,9 @@ class Dailylogcontroller extends BaseController {
               return;
             }
            }
-                 
+           
+           //--------------------------------------------------------------
+         $counter = 1; 
          $data_obrokM->save([
                'naziv' =>$ime_obroka
             ]);
@@ -303,7 +314,16 @@ class Dailylogcontroller extends BaseController {
                if($kolicinaNamirnice == null){
                    break;
                }
-               $namirnicaDB = $data_namirnicaM->where('naziv',$namirnica)->findAll()[0];
+               $namirnicaDB = $data_namirnicaM->where('naziv',$namirnica)->findAll();
+                if($namirnicaDB == null){
+                $string =  "Uneli ste pogresan naziv namirnice ".$namirnica;
+                $data['error'] = $string;
+                echo view('templates/header-nicepage/header-dailylog.php');
+                echo view('user/dailylog/error.php',$data);
+                echo view('templates/footer/footer.php');
+              return;
+            }
+            $namirnicaDB = $namirnicaDB[0];
                $counter++;
                $data_obrokNamirnicaM->save([
                    'id_obr'=>$id_obroka,
