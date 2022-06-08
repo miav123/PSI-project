@@ -25,10 +25,8 @@
             let username = document.getElementById("newUsername").value;
 
             //alert(username);
-            if(/^(?=.{4,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/.test(username) === false){
-                document.getElementById("usernameError").innerHTML = "Username isn't in a correct format. " +
-                    "It can contain only numbers, letters and/or periods.";
-                //alert("AAAAAAAAAAAAAAAAAAA");
+            if(/^.{1,40}$/.test(username) === false){
+                document.getElementById("usernameError").innerHTML = "Username isn't in a correct format. ";
             }
             else {
                 $.post("<?php echo base_url('Trainer/Namechange/checkUserName') ?>",
@@ -65,16 +63,14 @@
             let password = document.getElementById("newPassword").value;
             let repeatPassword = document.getElementById("repeatPassword").value;
 
-            if(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password) === false){
-                document.getElementById("passwordError").innerHTML = "Password isn't in a correct format. " +
-                    "It should contain minimum eight characters," +
-                    " at least one uppercase letter, one lowercase letter and one number.";
-                alert("LOSA SIFRA");
+            if(/^.{1,40}$/.test(password) === false){
+                document.getElementById("passwordError").innerHTML = "Password isn't in a correct format. ";
+                //alert("LOSA SIFRA");
             }
             else{
                 if(password !== repeatPassword){
                     document.getElementById("repeatpasswordError").innerHTML = "Repeated password isn't the same as the new password. ";
-                    alert("Nije Ista SIFRA");
+                    //alert("Nije Ista SIFRA");
                 }
                 else{
                     //alert("SUPER Sifra");
@@ -84,7 +80,7 @@
                         }
                         ,
                         function (vr) {
-                            alert(vr);
+                            //alert(vr);
                             document.getElementById("newPassword").value = "";
                             document.getElementById("repeatPassword").value ="";
                         }
@@ -138,7 +134,7 @@ $uri = service('uri');
                 <li class="nav-item">
                     <a class="nav-link" href="Newchallengecontroller">MAKE A NEW CHALLENGE</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="Namechange">MY ACCOUNT</a>
                 </li>
                 <li class="nav-item">
