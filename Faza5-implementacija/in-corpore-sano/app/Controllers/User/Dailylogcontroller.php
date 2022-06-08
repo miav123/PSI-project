@@ -276,7 +276,7 @@ class Dailylogcontroller extends BaseController {
                 echo view('user/dailylog/error.php',$data);
                 echo view('templates/footer/footer.php');
               return;
-           }
+            }
            }
                  
          $data_obrokM->save([
