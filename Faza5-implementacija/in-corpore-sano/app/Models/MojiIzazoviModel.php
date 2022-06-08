@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 class MojiIzazoviModel extends Model
 {
     protected $table      = 'moji_izazovi';
-    protected $allowedFields = ['id_veze', 'id_kor', 'id_izazov', 'dana_uzastopno_ispunjeno', 'propusteno'];
+    protected $allowedFields = ['id_veze', 'id_kor', 'id_izazov', 'datum_prijave_na_izazov','dana_uzastopno_ispunjeno', 'propusteno'];
     protected $primaryKey = 'id_veze';
 
 }
