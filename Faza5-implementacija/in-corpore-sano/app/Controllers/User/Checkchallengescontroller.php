@@ -7,9 +7,11 @@
 namespace App\Controllers\User;
 
 use App\Controllers\BaseController;
+use App\Models\CheckBadgesForUser;
 use App\Models\CheckChallengesForUser;
 use App\Models\GotoviIzazoviModel;
 use App\Models\IzazovModel;
+use App\Models\KorisnikBedzModel;
 use App\Models\MojiIzazoviModel;
 use App\Models\RegistrovaniKorisnikModel;
 use ReflectionException;

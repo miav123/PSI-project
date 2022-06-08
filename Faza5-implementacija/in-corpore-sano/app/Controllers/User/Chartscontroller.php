@@ -131,7 +131,7 @@ class Chartscontroller extends BaseController
 
         $data['chart_year_data'] = json_encode($year_data);
 
-        echo view('templates/header-user/header.php');
+        echo view('templates/header-user/header-nicepage.php');
         echo view('user/charts.php', $data);
         echo view('templates/footer/footer-nicepage.php');
     }
