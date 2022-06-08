@@ -109,21 +109,6 @@ class Checkchallengescontroller extends BaseController
                 }
             }
         }
-
-        /*
-         * Checking if user has earned any new badges.
-         */
-        $checkBadgesModel = new CheckBadgesForUser($db);
-        $badges = $checkBadgesModel->checkBadges($user_id);
-        $badgesUserModel = new KorisnikBedzModel();
-        foreach ($badges as $badge) {
-            if($badge != null) {
-                $badgesUserModel->insert([
-                    'id_kor' => $user_id,
-                    'id_bedz' => $badge['id_bedz']
-                ]);
-            }
-        }
     }
 
 }
