@@ -30,7 +30,7 @@
                   <br>
                   <br>
                   Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <input type="number" style="color:black; background-color: #ffffff !important;" name="time" min="0.001"> h 
+                  <input type="number" style="color:black; background-color: #ffffff !important;" name="time" min="0"> h 
                   <br>
 
                 <button type="submit" class="btn btn-danger"  name= "acceptbtn1" style="
