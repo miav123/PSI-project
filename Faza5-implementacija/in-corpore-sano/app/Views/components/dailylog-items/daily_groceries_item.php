@@ -3,7 +3,7 @@
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header" style="background-color: #d3e58a;">
-              <h4 class="modal-title kcal">Breakfast</h4>
+              <h4 class="modal-title kcal"><?=$name ?></h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body" style="background-color: #effe6d">
@@ -17,7 +17,7 @@
                 <?php echo "<tr>
                   <td>".$namirnica['ime']."</td>
                   <td>".$namirnica['kolicina']."</td>
-                  <td>200</td>
+                  <td>".$namirnica['100/kcal']."</td>
                 </tr>" ?>
                 <?php endforeach; ?>
 

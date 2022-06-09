@@ -72,6 +72,8 @@ class Dailylogcontroller extends BaseController {
         $kcalDaily -= $ukupnaPotrosnja;
         //--------------------------------------------------------------
         //
+        //
+        //
         //PRIKAZ HRANE
         $foodArray = array();
         $grooceriesArray = array();
@@ -115,7 +117,8 @@ class Dailylogcontroller extends BaseController {
                 //DODAVANJE NAMIRNICA JEDNOG OBROKA U LISTU NAMIRNICA OBROKA
                 $allGrooceriesInMeals[] =[
                     'namirniceZaObrok'=>$grooceriesInOneMeal,
-                    'idModal'=>$brojac
+                    'idModal'=>$brojac,
+                    'name'=>$dataObrokDB['naziv']
                 ];
                 
                 $grooceriesInOneMeal = null;
@@ -183,6 +186,7 @@ class Dailylogcontroller extends BaseController {
           foreach ($allGrooceriesInMeals as $proba){
               $posalji['namirnice'] = $proba['namirniceZaObrok'];
               $posalji['modal'] = $proba['idModal'];
+              $posalji['name'] = $proba['name']; 
               echo view('components/dailylog-items/daily_groceries_item.php',$posalji);
           }
           echo view('user/dailylog/dailyWater.php',$data_water);
