@@ -8,7 +8,9 @@
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <input class="add" type="button" data-toggle="modal" data-target="#myModal0" value="+Add Meal">
+        <input class="add btn btn-floating u-btn-round u-radius-50 
+                    u-btn-6 u-hover-palette-1-light-1" type="button" data-toggle="modal" 
+                    style="color: #ffffff" data-target="#myModal0" value="+Add Meal">
         <div class="modal fade" id="myModal0">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
