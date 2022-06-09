@@ -29,6 +29,7 @@
                 document.getElementById("usernameError").innerHTML = "Username isn't in a correct format. ";
             }
             else {
+                document.getElementById("usernameError").innerHTML = "";
                 $.post("<?php echo base_url('Trainer/Namechange/checkUserName') ?>",
                     {
                         'username': username
@@ -39,7 +40,7 @@
                             document.getElementById("usernameError").innerHTML = "The username you have chosen" +
                                 " is allready taken. Please choose another one :D";
                         } else {
-                            //alert("SUPER");
+                            document.getElementById("usernameError").innerHTML = "";
                             $.post("<?php echo base_url('Trainer/Namechange/addUserName') ?>",
                                 {
                                     'username': username
@@ -63,17 +64,18 @@
             let password = document.getElementById("newPassword").value;
             let repeatPassword = document.getElementById("repeatPassword").value;
 
-            if(/^.{1,40}$/.test(password) === false){
+            if(/^.{5,40}$/.test(password) === false){
                 document.getElementById("passwordError").innerHTML = "Password isn't in a correct format. ";
                 //alert("LOSA SIFRA");
             }
             else{
+                document.getElementById("passwordError").innerHTML = "";
                 if(password !== repeatPassword){
                     document.getElementById("repeatpasswordError").innerHTML = "Repeated password isn't the same as the new password. ";
                     //alert("Nije Ista SIFRA");
                 }
                 else{
-                    //alert("SUPER Sifra");
+                    document.getElementById("repeatpasswordError").innerHTML ="";
                     $.post("<?php echo base_url('Trainer/Namechange/addPassword') ?>",
                         {
                             'password': password
