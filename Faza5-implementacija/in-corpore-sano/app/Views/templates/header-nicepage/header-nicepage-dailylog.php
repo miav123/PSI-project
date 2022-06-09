@@ -92,6 +92,7 @@
          numberInput.type = "number";
          numberInput.name = "g"+brojTrenutnihPolja;
          numberInput.className = "unos1";
+         numberInput.setAttribute("min", 1);
           let pomocniSpam = document.createElement("span");
           pomocniSpam.innerHTML = "     ";
           let enter = document.createElement("br");
