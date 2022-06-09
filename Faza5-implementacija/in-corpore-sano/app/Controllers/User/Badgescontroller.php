@@ -127,7 +127,7 @@ class Badgescontroller extends BaseController{
        $data_water['waterBadges']=$waterBadges;
        
         
-        echo view('templates/header-nicepage/header-nicepage.php');
+        echo view('templates/header-nicepage/header-nicepage-badges.php');
         echo view('user/badges/trainingBadges.php', $data_training);
         echo view('user/badges/foodBadges.php',$data_food);
         echo view ('user/badges/waterBadges.php',$data_water);

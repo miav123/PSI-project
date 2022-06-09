@@ -177,7 +177,7 @@ class Dailylogcontroller extends BaseController {
        
         
         //PRIKAZ NA STRANICI
-         echo view('templates/header-nicepage/header-dailylog.php');
+         echo view('templates/header-nicepage/header-nicepage-dailylog.php');
          echo view('user/dailylog/caloriesIntake.php',$data_intake);
          echo view('user/dailylog/dailyWorkOuts.php',$data_workOut);
          echo view('user/dailylog/dailyFood.php',$data_food);
