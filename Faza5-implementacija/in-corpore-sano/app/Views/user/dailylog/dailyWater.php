@@ -14,7 +14,7 @@
       <div class=" col-lg-8 col-sm-12" style="text-align: center;">
           <form action="/user/water/" method="post">
         <input type="number" style="margin-top: 15%; background-color: #ffffff !important; text-align: center;
-          border-color: #fe6d73 !important; color: black" name="water">ml
+               border-color: #fe6d73 !important; color: black" name="water" min="1">ml
          <input value="+Add"   type="submit" name= "acceptbtn">
           </form>
       </div>

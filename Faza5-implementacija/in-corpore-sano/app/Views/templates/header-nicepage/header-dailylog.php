@@ -51,6 +51,11 @@
           let buttonOK = document.getElementById("submitButton");
           forma.removeChild(button);
           forma.removeChild(buttonOK);
+          ///pomoc pri proveri------------------------------------
+          let nevidljiviSpan = document.getElementById("numberOfFields");
+          nevidljiviSpan.setAttribute("value", number.length + 1);
+          //------------------------------------------------------
+          
           
           //brojac za polja
           let span = document.createElement("span");
@@ -78,12 +83,13 @@
               option.value = options.item(i).value;
               dataList.appendChild(option);
           }
+          lista.className = "unos";
          
           // <input type="number" style="color:black; background-color: #ffffff !important;"> g <br><br>
          let numberInput = document.createElement("input");
          numberInput.type = "number";
          numberInput.name = "g"+brojTrenutnihPolja;
- 
+         numberInput.className = "unos1";
           let pomocniSpam = document.createElement("span");
           pomocniSpam.innerHTML = "     ";
           let enter = document.createElement("br");
@@ -95,7 +101,6 @@
           pomocniSpam.innerHTML = "g";
           forma.appendChild(pomocniSpam);
           forma.appendChild(enter);
-         
          forma.appendChild(button);
          forma.appendChild(buttonOK);
       }

@@ -207,7 +207,7 @@ class Dailylogcontroller extends BaseController {
            $tipTreningaM = new \App\Models\TipTreningaModel();
            $tipTreningaDB = $tipTreningaM->where('naziv',$_POST['exercise'])->findAll();
            if($tipTreningaDB == null){
-              $string =  "Niste uneli postojeci tip treninga!";
+              $string =  "You did not enter an existing type of training!";
               $data['error'] = $string;
               echo view('templates/header-nicepage/header-dailylog.php');
               echo view('user/dailylog/error.php',$data);
@@ -216,7 +216,7 @@ class Dailylogcontroller extends BaseController {
               
            }
            if($this->request->getVar('time') == 0){
-              $string =  "Za ime svega, ko trenira 0h!";
+              $string =  "For the sake of everyone who trains 0 hours!";
               $data['error'] = $string;
               echo view('templates/header-nicepage/header-dailylog.php');
               echo view('user/dailylog/error.php',$data);
@@ -244,14 +244,20 @@ class Dailylogcontroller extends BaseController {
            $counter = 1;
            //provera za obrok
            $ime_obroka = $this->request->getVar("obrok");
+           
+           
+           //ako je nije uneto ime obroka
             if($this->request->getVar('obrok') == null){
-              $string =  "Niste uneli naziv obroka!";
+              $string =  "You did not enter a meal name!";
               $data['error'] = $string;
               echo view('templates/header-nicepage/header-dailylog.php');
               echo view('user/dailylog/error.php',$data);
               echo view('templates/footer/footer.php');
               return;
            }
+           //-------------------------------------
+           
+           
            date_default_timezone_set("Europe/Belgrade");
            $timeDate = date("Y-m-d H-i-s");
            
@@ -261,14 +267,23 @@ class Dailylogcontroller extends BaseController {
            $data_obrokNamirnicaM = new \App\Models\ObrokSadrziNamirniceModel();
            $data_namirnicaM = new \App\Models\NamirnicaModel();
            
-           //PROVERA DA LI JE UNOS DOBAR
-           while(true){
+           //broj polja za unos
+           $brojPoljaZaUnos = "numberOfFields";
+           $brojPoljaZaUnos = $this->request->getVar($brojPoljaZaUnos);
+        
+           //PROVERA DA LI JE CELOKUPAN UNOS DOBAR
+             while(true){
                $imeNamirnice = "food".strval($counter) ;
                $kolicina = "g".strval($counter);
+               //PROVERA DA LI POSTOJE POLJA
+               if($brojPoljaZaUnos<$counter){
+                   break;
+               }
+               
                $namirnica = $this->request->getVar($imeNamirnice);
                $kolicinaNamirnice = $this->request->getVar($kolicina);
                if(($kolicinaNamirnice == null)){
-                $string =  "Uneli ste 0 g".$namirnica;
+                $string =  "You entered 0g in field".$namirnica;
                 $data['error'] = $string;
                 echo view('templates/header-nicepage/header-dailylog.php');
                 echo view('user/dailylog/error.php',$data);
@@ -276,10 +291,11 @@ class Dailylogcontroller extends BaseController {
                 return;
                }
                
+               //provera da li namirnica postoji
                $namirnicaDB = $data_namirnicaM->where('naziv',$namirnica)->findAll(); 
                $counter++;
-              if($namirnicaDB == null ){
-                $string =  "Uneli ste pogresan naziv namirnice ".$namirnica;
+              if($namirnicaDB == null){
+                $string =  "You entered the wrong food name".$namirnica;
                 $data['error'] = $string;
                 echo view('templates/header-nicepage/header-dailylog.php');
                 echo view('user/dailylog/error.php',$data);
@@ -309,14 +325,17 @@ class Dailylogcontroller extends BaseController {
            while(true){
                $imeNamirnice = "food".strval($counter) ;
                $kolicina = "g".strval($counter);
-               $namirnica = $this->request->getVar($imeNamirnice);
-               $kolicinaNamirnice = $this->request->getVar($kolicina);
-               if($kolicinaNamirnice == null){
+               if($brojPoljaZaUnos<$counter){
                    break;
                }
+               $namirnica = $this->request->getVar($imeNamirnice);
+               $kolicinaNamirnice = $this->request->getVar($kolicina);
+//               if($kolicinaNamirnice == null){
+//                   break;
+//               }
                $namirnicaDB = $data_namirnicaM->where('naziv',$namirnica)->findAll();
                 if($namirnicaDB == null){
-                $string =  "Uneli ste pogresan naziv namirnice ".$namirnica;
+                $string =  " You entered the wrong food name ".$namirnica;
                 $data['error'] = $string;
                 echo view('templates/header-nicepage/header-dailylog.php');
                 echo view('user/dailylog/error.php',$data);

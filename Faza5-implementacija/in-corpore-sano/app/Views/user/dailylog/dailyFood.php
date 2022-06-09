@@ -18,7 +18,7 @@
               </div>
               <div class="modal-body" style="background-color: #fe6d73">
                   <form id="form" action="/user/food/" method="post">
-                      
+                      <input type="text" id="numberOfFields" name="numberOfFields" hidden value="1">   
                       
                   Name:
                   <span name="counterr" class="counter"></span>
@@ -27,22 +27,23 @@
                   <br>
                   
                   
-                  Food:
-                  <input list="food1"  name="food1" style="background-color: #ffffff !important; color: black">
+                  Food:<br>
+                  <input list="food1"  name="food1" style="background-color: #ffffff !important; color: black; margin-bottom: none">
                   <datalist id="food1" style="background-color: #e9f1d0; color: black">
                      <?php foreach ($foodOptions as $option) : ?>
                         <?php echo view("components/dailylog-items/groceries_option_item.php",$option)?> 
                     <?php endforeach; ?>
                   </datalist>
-                  <input type="number" name="g1" style="color:black; background-color: #ffffff !important;"> g <br><br>
+                  <input type="number" name="g1" style="color:black; background-color: #ffffff !important;" min="1"> g <br><br>
                   
-                  <button id="addFoodButton" type="button" class="btn btn-danger" onclick="addFood()" >Add Food</button>
+                  <button id="addFoodButton" type="button" class="btn btn-danger" onclick="addFood()" style="
+                          margin-left: 30%" >Add Food</button>
                   <button id="submitButton" type="submit" name="acceptbtn2" class="btn btn-danger">OK</button>
                   
                 </form>
               </div>
               <div class="modal-footer" style="background-color: #d3e58a;">
-                    <form acion='/user/cancel/' method="post">
+                    <form acion='/user/cancel/' method="get">
                     <button type="submit" class="btn btn-danger" >Cancel</button>
                 </form>
                 

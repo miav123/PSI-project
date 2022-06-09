@@ -852,7 +852,7 @@ h4{
 
 .colorFood{
     background-color:#d3e58a !important ;
-    border: #d3e58a;
+    border: #d3e58a solid 2px !important;
 }
 
 table{
@@ -885,3 +885,16 @@ tr{
     font-style: italic;
 }
 
+.unos{
+    background-color: #FFFFFF !important;
+    margin-bottom: 2px;
+    color: black;
+    
+}
+.unos1{
+    background-color: #FFFFFF !important;
+    margin-bottom: 2px;
+    margin-left: 5px;
+    color: black;
+    
+}

@@ -1,7 +1,7 @@
 <!--        Teodora Glisic 19/0572-->
 <div class="row">
       <div class="col-sm-12">
-        <h3 class="hh3">Training Log</h3>
+          <h3 class="hh3">Training Log</h3>
         <hr>
       </div>
     </div>
@@ -16,15 +16,11 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
               </div>
               <div class="modal-body" style="background-color: #fe6d73">
-                  <form  action="/user/training/" method="post">
+                  <form  action="/user/training/" method="post" >
                   Excercise:
                   <input list="browsers"  style="color: black; background-color: #ffffff !important;"
                          name="exercise" required="true" maxlength="50">
                   <datalist id='browsers' style="background-color: #e9f1d0;">
-<!--                <option value="Weight Lifting: general">
-                    <option value="Swimming">
-                    <option value="Yoga">
-                    <option value="...">-->
                     <?php foreach ($trainingOptions as $option) : ?>
                         <?php echo view("components/dailylog-items/training_option.php",$option)?> 
                     <?php endforeach; ?>
@@ -32,10 +28,11 @@
                   <br>
                   <br>
                   Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <input type="text" style="color:black; background-color: #ffffff !important;" name="time">
-<!--              </div>
-              <div class="modal-footer" style="background-color: #d3e58a;">-->
-                <button type="submit" class="btn btn-danger"  name= "acceptbtn1">OK</button>
+                  <input type="number" style="color:black; background-color: #ffffff !important;" name="time" min="0.001"> h 
+                  <br>
+
+                <button type="submit" class="btn btn-danger"  name= "acceptbtn1" style="
+                        margin-left: 70%">OK</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal" >Cancel</button>
                    
                   </form>
