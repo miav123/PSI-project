@@ -11,7 +11,7 @@
             <div class="row">
               <div class="col-sm-12">
                   <h4 class="kcal " style="font-family: inherit; font-weight: 700"><?= $name ?></h4>
-                Duration time : <?= $time ?> h
+                Duration time : <?= $time ?> min
               </div>
             </div>
             <div class="row">

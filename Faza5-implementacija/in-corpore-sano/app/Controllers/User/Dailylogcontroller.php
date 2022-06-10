@@ -60,7 +60,7 @@ class Dailylogcontroller extends BaseController {
                     'picturePath'=>"/assets/images/dailylog/training/".$pictureP.".jpg",
                     'name' => $tipTreningaModelDB['naziv'],
                     'time' =>$work['vreme_trajanja'],
-                    'kcal' => ($work['vreme_trajanja']*$potrosnjaZaPolaSata)*2
+                    'kcal' => ($work['vreme_trajanja']*$potrosnjaZaPolaSata)/30
                 ];
             }
         }
@@ -219,7 +219,7 @@ class Dailylogcontroller extends BaseController {
               return;
               
            }
-           if($this->request->getVar('time') == 0){
+           if($this->request->getVar('time') <= 0){
               $string =  "For the sake of everyone who trains 0 hours!";
               $data['error'] = $string;
               echo view('templates/header-nicepage/header-dailylog.php');
