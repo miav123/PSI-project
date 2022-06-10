@@ -368,11 +368,14 @@ class Dailylogcontroller extends BaseController {
         if(array_key_exists('acceptbtn', $_POST)) {
            $unosVodeM = new \App\Models\UnosVodeModel();
            $timeDate = date("Y-m-d H-i-s");
-           $unosVodeM->save([
+           $kolicina = $this->request->getVar('water');
+           if($kolicina != null){
+               $unosVodeM->save([
               'id_kor'=>session("id"),
                'datum'=>$timeDate,
                'kolicina'=>$this->request->getVar('water')
            ]);
+           }
         }
         return redirect()->to('user/daily-log');
     }
