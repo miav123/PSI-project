@@ -38,7 +38,7 @@ class Namechange extends BaseController
     public function addUserName()
     {
 
-        $id = $this->session->get('trenerId');
+        $id = $this->session->get('id');
         $username = $this->request->getVar('username');
         if($username != ""){
             $trainer = new KorisnikModel();
@@ -55,7 +55,7 @@ class Namechange extends BaseController
      */
 
     public function addPassword(){
-        $id = $this->session->get('trenerId');
+        $id = $this->session->get('id');
         $password = $this->request->getVar('password');
         $trainer = new KorisnikModel();
         $trainer->save([
@@ -73,7 +73,7 @@ class Namechange extends BaseController
 
     public function checkUserName()
     {
-        $id = $this->session->get('trenerId');
+        $id = $this->session->get('id');
         $username = $this->request->getVar('username');
 
         $modelUser = new KorisnikModel();
@@ -96,7 +96,7 @@ class Namechange extends BaseController
      */
 
     public function UsernamefromDB(){
-      $id = $this->session->get('trenerId');
+      $id = $this->session->get('id');
         $modelUser = new KorisnikModel();
         $trainers = $modelUser->findUserId($id);
         $trainer = $trainers[0];
