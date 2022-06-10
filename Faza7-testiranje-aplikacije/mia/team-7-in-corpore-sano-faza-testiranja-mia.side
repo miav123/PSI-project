@@ -147,6 +147,13 @@
       "target": "linkText=LOG OUT",
       "targets": [],
       "value": ""
+    }, {
+      "id": "be7ea47d-e401-4801-bcf2-baf3c06129e7",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "1794a55a-d4c5-478d-ac61-4221c79f35a5",
@@ -464,6 +471,13 @@
       "target": "linkText=LOG OUT",
       "targets": [],
       "value": ""
+    }, {
+      "id": "dc82368c-513b-492a-87e8-980163147e31",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "c89ff8e0-a54f-419c-9b14-49c0fd316169",
@@ -711,6 +725,13 @@
       "target": "linkText=LOG OUT",
       "targets": [],
       "value": ""
+    }, {
+      "id": "2791a9f1-50b2-48de-bcdd-0bae9fb0f546",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "21c601a6-70e1-48c2-a0c5-7815afe73efd",
@@ -956,6 +977,13 @@
       "comment": "",
       "command": "click",
       "target": "linkText=LOG OUT",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ed842d6f-7af6-4081-bf98-6f7cd2815ddb",
+      "comment": "",
+      "command": "close",
+      "target": "",
       "targets": [],
       "value": ""
     }]
@@ -1284,6 +1312,13 @@
       "target": "linkText=LOG OUT",
       "targets": [],
       "value": ""
+    }, {
+      "id": "5b541cf2-2d8e-4f87-ad9f-4019a48b21f6",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "95ae96d7-f5a7-4c9a-8a9e-b9fd24f12c02",
@@ -1560,6 +1595,13 @@
       "target": "linkText=LOG OUT",
       "targets": [],
       "value": ""
+    }, {
+      "id": "a369e61a-51f3-4fcc-8067-97b386c77f89",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "a2e41404-f2e4-42b6-8e03-1eca25d578e5",
@@ -1833,6 +1875,13 @@
       "comment": "",
       "command": "click",
       "target": "linkText=LOG OUT",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6df25240-2f98-45b4-81df-aa68ffce939e",
+      "comment": "",
+      "command": "close",
+      "target": "",
       "targets": [],
       "value": ""
     }]
@@ -2133,6 +2182,13 @@
       "comment": "",
       "command": "click",
       "target": "linkText=LOG OUT",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f3f9e681-c37d-4713-87d8-5a6e3f570e65",
+      "comment": "",
+      "command": "close",
+      "target": "",
       "targets": [],
       "value": ""
     }]
@@ -2590,6 +2646,13 @@
         ["xpath=//a[contains(.,'LOG OUT')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "90d8ae23-981c-4a23-af57-55bef120177d",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "ff98946c-6c2d-4a3a-8042-a54e55fa5d9d",
@@ -2898,6 +2961,13 @@
         ["xpath=//li[5]/a", "xpath:position"],
         ["xpath=//a[contains(.,'LOG OUT')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "3e384000-fcd3-40e0-ab45-beadee01307c",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -3293,6 +3363,13 @@
         ["xpath=//a[contains(.,'LOG OUT')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "23846725-6ad5-4b7f-b247-ee600b026653",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "45a5cb1d-349c-4019-a6a0-0901102df49a",
@@ -3437,6 +3514,13 @@
         ["xpath=//li[5]/a", "xpath:position"],
         ["xpath=//a[contains(.,'LOG OUT')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "417936f4-a03e-4472-8669-6282b886d894",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -3610,6 +3694,13 @@
         ["xpath=//a[contains(.,'LOG OUT')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "21815856-46fb-4198-bbf5-2c5f23cfd3f0",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "8c3bee4c-6a28-40c6-b03e-d08a85ae1622",
@@ -3754,26 +3845,33 @@
         ["xpath=//a[contains(.,'LOG OUT')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "17a3731e-6849-4857-b4f4-501d6b4a2ac0",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "3550c885-dbc3-4f6b-bad2-6c8827d845cc",
     "name": "TEST 15 - Neuspesna promena lozinke, lozinka je manja od 5 karaktera",
     "commands": [{
-      "id": "e2e055cc-a7fa-4d58-b89f-8d4956e2d9c1",
+      "id": "e14adb75-04fc-49f6-aaa3-d5a5204f2fb9",
       "comment": "",
       "command": "open",
       "target": "/",
       "targets": [],
       "value": ""
     }, {
-      "id": "692f67ac-9b6e-4aca-b4aa-5232b459678d",
+      "id": "9fab90c2-baa9-4b55-8c68-d7a075de6ff6",
       "comment": "",
       "command": "setWindowSize",
       "target": "1376x744",
       "targets": [],
       "value": ""
     }, {
-      "id": "7fd4cfe8-f59c-4fc5-9e82-07ebb31c7288",
+      "id": "c653f5d7-d409-426f-991e-c8eec8249790",
       "comment": "",
       "command": "click",
       "target": "id=usernameLogIn",
@@ -3787,7 +3885,7 @@
       ],
       "value": ""
     }, {
-      "id": "9847956b-c08a-4eef-87ec-8a705bb0fe07",
+      "id": "51e205fb-67b2-490f-a08c-4e136ae7dcf0",
       "comment": "",
       "command": "type",
       "target": "id=usernameLogIn",
@@ -3801,7 +3899,7 @@
       ],
       "value": "kakashi"
     }, {
-      "id": "5be22429-0cb0-4dc4-bc86-06475383cd30",
+      "id": "0f353149-152a-4c46-bf02-10c3a5d26211",
       "comment": "",
       "command": "click",
       "target": "id=passwordLogIn",
@@ -3815,7 +3913,7 @@
       ],
       "value": ""
     }, {
-      "id": "b4390038-0e53-4cd1-902a-7e6b4db49bb3",
+      "id": "211e239e-e772-41d2-b44b-d8184baef22f",
       "comment": "",
       "command": "type",
       "target": "id=passwordLogIn",
@@ -3829,7 +3927,7 @@
       ],
       "value": "sifra123"
     }, {
-      "id": "0b7059c3-ce04-46e5-b27a-66c2c44adf5a",
+      "id": "123464dc-0183-454b-adc1-0eca622f4c31",
       "comment": "",
       "command": "click",
       "target": "id=buttonLogIn",
@@ -3844,7 +3942,7 @@
       ],
       "value": ""
     }, {
-      "id": "fd1b0268-7694-412f-b200-b9f6f37525ed",
+      "id": "88b10696-99f0-4fec-8829-fc3ac09a3cb8",
       "comment": "",
       "command": "click",
       "target": "linkText=MY ACCOUNT",
@@ -3859,7 +3957,7 @@
       ],
       "value": ""
     }, {
-      "id": "9769cf7a-df3e-4ebe-b190-56b5ab481ca2",
+      "id": "d9658b6b-e711-4576-9801-9e3172506d06",
       "comment": "",
       "command": "click",
       "target": "id=newPassword",
@@ -3872,7 +3970,7 @@
       ],
       "value": ""
     }, {
-      "id": "5099187e-8fc8-41ea-8e25-c4d61054d8f5",
+      "id": "e9ace289-bc99-4788-8bc6-7d169a742da2",
       "comment": "",
       "command": "type",
       "target": "id=newPassword",
@@ -3883,9 +3981,9 @@
         ["xpath=//table[@id='tabela']/tbody/tr[2]/td/input", "xpath:idRelative"],
         ["xpath=//tr[2]/td/input", "xpath:position"]
       ],
-      "value": "sifr"
+      "value": "sif"
     }, {
-      "id": "2c186b0c-b1de-4e27-8ae6-0242687c16ca",
+      "id": "5a3922b4-a17f-4512-a4ea-d1f315a2b9ed",
       "comment": "",
       "command": "click",
       "target": "id=repeatPassword",
@@ -3898,7 +3996,7 @@
       ],
       "value": ""
     }, {
-      "id": "aa31395b-5423-4ad1-a063-3bcf284b65af",
+      "id": "c920eec8-ca20-4fa0-aaa1-0e39eac3628f",
       "comment": "",
       "command": "type",
       "target": "id=repeatPassword",
@@ -3909,9 +4007,9 @@
         ["xpath=//table[@id='tabela']/tbody/tr[3]/td/input", "xpath:idRelative"],
         ["xpath=//tr[3]/td/input", "xpath:position"]
       ],
-      "value": "sifr"
+      "value": "sif"
     }, {
-      "id": "113232c1-9b54-4912-87fd-9e4ff094b666",
+      "id": "1c04a15f-d234-4be0-9474-a6694dd477c8",
       "comment": "",
       "command": "click",
       "target": "css=button:nth-child(7)",
@@ -3923,7 +4021,20 @@
       ],
       "value": ""
     }, {
-      "id": "262f59fc-74bf-4925-af86-a40ffdb901a5",
+      "id": "f0d36a42-6580-47be-9949-f14ca53f6c51",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=passwordError",
+      "targets": [
+        ["id=passwordError", "id"],
+        ["css=#passwordError", "css:finder"],
+        ["xpath=//span[@id='passwordError']", "xpath:attributes"],
+        ["xpath=//table[@id='tabela']/tbody/tr[2]/td/span", "xpath:idRelative"],
+        ["xpath=//tr[2]/td/span", "xpath:position"]
+      ],
+      "value": "Password isn't in a correct format."
+    }, {
+      "id": "a71d4f7f-f729-4474-9bcc-972e7abdbae7",
       "comment": "",
       "command": "click",
       "target": "linkText=LOG OUT",
@@ -3937,11 +4048,217 @@
         ["xpath=//a[contains(.,'LOG OUT')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "7b9a7117-6f7e-406a-9b84-14be14ebe667",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "250d3ae2-950d-4bc1-9b1d-f843477aa949",
     "name": "TEST 16 - Neuspesna promena lozinke, lozinka je duza od 40 karaktera",
-    "commands": []
+    "commands": [{
+      "id": "75c15b0f-3de9-46e2-bb6e-324b9f00fcea",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "46f58e64-dbad-4541-bf02-79ff8d2b6afb",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1376x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0ad0a742-53b7-43b3-a088-c73f149fef55",
+      "comment": "",
+      "command": "click",
+      "target": "id=usernameLogIn",
+      "targets": [
+        ["id=usernameLogIn", "id"],
+        ["name=username", "name"],
+        ["css=#usernameLogIn", "css:finder"],
+        ["xpath=//input[@id='usernameLogIn']", "xpath:attributes"],
+        ["xpath=//form[@id='loginform']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9230291d-62d5-47d7-88b1-dc5d891b9ffc",
+      "comment": "",
+      "command": "type",
+      "target": "id=usernameLogIn",
+      "targets": [
+        ["id=usernameLogIn", "id"],
+        ["name=username", "name"],
+        ["css=#usernameLogIn", "css:finder"],
+        ["xpath=//input[@id='usernameLogIn']", "xpath:attributes"],
+        ["xpath=//form[@id='loginform']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "kakashi"
+    }, {
+      "id": "03b13ae4-7c19-4b18-963a-2b3731095c20",
+      "comment": "",
+      "command": "click",
+      "target": "id=passwordLogIn",
+      "targets": [
+        ["id=passwordLogIn", "id"],
+        ["name=password", "name"],
+        ["css=#passwordLogIn", "css:finder"],
+        ["xpath=//input[@id='passwordLogIn']", "xpath:attributes"],
+        ["xpath=//form[@id='loginform']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "18b48003-6a72-4140-bde0-a9aaa1d7e5c9",
+      "comment": "",
+      "command": "type",
+      "target": "id=passwordLogIn",
+      "targets": [
+        ["id=passwordLogIn", "id"],
+        ["name=password", "name"],
+        ["css=#passwordLogIn", "css:finder"],
+        ["xpath=//input[@id='passwordLogIn']", "xpath:attributes"],
+        ["xpath=//form[@id='loginform']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "sifra123"
+    }, {
+      "id": "fdea3cac-b9cc-4d17-a931-cb9b61ae10e8",
+      "comment": "",
+      "command": "click",
+      "target": "id=buttonLogIn",
+      "targets": [
+        ["id=buttonLogIn", "id"],
+        ["name=buttonLogIn", "name"],
+        ["css=#buttonLogIn", "css:finder"],
+        ["xpath=//button[@id='buttonLogIn']", "xpath:attributes"],
+        ["xpath=//form[@id='loginform']/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'LogIn')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "037d4e3e-a61b-49b6-81a3-175a76ad6a07",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=MY ACCOUNT",
+      "targets": [
+        ["linkText=MY ACCOUNT", "linkText"],
+        ["css=.nav-item:nth-child(4) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'MY ACCOUNT')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNav']/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'Namechange')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'MY ACCOUNT')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5168c1bd-b4fa-430f-a641-2e1a994799eb",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPassword",
+      "targets": [
+        ["id=newPassword", "id"],
+        ["css=#newPassword", "css:finder"],
+        ["xpath=//input[@id='newPassword']", "xpath:attributes"],
+        ["xpath=//table[@id='tabela']/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "60459d77-c212-41af-aad8-3caaf10b0155",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPassword",
+      "targets": [
+        ["id=newPassword", "id"],
+        ["css=#newPassword", "css:finder"],
+        ["xpath=//input[@id='newPassword']", "xpath:attributes"],
+        ["xpath=//table[@id='tabela']/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }, {
+      "id": "3e221c9a-69f9-42b6-b075-ca5547ad54a4",
+      "comment": "",
+      "command": "click",
+      "target": "id=repeatPassword",
+      "targets": [
+        ["id=repeatPassword", "id"],
+        ["css=#repeatPassword", "css:finder"],
+        ["xpath=//input[@id='repeatPassword']", "xpath:attributes"],
+        ["xpath=//table[@id='tabela']/tbody/tr[3]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "526ef6a2-d523-4489-8097-e29fcac31094",
+      "comment": "",
+      "command": "type",
+      "target": "id=repeatPassword",
+      "targets": [
+        ["id=repeatPassword", "id"],
+        ["css=#repeatPassword", "css:finder"],
+        ["xpath=//input[@id='repeatPassword']", "xpath:attributes"],
+        ["xpath=//table[@id='tabela']/tbody/tr[3]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/input", "xpath:position"]
+      ],
+      "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }, {
+      "id": "3d297f78-fc0d-4ae1-bedd-9eb6098251bc",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(7)",
+      "targets": [
+        ["css=button:nth-child(7)", "css:finder"],
+        ["xpath=//button[@onclick='commitChangestoPassword()']", "xpath:attributes"],
+        ["xpath=//table[@id='tabela']/tbody/tr[3]/td/button", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4eaf8e96-8790-4776-806c-6b7fefd0f021",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=passwordError",
+      "targets": [
+        ["id=passwordError", "id"],
+        ["css=#passwordError", "css:finder"],
+        ["xpath=//span[@id='passwordError']", "xpath:attributes"],
+        ["xpath=//table[@id='tabela']/tbody/tr[2]/td/span", "xpath:idRelative"],
+        ["xpath=//tr[2]/td/span", "xpath:position"]
+      ],
+      "value": "Password isn't in a correct format."
+    }, {
+      "id": "16629f25-95dd-4cf9-ab80-40726289e62c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=LOG OUT",
+      "targets": [
+        ["linkText=LOG OUT", "linkText"],
+        ["css=.nav-item:nth-child(5) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'LOG OUT')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNav']/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/logout')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'LOG OUT')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9471edf1-56b9-46d0-bfa1-e7d8f442a268",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
   }, {
     "id": "9765c5d5-701f-4274-8c46-0cd3b65bf878",
     "name": "TEST 14 - Neuspesna promena korisnckog imena, korisnicko ime ima vise od 40 karaktera",
@@ -4112,6 +4429,13 @@
         ["xpath=//a[contains(.,'LOG OUT')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "994662d6-f407-405b-b5a8-ff3513ea4e45",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "1fbb0f66-d289-4672-8a40-cec7627e9b76",
@@ -4281,6 +4605,13 @@
         ["xpath=//li[5]/a", "xpath:position"],
         ["xpath=//a[contains(.,'LOG OUT')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "40c3259e-e49d-4733-b7b4-24a2f24e1b41",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -4456,6 +4787,13 @@
         ["xpath=//a[contains(.,'LOG OUT')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "d97ec2bd-fe7a-482c-9bca-5fc4bcfd8741",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "4d39afaf-6c59-4ea4-a6a3-01a017c9ef87",
@@ -4624,6 +4962,13 @@
         ["xpath=//li[5]/a", "xpath:position"],
         ["xpath=//a[contains(.,'LOG OUT')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "db8a16ad-563d-47d0-bdc3-8db3bee59fb9",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
       "value": ""
     }]
   }],

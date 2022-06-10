@@ -61,7 +61,13 @@ class Checkchallengescontroller extends BaseController
             $flag_missed = false;
             $day_counter = 0;
 
+            date_default_timezone_set("Europe/Belgrade");
+
             foreach ($data as $record) {
+
+                if($record['date'] >= date("Y-m-d")) {
+                    break;
+                }
 
                 $index = $record['result'] / $record['required'];
                 /*
@@ -81,7 +87,7 @@ class Checkchallengescontroller extends BaseController
 
                 $myChallenge['propusteno'] = 1;
                 $myChallengesModel->save($myChallenge);
-                // $myChallengesModel->delete($myChallenge);
+                $myChallengesModel->delete($myChallenge);
 
             } else {
 
@@ -94,7 +100,7 @@ class Checkchallengescontroller extends BaseController
                     $myChallengesModel->delete($myChallenge);
 
                     // insert into done challenges
-                    $doneChallengesModel->save([
+                    $doneChallengesModel->insert([
 
                         'id_kor' => $myChallenge['id_kor'],
                         'id_izazov' => $myChallenge['id_izazov'],
