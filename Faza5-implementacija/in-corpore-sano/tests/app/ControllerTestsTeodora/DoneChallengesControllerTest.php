@@ -45,7 +45,7 @@ class DoneChallengesControllerTest extends CIUnitTestCase
         $_SESSION['isLoggedIn'] = true;
         $_SESSION['role'] = 'user';
         
-        $result = $this->withURI('http://localhost:8080/user/current-challenges')
+        $result = $this->withURI('http://localhost:8080/user/done-challenges')
             ->controller(\App\Controllers\User\Donechallengescontroller::class)
             ->execute('likechallenge',1);
 

@@ -33,7 +33,7 @@ class MyChallengesControllerTest extends CIUnitTestCase
         
         $result = $this->withURI('http://localhost:8080/user/my-challenges')
             ->controller(\App\Controllers\User\Mychallengescontroller::class)
-            ->execute('doneChallenges');
+            ->execute('mychallenges');
 
         $this->assertTrue($result->isOK());
         
@@ -46,8 +46,8 @@ class MyChallengesControllerTest extends CIUnitTestCase
         $_SESSION['role'] = 'user';
         
         $result = $this->withURI('http://localhost:8080/user/my-challenges')
-            ->controller(\App\Controllers\User\Mynechallengescontroller::class)
-            ->execute('likechallenge',1);
+            ->controller(\App\Controllers\User\Mychallengescontroller::class)
+            ->execute('leavechallenge',1);
 
         $this->assertTrue($result->isOK());
         
