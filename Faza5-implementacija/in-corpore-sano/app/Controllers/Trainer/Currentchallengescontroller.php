@@ -29,7 +29,7 @@ class Currentchallengescontroller extends \App\Controllers\BaseController
 
     public function addChallenge(){
         //echo("FUNKCIJA KONTROLER");
-        $id = $this->session->get('trenerId');
+        $id = $this->session->get('id');
         $challenges =array();
 
         $modelChallenge = new IzazovModel();

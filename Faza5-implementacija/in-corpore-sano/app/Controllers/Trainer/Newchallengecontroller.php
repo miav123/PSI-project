@@ -32,7 +32,7 @@ class Newchallengecontroller extends \App\Controllers\BaseController
 var $id_Challenge = 0;
     public function createChallenge(){
 
-        $id = $this->session->get('trenerId');
+        $id = $this->session->get('id');
         $type = $this->request->getVar('type');
         $name = $this->request->getVar('name');
         $description = $this->request->getVar('description');
