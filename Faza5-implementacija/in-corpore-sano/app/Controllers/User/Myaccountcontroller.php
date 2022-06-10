@@ -225,7 +225,7 @@ class Myaccountcontroller extends BaseController {
 
             ];
 
-            if (! $this->validate($rules, errorM)) {
+            if (! $this->validate($rules, $errorM)) {
                 $data['validation'] = $this->validator;
                 $regusers = Myaccountcontroller::findRU();
                 $data['regusers'] = $regusers;
