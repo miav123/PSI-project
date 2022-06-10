@@ -51,7 +51,7 @@ class CheckChallengesForUser {
                                             SELECT `izazov`.`trajanje_u_danima`
                                             FROM `izazov`, `moji_izazovi`
                                             WHERE `moji_izazovi`.`id_kor` = {$user_id} AND `izazov`.`id_izazov` = {$challenge_id} AND `izazov`.`id_izazov` = `moji_izazovi`.`id_izazov`
-                                        ) AND date < DATE_SUB(DATE(NOW()), INTERVAL 1 DAY)
+                                        )
                                     )
                                 
                                     SELECT id_day, date, COALESCE((
@@ -89,7 +89,7 @@ class CheckChallengesForUser {
                                             SELECT `izazov`.`trajanje_u_danima`
                                             FROM `izazov`, `moji_izazovi`
                                             WHERE `moji_izazovi`.`id_kor` = {$user_id} AND `izazov`.`id_izazov` = {$challenge_id} AND `izazov`.`id_izazov` = `moji_izazovi`.`id_izazov`
-                                        ) AND date < DATE_SUB(DATE(NOW()), INTERVAL 1 DAY)
+                                        )
                                     )
                                     
                                     SELECT id_day, date, COALESCE((
@@ -127,7 +127,7 @@ class CheckChallengesForUser {
                                             SELECT `izazov`.`trajanje_u_danima`
                                             FROM `izazov`, `moji_izazovi`
                                             WHERE `moji_izazovi`.`id_kor` = {$user_id} AND `izazov`.`id_izazov` = {$challenge_id} AND `izazov`.`id_izazov` = `moji_izazovi`.`id_izazov`
-                                        ) AND date < DATE_SUB(DATE(NOW()), INTERVAL 1 DAY)
+                                        )
                                     )
                                 
                                     SELECT id_day, date, id_type, COALESCE((
