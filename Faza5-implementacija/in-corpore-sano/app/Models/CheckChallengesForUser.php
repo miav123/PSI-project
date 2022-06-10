@@ -131,7 +131,7 @@ class CheckChallengesForUser {
                                     )
                                 
                                     SELECT id_day, date, id_type, COALESCE((
-                                            SELECT SUM(vreme_trajanja)
+                                            SELECT SUM(vreme_trajanja)/60
                                             FROM `unos_treninga`
                                             WHERE id_kor = {$user_id} AND DATE(datum) = date AND id_tip = id_type
                                             GROUP BY DATE(datum)

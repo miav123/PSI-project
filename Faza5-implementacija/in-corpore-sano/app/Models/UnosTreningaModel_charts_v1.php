@@ -44,7 +44,7 @@ class UnosTreningaModel_charts_v1 {
                                     )
                                     
                                     SELECT id_day AS day_of_week, COALESCE((
-                                        SELECT SUM(vreme_trajanja * kcal_za_pola_sata_tren * 2) AS result
+                                        SELECT SUM(vreme_trajanja * kcal_za_pola_sata_tren / 30) AS result
                                         FROM `unos_treninga`, `tip_treninga`
                                         WHERE id_kor = {$user_id} AND YEARWEEK(DATE(datum), 1) = YEARWEEK(DATE(NOW()), 1) AND DAYOFWEEK(DATE(datum)) = id_day AND `unos_treninga`.id_tip = `tip_treninga`.`id_tip`
                                         GROUP BY DATE(datum)
