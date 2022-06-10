@@ -55,7 +55,7 @@ class Dailylogcontroller extends BaseController {
                 $pictureP = $work['id_tip']%10;
                 $tipTreningaModelDB = $typeTreningModel->where('id_tip',$work['id_tip'])->findAll()[0];
                 $potrosnjaZaPolaSata = $tipTreningaModelDB['kcal_za_pola_sata_tren'];
-                $ukupnaPotrosnja += ($work['vreme_trajanja']*$potrosnjaZaPolaSata)*2;
+                $ukupnaPotrosnja += ($work['vreme_trajanja']*$potrosnjaZaPolaSata)/30;
                 $workArray[] = [
                     'picturePath'=>"/assets/images/dailylog/training/".$pictureP.".jpg",
                     'name' => $tipTreningaModelDB['naziv'],
