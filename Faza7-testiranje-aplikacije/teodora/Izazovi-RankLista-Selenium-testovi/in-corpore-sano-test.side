@@ -289,21 +289,21 @@
     "id": "eaf1b6e7-4a94-4d2e-8a0a-e4d89417360c",
     "name": "TEST-03-korisnik-se-uspesno-prijavljuje-na-izazov-hrana",
     "commands": [{
-      "id": "318097d3-7023-4cfc-9ad3-c8bb89baf7ab",
+      "id": "22f01683-ae7c-4a16-900d-e8a0a717514b",
       "comment": "",
       "command": "open",
       "target": "http://localhost:8080/",
       "targets": [],
       "value": ""
     }, {
-      "id": "43908b98-63ee-4307-8b6d-98b7c4b3808c",
+      "id": "1e04444a-9618-42ff-b223-c30f362e9fcc",
       "comment": "",
       "command": "setWindowSize",
       "target": "1936x1056",
       "targets": [],
       "value": ""
     }, {
-      "id": "ac8eac0f-ea0d-47eb-b743-fb9661fd98f0",
+      "id": "09472331-9877-4343-8063-3f0362334b98",
       "comment": "",
       "command": "click",
       "target": "id=usernameLogIn",
@@ -317,7 +317,7 @@
       ],
       "value": ""
     }, {
-      "id": "b8f7d1f5-2c77-45d8-a30a-4ac550cdee35",
+      "id": "b5de3dfc-ea05-4bad-9e4e-6f2d3076668f",
       "comment": "",
       "command": "type",
       "target": "id=usernameLogIn",
@@ -329,9 +329,9 @@
         ["xpath=//form[@id='loginform']/div/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "sakura"
+      "value": "naruto"
     }, {
-      "id": "8c4d40d9-2347-498b-b7c5-e6a252dd38c3",
+      "id": "f74e3735-94b9-489f-aeee-80ddc836dbb9",
       "comment": "",
       "command": "click",
       "target": "id=passwordLogIn",
@@ -345,7 +345,7 @@
       ],
       "value": ""
     }, {
-      "id": "d8db6698-ca56-45b4-999a-52cc638864b6",
+      "id": "33b3a599-67e9-4df9-a1b2-ed604fa9bc95",
       "comment": "",
       "command": "type",
       "target": "id=passwordLogIn",
@@ -359,7 +359,7 @@
       ],
       "value": "sifra123"
     }, {
-      "id": "589c1dc1-1385-46e3-8788-ba85923c65e7",
+      "id": "67212e73-ddd3-4338-9958-f2a4def5910d",
       "comment": "",
       "command": "click",
       "target": "id=buttonLogIn",
@@ -374,67 +374,35 @@
       ],
       "value": ""
     }, {
-      "id": "83541049-f317-4f8d-9d32-9a05c73c0510",
+      "id": "9fa56897-1ed8-43ef-b654-dd5a06084027",
       "comment": "",
       "command": "click",
-      "target": "linkText=CHALLENGES",
+      "target": "css=.u-nav-2 > .u-nav-item:nth-child(1) > .u-button-style",
       "targets": [
-        ["linkText=CHALLENGES", "linkText"],
-        ["css=.dropdown-toggle", "css:finder"],
-        ["xpath=//a[contains(text(),'CHALLENGES')]", "xpath:link"],
-        ["xpath=//div[@id='navbarNav']/ul/li[3]/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
-        ["xpath=//li[3]/a", "xpath:position"],
-        ["xpath=//a[contains(.,'CHALLENGES')]", "xpath:innerText"]
+        ["css=.u-nav-2 > .u-nav-item:nth-child(1) > .u-button-style", "css:finder"],
+        ["xpath=//a[contains(text(),'Current Challenges')]", "xpath:link"],
+        ["xpath=//header[@id='sec-348f']/div/nav/div[2]/ul/li[2]/div/ul/li/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/user/current-challenges')])[2]", "xpath:href"],
+        ["xpath=//li[2]/div/ul/li/a", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "e4626700-ce54-41df-ba93-888b42f59d78",
+      "id": "4a5d6366-5ca6-4baa-857f-0fb26590f328",
       "comment": "",
       "command": "click",
-      "target": "linkText=CURRENT CHALLENGES",
+      "target": "css=.list-group-item:nth-child(3) .btn",
       "targets": [
-        ["linkText=CURRENT CHALLENGES", "linkText"],
-        ["css=.dropdown-item:nth-child(1)", "css:finder"],
-        ["xpath=//a[contains(text(),'CURRENT CHALLENGES')]", "xpath:link"],
-        ["xpath=//div[@id='navbarNav']/ul/li[3]/div/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/user/current-challenges')]", "xpath:href"],
-        ["xpath=//div/a", "xpath:position"],
-        ["xpath=//a[contains(.,'CURRENT CHALLENGES')]", "xpath:innerText"]
+        ["css=.list-group-item:nth-child(3) .btn", "css:finder"],
+        ["xpath=(//button[@name='acceptbtn'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='content']/div/div[3]/div[2]/div/form/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/form/button", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "09c21c8c-e457-4e00-96db-34ea1174ab6e",
+      "id": "935156d7-88bd-48ba-8641-2b41239cd9af",
       "comment": "",
       "command": "click",
-      "target": "name=acceptbtn",
-      "targets": [
-        ["name=acceptbtn", "name"],
-        ["css=.list-group-item:nth-child(1) .btn", "css:finder"],
-        ["xpath=//button[@name='acceptbtn']", "xpath:attributes"],
-        ["xpath=//div[@id='content']/div/div/div[2]/div/form/button", "xpath:idRelative"],
-        ["xpath=//form/button", "xpath:position"],
-        ["xpath=//button[contains(.,'ACCEPT')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "29bda438-7b81-4028-95a1-358cd100eb56",
-      "comment": "",
-      "command": "doubleClick",
-      "target": "css=.u-nav-item:nth-child(2) > .u-border-2",
-      "targets": [
-        ["css=.u-nav-item:nth-child(2) > .u-border-2", "css:finder"],
-        ["xpath=//a[contains(text(),'Challenges')]", "xpath:link"],
-        ["xpath=//header[@id='sec-348f']/div/nav/div[2]/ul/li[2]/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/user/current-challenges')]", "xpath:href"],
-        ["xpath=//li[2]/a", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "0b0cca5e-acd0-41b7-a42f-164123dd5e09",
-      "comment": "",
-      "command": "click",
-      "target": "xpath=//header[@id='sec-348f']/div/nav/div[2]/ul/li[2]/div/ul/li[2]/a",
+      "target": "css=.u-nav-2 > .u-nav-item:nth-child(2) > .u-button-style",
       "targets": [
         ["css=.u-nav-2 > .u-nav-item:nth-child(2) > .u-button-style", "css:finder"],
         ["xpath=//a[contains(text(),'My Challenges')]", "xpath:link"],
@@ -444,10 +412,10 @@
       ],
       "value": ""
     }, {
-      "id": "8c18746a-dae4-43a9-9bd0-8b587ec14605",
+      "id": "38e48092-1a30-4c06-935e-1e6aa7003ca5",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "xpath=//div[@id='content']/div/div/div/div[2]/h5",
+      "target": "css=.align-self-center",
       "targets": [
         ["css=.align-self-center", "css:finder"],
         ["xpath=//div[@id='content']/div/div/div/div[2]/h5", "xpath:idRelative"],
@@ -456,18 +424,7 @@
       ],
       "value": ""
     }, {
-      "id": "e0e219f5-e731-422f-92e8-783ae6908ea0",
-      "comment": "",
-      "command": "click",
-      "target": "css=.u-container-layout",
-      "targets": [
-        ["css=.u-container-layout", "css:finder"],
-        ["xpath=//section[@id='sec-f86b']/div/div/div/div/div", "xpath:idRelative"],
-        ["xpath=//div/div/div/div/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "fd2c1921-bfbd-4dbf-9e99-fc07126210b9",
+      "id": "ad4aa5b0-77cd-4298-8ede-dd2458faec3f",
       "comment": "",
       "command": "click",
       "target": "css=.u-nav-item:nth-child(6) > .u-border-2",
@@ -480,7 +437,7 @@
       ],
       "value": ""
     }, {
-      "id": "cc285320-9c20-4570-a80c-7c7a4f628cc1",
+      "id": "e8c5398f-4c81-4cf0-9feb-cb00cded0536",
       "comment": "",
       "command": "click",
       "target": "linkText=LOG OUT",
@@ -499,21 +456,21 @@
     "id": "5250fdcb-a866-4c8c-81a1-7fca94d407b2",
     "name": "TEST-04-prijava-dva-izazova-istog-tipa-voda-hrana",
     "commands": [{
-      "id": "59a05505-b878-4a77-8c5b-c41a0591ca24",
+      "id": "c31e9046-fcae-46d3-9f4f-e36de86fa4fd",
       "comment": "",
       "command": "open",
       "target": "http://localhost:8080/",
       "targets": [],
       "value": ""
     }, {
-      "id": "f0db7ba8-3560-495a-9ee6-9dbe23047d82",
+      "id": "f34f3d44-b266-4973-b613-24dd8a8c9c35",
       "comment": "",
       "command": "setWindowSize",
-      "target": "1920x1040",
+      "target": "1936x1056",
       "targets": [],
       "value": ""
     }, {
-      "id": "5f69be0a-5494-406c-a76c-10f324ae7319",
+      "id": "013bb259-2855-46aa-8fbb-03feb83baa25",
       "comment": "",
       "command": "click",
       "target": "id=usernameLogIn",
@@ -527,7 +484,7 @@
       ],
       "value": ""
     }, {
-      "id": "1a529a6d-6577-4ecc-a5b2-4368c8adeb94",
+      "id": "705e8359-222b-4d36-bfa3-9886ebed00e9",
       "comment": "",
       "command": "type",
       "target": "id=usernameLogIn",
@@ -539,9 +496,9 @@
         ["xpath=//form[@id='loginform']/div/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "mia"
+      "value": "naruto"
     }, {
-      "id": "b32a9593-0e27-44f8-8d80-95d18c669359",
+      "id": "955c0201-0c47-4681-91cb-26aa965cf11f",
       "comment": "",
       "command": "click",
       "target": "id=passwordLogIn",
@@ -555,7 +512,7 @@
       ],
       "value": ""
     }, {
-      "id": "fec8f5bb-80ad-4482-9dd0-4c6776394d47",
+      "id": "e371e135-1f32-407d-913c-dd5699858fcf",
       "comment": "",
       "command": "type",
       "target": "id=passwordLogIn",
@@ -569,7 +526,7 @@
       ],
       "value": "sifra123"
     }, {
-      "id": "2af08215-0936-498f-b1d1-4bac43d251bc",
+      "id": "b54f4db2-20d5-40df-a589-49123b4bfd16",
       "comment": "",
       "command": "click",
       "target": "id=buttonLogIn",
@@ -584,75 +541,55 @@
       ],
       "value": ""
     }, {
-      "id": "558031ac-7448-4262-a4c1-6270aa38b647",
+      "id": "46bd0bcb-0ecc-495d-a3eb-769bca17535c",
       "comment": "",
       "command": "click",
-      "target": "linkText=CHALLENGES",
+      "target": "css=.u-nav-2 > .u-nav-item:nth-child(1) > .u-button-style",
       "targets": [
-        ["linkText=CHALLENGES", "linkText"],
-        ["css=.dropdown-toggle", "css:finder"],
-        ["xpath=//a[contains(text(),'CHALLENGES')]", "xpath:link"],
-        ["xpath=//div[@id='navbarNav']/ul/li[3]/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
-        ["xpath=//li[3]/a", "xpath:position"],
-        ["xpath=//a[contains(.,'CHALLENGES')]", "xpath:innerText"]
+        ["css=.u-nav-2 > .u-nav-item:nth-child(1) > .u-button-style", "css:finder"],
+        ["xpath=//a[contains(text(),'Current Challenges')]", "xpath:link"],
+        ["xpath=//header[@id='sec-348f']/div/nav/div[2]/ul/li[2]/div/ul/li/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/user/current-challenges')])[2]", "xpath:href"],
+        ["xpath=//li[2]/div/ul/li/a", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "43ede681-0917-4541-877a-19f0811481a8",
+      "id": "2b9ebcf1-dd74-468d-9427-17018884bf2d",
       "comment": "",
       "command": "click",
-      "target": "linkText=CURRENT CHALLENGES",
+      "target": "css=.list-group-item:nth-child(6) .btn",
       "targets": [
-        ["linkText=CURRENT CHALLENGES", "linkText"],
-        ["css=.dropdown-item:nth-child(1)", "css:finder"],
-        ["xpath=//a[contains(text(),'CURRENT CHALLENGES')]", "xpath:link"],
-        ["xpath=//div[@id='navbarNav']/ul/li[3]/div/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/user/current-challenges')]", "xpath:href"],
-        ["xpath=//div/a", "xpath:position"],
-        ["xpath=//a[contains(.,'CURRENT CHALLENGES')]", "xpath:innerText"]
+        ["css=.list-group-item:nth-child(6) .btn", "css:finder"],
+        ["xpath=//div[@id='content']/div/div[6]/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/button", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "249e6dde-ce34-4f82-8043-b6ea4a7fde74",
-      "comment": "",
-      "command": "click",
-      "target": "css=.list-group-item:nth-child(1) .btn",
-      "targets": [
-        ["css=.list-group-item:nth-child(1) .btn", "css:finder"],
-        ["xpath=//div[@id='content']/div/div/div[2]/div/button", "xpath:idRelative"],
-        ["xpath=//div[2]/div/button", "xpath:position"],
-        ["xpath=//button[contains(.,'ACCEPT')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "5cf8ffa4-ab17-498b-9018-03db0b8a1ab1",
+      "id": "5836b9dd-fc7e-48da-b330-91d35a5897d1",
       "comment": "",
       "command": "mouseOver",
-      "target": "css=.list-group-item:nth-child(1) .btn",
+      "target": "css=.list-group-item:nth-child(6) .btn",
       "targets": [
-        ["css=.list-group-item:nth-child(1) .btn", "css:finder"],
-        ["xpath=//div[@id='content']/div/div/div[2]/div/button", "xpath:idRelative"],
-        ["xpath=//div[2]/div/button", "xpath:position"],
-        ["xpath=//button[contains(.,'ACCEPT')]", "xpath:innerText"]
+        ["css=.list-group-item:nth-child(6) .btn", "css:finder"],
+        ["xpath=//div[@id='content']/div/div[6]/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/button", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "3c3aec2a-ef94-43a8-9398-15cf115013f3",
+      "id": "367d24e0-dae3-4ec7-97f8-fdbf15b1f1e7",
       "comment": "",
       "command": "mouseOut",
-      "target": "css=.list-group-item:nth-child(1) .btn",
+      "target": "css=.list-group-item:nth-child(6) .btn",
       "targets": [
-        ["css=.list-group-item:nth-child(1) .btn", "css:finder"],
-        ["xpath=//div[@id='content']/div/div/div[2]/div/button", "xpath:idRelative"],
-        ["xpath=//div[2]/div/button", "xpath:position"],
-        ["xpath=//button[contains(.,'ACCEPT')]", "xpath:innerText"]
+        ["css=.list-group-item:nth-child(6) .btn", "css:finder"],
+        ["xpath=//div[@id='content']/div/div[6]/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/button", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "17b5aee7-eff7-42b4-8bf1-7253b1f13802",
+      "id": "e899c515-3d69-4e50-b9c2-808bda8dd7e2",
       "comment": "",
-      "command": "assertElementPresent",
+      "command": "assertText",
       "target": "id=modalBodyLogIn",
       "targets": [
         ["id=modalBodyLogIn", "id"],
@@ -661,9 +598,9 @@
         ["xpath=//div[@id='myModal']/div/div/div[2]", "xpath:idRelative"],
         ["xpath=//div/div/div[2]", "xpath:position"]
       ],
-      "value": ""
+      "value": "   You can only participate in one challenge from the water-related and food-related challenges at the same time."
     }, {
-      "id": "3357b71d-f7b8-481f-95e0-bb46ba2a191a",
+      "id": "364b87bb-defb-4c24-a9a7-40658d2f32d4",
       "comment": "",
       "command": "click",
       "target": "css=.btn-secondary",
@@ -676,7 +613,7 @@
       ],
       "value": ""
     }, {
-      "id": "6a19c8ba-0679-405c-a234-49d86c5aec58",
+      "id": "7b439254-3066-402e-90f6-3be5e208a3ac",
       "comment": "",
       "command": "click",
       "target": "css=.u-nav-item:nth-child(6) > .u-border-2",
@@ -689,7 +626,7 @@
       ],
       "value": ""
     }, {
-      "id": "c025378a-664b-41fd-919d-d13752f6036d",
+      "id": "4524db95-8dcd-4114-bb8e-b2b3a4e40ffe",
       "comment": "",
       "command": "click",
       "target": "linkText=LOG OUT",
@@ -708,21 +645,21 @@
     "id": "a542dc08-ba7d-4452-b17f-ddb668e3fb9c",
     "name": "TEST-05-korisnik-se-uspesno-prijavljuje-na-vise-trening-izazova",
     "commands": [{
-      "id": "4d4ca62d-3914-4e93-8ac1-c78f344958ce",
+      "id": "2c9ff630-925d-4c45-a5e5-c0a6830cfc0e",
       "comment": "",
       "command": "open",
       "target": "http://localhost:8080/",
       "targets": [],
       "value": ""
     }, {
-      "id": "5426a4ca-a068-4009-ae59-19f73dc3d1af",
+      "id": "9da1381d-73e9-41cc-bd6d-cde630e29ab2",
       "comment": "",
       "command": "setWindowSize",
-      "target": "1920x1040",
+      "target": "1936x1056",
       "targets": [],
       "value": ""
     }, {
-      "id": "69ce2248-c435-4c1e-abc7-52af1ec4a2ee",
+      "id": "da2ba956-0367-46c2-a8ed-d16a1662ce80",
       "comment": "",
       "command": "click",
       "target": "id=usernameLogIn",
@@ -736,7 +673,7 @@
       ],
       "value": ""
     }, {
-      "id": "4114d112-098d-4726-8fc1-304ec237f75c",
+      "id": "f814d92b-f176-47a1-a032-04de03c919a5",
       "comment": "",
       "command": "type",
       "target": "id=usernameLogIn",
@@ -748,9 +685,9 @@
         ["xpath=//form[@id='loginform']/div/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "sakura"
+      "value": "naruto"
     }, {
-      "id": "f6812f26-cfbc-4df9-83c2-8cfed07fe5f6",
+      "id": "106d332e-b202-4560-9b5f-330c4467a829",
       "comment": "",
       "command": "click",
       "target": "id=passwordLogIn",
@@ -764,7 +701,7 @@
       ],
       "value": ""
     }, {
-      "id": "dc260736-62b8-4f3d-94e3-fce426d6097a",
+      "id": "c6393c25-0569-406e-9df0-cb2feeba8adf",
       "comment": "",
       "command": "type",
       "target": "id=passwordLogIn",
@@ -778,7 +715,7 @@
       ],
       "value": "sifra123"
     }, {
-      "id": "017d1033-9bd0-4a19-a802-6b737018d7e0",
+      "id": "73d4518c-400b-4d0b-bd73-35e452fa579b",
       "comment": "",
       "command": "click",
       "target": "id=buttonLogIn",
@@ -793,49 +730,44 @@
       ],
       "value": ""
     }, {
-      "id": "987a11cf-5595-4404-8ea0-4315f154af87",
+      "id": "e737c222-f6dc-480f-a9b7-2f49287a5943",
       "comment": "",
       "command": "click",
-      "target": "linkText=CHALLENGES",
+      "target": "css=.u-nav-2 > .u-nav-item:nth-child(1) > .u-button-style",
       "targets": [
-        ["linkText=CHALLENGES", "linkText"],
-        ["css=.dropdown-toggle", "css:finder"],
-        ["xpath=//a[contains(text(),'CHALLENGES')]", "xpath:link"],
-        ["xpath=//div[@id='navbarNav']/ul/li[3]/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
-        ["xpath=//li[3]/a", "xpath:position"],
-        ["xpath=//a[contains(.,'CHALLENGES')]", "xpath:innerText"]
+        ["css=.u-nav-2 > .u-nav-item:nth-child(1) > .u-button-style", "css:finder"],
+        ["xpath=//a[contains(text(),'Current Challenges')]", "xpath:link"],
+        ["xpath=//header[@id='sec-348f']/div/nav/div[2]/ul/li[2]/div/ul/li/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/user/current-challenges')])[2]", "xpath:href"],
+        ["xpath=//li[2]/div/ul/li/a", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "90d7fe5f-1439-4348-9274-46f469e50a92",
+      "id": "81f016d3-7812-4087-9b26-5e30f58c30ee",
       "comment": "",
       "command": "click",
-      "target": "linkText=CURRENT CHALLENGES",
+      "target": "css=.list-group-item:nth-child(2) .btn",
       "targets": [
-        ["linkText=CURRENT CHALLENGES", "linkText"],
-        ["css=.dropdown-item:nth-child(1)", "css:finder"],
-        ["xpath=//a[contains(text(),'CURRENT CHALLENGES')]", "xpath:link"],
-        ["xpath=//div[@id='navbarNav']/ul/li[3]/div/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/user/current-challenges')]", "xpath:href"],
-        ["xpath=//div/a", "xpath:position"],
-        ["xpath=//a[contains(.,'CURRENT CHALLENGES')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "697a4e4d-1dae-4795-b5e0-002f1f6a11d4",
-      "comment": "",
-      "command": "click",
-      "target": "css=.u-custom-color-6",
-      "targets": [
-        ["css=.u-custom-color-6", "css:finder"],
+        ["css=.list-group-item:nth-child(2) .btn", "css:finder"],
         ["xpath=(//button[@name='acceptbtn'])[2]", "xpath:attributes"],
         ["xpath=//div[@id='content']/div/div[2]/div[2]/div/form/button", "xpath:idRelative"],
         ["xpath=//div[2]/div[2]/div/form/button", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "0fe067d8-ae89-47a9-998b-8dd024dee3e0",
+      "id": "42b92a5e-7255-4ec3-8b16-95750c8a98e5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.u-custom-color-6",
+      "targets": [
+        ["css=.u-custom-color-6", "css:finder"],
+        ["xpath=(//button[@name='acceptbtn'])[10]", "xpath:attributes"],
+        ["xpath=//div[@id='content']/div/div[13]/div[2]/div/form/button", "xpath:idRelative"],
+        ["xpath=//div[13]/div[2]/div/form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fee0f91b-1258-4c19-9aa1-ce4162e8e5b2",
       "comment": "",
       "command": "click",
       "target": "css=.u-nav-2 > .u-nav-item:nth-child(2) > .u-button-style",
@@ -848,19 +780,43 @@
       ],
       "value": ""
     }, {
-      "id": "b3f79c2b-0e3b-4c24-8e7e-ee994a31e554",
+      "id": "4a7ef9f3-10fb-4927-be33-3295580329eb",
       "comment": "",
-      "command": "assertText",
-      "target": "css=.align-self-center",
+      "command": "assertElementPresent",
+      "target": "css=.list-group-item:nth-child(2) .mb-1:nth-child(1)",
       "targets": [
-        ["css=.align-self-center", "css:finder"],
-        ["xpath=//div[@id='content']/div/div/div/div[2]/h5", "xpath:idRelative"],
-        ["xpath=//h5", "xpath:position"],
+        ["css=.list-group-item:nth-child(2) .mb-1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='content']/div/div[2]/div/div[2]/h5", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/h5", "xpath:position"],
         ["xpath=//h5[contains(.,'Step up')]", "xpath:innerText"]
       ],
-      "value": "Step up"
+      "value": ""
     }, {
-      "id": "095dddeb-cfe8-474a-b144-a86bdd6272b3",
+      "id": "33b44af5-07a8-400b-8684-2ed6e8e153de",
+      "comment": "",
+      "command": "click",
+      "target": "css=.list-group-item:nth-child(3) .mb-1:nth-child(1)",
+      "targets": [
+        ["css=.list-group-item:nth-child(3) .mb-1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='content']/div/div[3]/div/div[2]/h5", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[2]/h5", "xpath:position"],
+        ["xpath=//h5[contains(.,'Play tennis')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "45cf8e48-4d96-4fbe-bcc5-f8c2283fd38e",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.list-group-item:nth-child(3) .mb-1:nth-child(1)",
+      "targets": [
+        ["css=.list-group-item:nth-child(3) .mb-1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='content']/div/div[3]/div/div[2]/h5", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[2]/h5", "xpath:position"],
+        ["xpath=//h5[contains(.,'Play tennis')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1a20ed98-655f-4ec9-960b-c8d140eca3dd",
       "comment": "",
       "command": "click",
       "target": "css=.u-nav-item:nth-child(6) > .u-border-2",
@@ -873,7 +829,7 @@
       ],
       "value": ""
     }, {
-      "id": "36918106-4aae-4dd2-acef-a9af0659eeff",
+      "id": "dcf6e95f-311a-439d-82d5-dbf996d8ce86",
       "comment": "",
       "command": "click",
       "target": "linkText=LOG OUT",
@@ -1112,21 +1068,21 @@
     "id": "15ea6c23-1e92-4084-ab64-04134956ee4c",
     "name": "TEST-07-korisnik-se-prijavljuje-na-voda-izazov",
     "commands": [{
-      "id": "3d18f216-ff0f-4e9f-bbfe-968dc150af9f",
+      "id": "acd7ba4e-6de8-46dd-9d4b-77feb161b97e",
       "comment": "",
       "command": "open",
       "target": "http://localhost:8080/",
       "targets": [],
       "value": ""
     }, {
-      "id": "32c745ca-d009-428f-b170-7cf3008d6829",
+      "id": "aaba8613-ae48-4939-a74b-169093e3d537",
       "comment": "",
       "command": "setWindowSize",
-      "target": "1936x1056",
+      "target": "1186x840",
       "targets": [],
       "value": ""
     }, {
-      "id": "89a49cbe-28e7-4769-ad43-878599e65135",
+      "id": "b4e47060-943b-4674-830f-f23ff3adbec8",
       "comment": "",
       "command": "click",
       "target": "id=usernameLogIn",
@@ -1140,7 +1096,7 @@
       ],
       "value": ""
     }, {
-      "id": "cbe9d3a3-1fc3-4ad0-867e-22ebb4950c65",
+      "id": "84268451-fe82-40dd-9009-4e5b32b0c902",
       "comment": "",
       "command": "type",
       "target": "id=usernameLogIn",
@@ -1152,9 +1108,9 @@
         ["xpath=//form[@id='loginform']/div/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "sakura"
+      "value": "mia"
     }, {
-      "id": "f94a2cb3-3f08-4712-8cc8-53e1d9596624",
+      "id": "b144c45c-d227-4cce-9e18-00449ee8dce4",
       "comment": "",
       "command": "click",
       "target": "id=passwordLogIn",
@@ -1168,7 +1124,7 @@
       ],
       "value": ""
     }, {
-      "id": "a003d191-587d-4a5f-9df1-049ca94b60d4",
+      "id": "0c89f581-cb29-400b-9daa-99feae614e78",
       "comment": "",
       "command": "type",
       "target": "id=passwordLogIn",
@@ -1182,7 +1138,7 @@
       ],
       "value": "sifra123"
     }, {
-      "id": "6d61fd31-de7c-42dd-837a-8b869769b12e",
+      "id": "1d592f30-fdee-4a4c-a1a1-75a52b4e0a67",
       "comment": "",
       "command": "click",
       "target": "id=buttonLogIn",
@@ -1197,37 +1153,20 @@
       ],
       "value": ""
     }, {
-      "id": "248d919a-9982-44dc-b401-c72a264b8e33",
+      "id": "d30ee02b-0794-4414-ad70-d572abc6bb00",
       "comment": "",
       "command": "click",
-      "target": "linkText=CHALLENGES",
+      "target": "css=.u-nav-2 > .u-nav-item:nth-child(1) > .u-button-style",
       "targets": [
-        ["linkText=CHALLENGES", "linkText"],
-        ["css=.dropdown-toggle", "css:finder"],
-        ["xpath=//a[contains(text(),'CHALLENGES')]", "xpath:link"],
-        ["xpath=//div[@id='navbarNav']/ul/li[3]/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
-        ["xpath=//li[3]/a", "xpath:position"],
-        ["xpath=//a[contains(.,'CHALLENGES')]", "xpath:innerText"]
+        ["css=.u-nav-2 > .u-nav-item:nth-child(1) > .u-button-style", "css:finder"],
+        ["xpath=//a[contains(text(),'Current Challenges')]", "xpath:link"],
+        ["xpath=//header[@id='sec-348f']/div/nav/div[2]/ul/li[2]/div/ul/li/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/user/current-challenges')])[2]", "xpath:href"],
+        ["xpath=//li[2]/div/ul/li/a", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "28ddaf2f-bcfb-4523-9d6c-4274681422f7",
-      "comment": "",
-      "command": "click",
-      "target": "linkText=CURRENT CHALLENGES",
-      "targets": [
-        ["linkText=CURRENT CHALLENGES", "linkText"],
-        ["css=.dropdown-item:nth-child(1)", "css:finder"],
-        ["xpath=//a[contains(text(),'CURRENT CHALLENGES')]", "xpath:link"],
-        ["xpath=//div[@id='navbarNav']/ul/li[3]/div/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/user/current-challenges')]", "xpath:href"],
-        ["xpath=//div/a", "xpath:position"],
-        ["xpath=//a[contains(.,'CURRENT CHALLENGES')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "d8ab6d35-fed0-47b0-8ad5-a74df088dd58",
+      "id": "129d6218-c97c-441d-b1fd-fbf4a7888dde",
       "comment": "",
       "command": "click",
       "target": "name=acceptbtn",
@@ -1241,19 +1180,20 @@
       ],
       "value": ""
     }, {
-      "id": "61bd7a39-66cf-4ecd-9bcb-78d4c23af1b1",
+      "id": "b7c8f5fc-7ddd-4581-b2b5-da6bf7493387",
       "comment": "",
-      "command": "verifyElementNotPresent",
-      "target": "css=.list-group-item:nth-child(1) .mb-1:nth-child(1)",
+      "command": "click",
+      "target": "css=.u-nav-item:nth-child(1) > .u-border-2",
       "targets": [
-        ["css=.list-group-item:nth-child(1) .mb-1:nth-child(1)", "css:finder"],
-        ["xpath=//div[@id='content']/div/div/div/div[2]/h5", "xpath:idRelative"],
-        ["xpath=//div[2]/h5", "xpath:position"],
-        ["xpath=//h5[contains(.,'Drink 2l of water every day!')]", "xpath:innerText"]
+        ["css=.u-nav-item:nth-child(1) > .u-border-2", "css:finder"],
+        ["xpath=//a[contains(text(),'Daily Log')]", "xpath:link"],
+        ["xpath=//header[@id='sec-348f']/div/nav/div[2]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/user/daily-log')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "189ac82c-c17c-4e12-a097-f20159390e5d",
+      "id": "99d81d74-d072-4c2e-8e82-b195770600e0",
       "comment": "",
       "command": "click",
       "target": "css=.u-nav-2 > .u-nav-item:nth-child(2) > .u-button-style",
@@ -1266,19 +1206,19 @@
       ],
       "value": ""
     }, {
-      "id": "2841fd0f-243e-42fb-8983-f05beae6f16a",
+      "id": "956aa9cf-316b-4172-8561-13ce58033c43",
       "comment": "",
-      "command": "assertText",
-      "target": "css=.list-group-item:nth-child(1) .mb-1:nth-child(1)",
+      "command": "assertElementPresent",
+      "target": "css=.align-self-center",
       "targets": [
-        ["css=.list-group-item:nth-child(1) .mb-1:nth-child(1)", "css:finder"],
+        ["css=.align-self-center", "css:finder"],
         ["xpath=//div[@id='content']/div/div/div/div[2]/h5", "xpath:idRelative"],
-        ["xpath=//div[2]/h5", "xpath:position"],
+        ["xpath=//h5", "xpath:position"],
         ["xpath=//h5[contains(.,'Drink 2l of water every day!')]", "xpath:innerText"]
       ],
-      "value": "Drink 2l of water every day!"
+      "value": ""
     }, {
-      "id": "3fcbfc80-dc27-4a5c-af4d-b8c1dc5a1ac6",
+      "id": "864668ef-b35e-460c-b5ff-8d0f8b38c2c0",
       "comment": "",
       "command": "click",
       "target": "css=.u-nav-item:nth-child(6) > .u-border-2",
@@ -1291,7 +1231,7 @@
       ],
       "value": ""
     }, {
-      "id": "09777f7e-d0a9-4c10-a2fd-eb17d4a14c49",
+      "id": "4cc17623-6f8e-4d14-bba5-2d72f5f4118d",
       "comment": "",
       "command": "click",
       "target": "linkText=LOG OUT",
@@ -1310,21 +1250,21 @@
     "id": "7a3beed7-1364-4321-b7ff-5d0f5ea295de",
     "name": "TEST-08-odjavljivanje-sa-izazova",
     "commands": [{
-      "id": "2c7bdb77-1303-4064-98ec-5beee3a68dd4",
+      "id": "88935a5b-c25b-4991-9621-a70cd0534a93",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:8080/user/current-challenges",
+      "target": "http://localhost:8080/",
       "targets": [],
       "value": ""
     }, {
-      "id": "87ec7547-ec52-4615-be70-39119627ae5d",
+      "id": "31add542-31e6-4c27-b7e1-90b26f97d2f0",
       "comment": "",
       "command": "setWindowSize",
       "target": "1936x1056",
       "targets": [],
       "value": ""
     }, {
-      "id": "a5983c79-f705-4f3b-95af-3c8d0d470912",
+      "id": "48d1555d-600d-4010-add2-81de69338ced",
       "comment": "",
       "command": "click",
       "target": "id=usernameLogIn",
@@ -1338,7 +1278,7 @@
       ],
       "value": ""
     }, {
-      "id": "582cec2f-cf74-444a-a21c-0ff8801c0344",
+      "id": "e0392dbd-f0af-4f06-bb2b-5f1c6c7b5a44",
       "comment": "",
       "command": "type",
       "target": "id=usernameLogIn",
@@ -1352,7 +1292,7 @@
       ],
       "value": "mia"
     }, {
-      "id": "1d30d0a0-08a2-4adb-9f35-83c3c52277ed",
+      "id": "e7d12983-93ef-4435-b72c-2610cb1c23cd",
       "comment": "",
       "command": "click",
       "target": "id=passwordLogIn",
@@ -1366,7 +1306,7 @@
       ],
       "value": ""
     }, {
-      "id": "3ffaf915-2108-4a09-80a6-e351fcd72e79",
+      "id": "16c1ca79-5c19-4e46-96ed-93f3a41ea6ce",
       "comment": "",
       "command": "type",
       "target": "id=passwordLogIn",
@@ -1380,7 +1320,7 @@
       ],
       "value": "sifra123"
     }, {
-      "id": "38e7af9e-c62a-4ff8-a05f-a12167bdc62b",
+      "id": "9940a0ff-1476-4fae-975b-72fbaba8a304",
       "comment": "",
       "command": "click",
       "target": "id=buttonLogIn",
@@ -1395,64 +1335,7 @@
       ],
       "value": ""
     }, {
-      "id": "53fe3b48-fb62-4fc2-8870-6ec383bf07e7",
-      "comment": "",
-      "command": "click",
-      "target": "linkText=CHALLENGES",
-      "targets": [
-        ["linkText=CHALLENGES", "linkText"],
-        ["css=.dropdown-toggle", "css:finder"],
-        ["xpath=//a[contains(text(),'CHALLENGES')]", "xpath:link"],
-        ["xpath=//div[@id='navbarNav']/ul/li[3]/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
-        ["xpath=//li[3]/a", "xpath:position"],
-        ["xpath=//a[contains(.,'CHALLENGES')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "e4d8e208-07a8-49ea-9aa1-fc0decf4dc82",
-      "comment": "",
-      "command": "click",
-      "target": "linkText=MY CHALLENGES",
-      "targets": [
-        ["linkText=MY CHALLENGES", "linkText"],
-        ["css=.dropdown-item:nth-child(2)", "css:finder"],
-        ["xpath=//a[contains(text(),'MY CHALLENGES')]", "xpath:link"],
-        ["xpath=//div[@id='navbarNav']/ul/li[3]/div/a[2]", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/user/my-challenges')]", "xpath:href"],
-        ["xpath=//a[2]", "xpath:position"],
-        ["xpath=//a[contains(.,'MY CHALLENGES')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "9c214007-280f-4425-aea7-86ed16719a4d",
-      "comment": "",
-      "command": "click",
-      "target": "css=.u-nav-2 > .u-nav-item:nth-child(1) > .u-button-style",
-      "targets": [
-        ["css=.u-nav-2 > .u-nav-item:nth-child(1) > .u-button-style", "css:finder"],
-        ["xpath=//a[contains(text(),'Current Challenges')]", "xpath:link"],
-        ["xpath=//header[@id='sec-348f']/div/nav/div[2]/ul/li[2]/div/ul/li/a", "xpath:idRelative"],
-        ["xpath=(//a[contains(@href, '/user/current-challenges')])[2]", "xpath:href"],
-        ["xpath=//li[2]/div/ul/li/a", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "b1fcce42-948b-4771-9d6e-4bb7ccd4d9d3",
-      "comment": "",
-      "command": "click",
-      "target": "name=acceptbtn",
-      "targets": [
-        ["name=acceptbtn", "name"],
-        ["css=.list-group-item:nth-child(1) .btn", "css:finder"],
-        ["xpath=//button[@name='acceptbtn']", "xpath:attributes"],
-        ["xpath=//div[@id='content']/div/div/div[2]/div/form/button", "xpath:idRelative"],
-        ["xpath=//form/button", "xpath:position"],
-        ["xpath=//button[contains(.,'ACCEPT')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "620a57b0-17a0-426a-b260-f2d4d54f259a",
+      "id": "0db86b54-a1f5-485a-ab1d-0de3d358b679",
       "comment": "",
       "command": "click",
       "target": "css=.u-nav-2 > .u-nav-item:nth-child(2) > .u-button-style",
@@ -1465,7 +1348,7 @@
       ],
       "value": ""
     }, {
-      "id": "f5c81d59-8c88-48db-9880-d05ec1304b7a",
+      "id": "67f3be25-5a8b-4e13-b5b0-5d9b880f695e",
       "comment": "",
       "command": "click",
       "target": "name=leavebtn",
@@ -1479,7 +1362,7 @@
       ],
       "value": ""
     }, {
-      "id": "51e71a77-0cff-4518-a065-a27c8ea660f9",
+      "id": "f51807a9-b967-404e-a7eb-2010598d531c",
       "comment": "",
       "command": "click",
       "target": "css=.u-nav-2 > .u-nav-item:nth-child(1) > .u-button-style",
@@ -1492,7 +1375,7 @@
       ],
       "value": ""
     }, {
-      "id": "2fbd1f8f-0dcd-4d58-96e2-134f60190975",
+      "id": "106dab3b-0994-4700-bfc5-b03cec8fccf0",
       "comment": "",
       "command": "assertElementPresent",
       "target": "css=.list-group-item:nth-child(1) .mb-1:nth-child(1)",
@@ -1500,7 +1383,35 @@
         ["css=.list-group-item:nth-child(1) .mb-1:nth-child(1)", "css:finder"],
         ["xpath=//div[@id='content']/div/div/div/div[2]/h5", "xpath:idRelative"],
         ["xpath=//div[2]/h5", "xpath:position"],
-        ["xpath=//h5[contains(.,'JunkToJunk')]", "xpath:innerText"]
+        ["xpath=//h5[contains(.,'Drink 2l of water every day!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3c586856-75d5-42bc-9c04-de3d413a2441",
+      "comment": "",
+      "command": "click",
+      "target": "css=.u-nav-item:nth-child(6) > .u-border-2",
+      "targets": [
+        ["css=.u-nav-item:nth-child(6) > .u-border-2", "css:finder"],
+        ["xpath=//a[contains(text(),'My account')]", "xpath:link"],
+        ["xpath=//header[@id='sec-348f']/div/nav/div[2]/ul/li[6]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/user/my-account')]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "16ba57be-28f7-4420-bb91-142ff498babd",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=LOG OUT",
+      "targets": [
+        ["linkText=LOG OUT", "linkText"],
+        ["css=.b", "css:finder"],
+        ["xpath=//a[contains(text(),'LOG OUT')]", "xpath:link"],
+        ["xpath=//section[@id='carousel_dae6']/div[10]/div/div/div/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/logout')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'LOG OUT')]", "xpath:innerText"]
       ],
       "value": ""
     }]
@@ -1548,7 +1459,7 @@
         ["xpath=//form[@id='loginform']/div/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "sakura"
+      "value": "naruto"
     }, {
       "id": "d0d3d35a-bce7-4180-a8f3-e16d94494449",
       "comment": "",
